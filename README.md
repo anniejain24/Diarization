@@ -1,6 +1,6 @@
 # Diarization
 
-
+Experiments for various approaches to add speaker labels to the SimCenter osce recordings/transcripts
 
 ## Getting started
 
