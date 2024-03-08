@@ -1,0 +1,47 @@
+2024-03-08 13:01:40 -0600   70142 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-03-08 13:01:40 -0600   70142 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
+2024-03-08 13:01:40 -0600   70142 execution.flow     INFO     Executing node read_transcript. node run id: 24ea0ad4-2116-45cd-b777-77adf46c6367_read_transcript_0
+2024-03-08 13:01:41 -0600   70142 execution.flow     INFO     Node read_transcript completes.
+2024-03-08 13:01:41 -0600   70142 execution.flow     INFO     Executing node summarize_transcript. node run id: 24ea0ad4-2116-45cd-b777-77adf46c6367_summarize_transcript_0
+2024-03-08 13:01:42 -0600   70142 execution.flow     INFO     Node summarize_transcript completes.
+2024-03-08 13:01:42 -0600   70142 execution.flow     INFO     Executing node diarize_transcript. node run id: 24ea0ad4-2116-45cd-b777-77adf46c6367_diarize_transcript_0
+2024-03-08 13:01:42 -0600   70142 execution          WARNING  [diarize_transcript in line 0 (index starts from 0)] stderr> Exception occurs: BadRequestError: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2024-03-08 13:01:42 -0600   70142 execution          ERROR    Node diarize_transcript in line 0 failed. Exception: OpenAI API hits BadRequestError: The response_format parameter needs to be a dictionary such as {"type": "text"}. The value associated with the type key should be either 'text' or 'json_object' If you are using openai connection, you can only set response_format to { "type": "json_object" } when calling gpt-3.5-turbo-1106 or gpt-4-1106-preview to enable JSON mode. You can refer to https://platform.openai.com/docs/guides/text-generation/json-mode. If you are using azure openai connection, then please first go to your Azure OpenAI resource, deploy model 'gpt-35-turbo-1106' or 'gpt-4-1106-preview'. You can refer to https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/json-mode?tabs=python..
+Traceback (most recent call last):
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/tools/common.py", line 207, in wrapper
+    return func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/tools/aoai.py", line 157, in chat
+    completion = self._client.chat.completions.create(**params)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 88, in wrapper
+    return f(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/tracer.py", line 528, in wrapped
+    output = func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/resources/chat/completions.py", line 663, in create
+    return self._post(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_base_client.py", line 889, in request
+    return self._request(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_base_client.py", line 980, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 88, in invoke_tool
+    result = self._invoke_tool_with_timer(node, f, kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 196, in _invoke_tool_with_timer
+    raise e
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 190, in _invoke_tool_with_timer
+    return f(**kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/executor/flow_executor.py", line 1079, in wrapper
+    return f(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/tracer.py", line 528, in wrapped
+    output = func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/tools/common.py", line 222, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits BadRequestError: The response_format parameter needs to be a dictionary such as {"type": "text"}. The value associated with the type key should be either 'text' or 'json_object' If you are using openai connection, you can only set response_format to { "type": "json_object" } when calling gpt-3.5-turbo-1106 or gpt-4-1106-preview to enable JSON mode. You can refer to https://platform.openai.com/docs/guides/text-generation/json-mode. If you are using azure openai connection, then please first go to your Azure OpenAI resource, deploy model 'gpt-35-turbo-1106' or 'gpt-4-1106-preview'. You can refer to https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/json-mode?tabs=python.
+2024-03-08 13:01:42 -0600   70142 execution.flow     ERROR    Flow execution has failed. Cancelling all running nodes: diarize_transcript.
