@@ -24,3 +24,15 @@ Notes: transcript got truncated because of token max, removed token max and it w
 ]
 
 Note: this particular transcript really only captured the doctor/student speech so was a bit difficult for the diarization task
+
+Another from default ID, with current prompt (3/11 8:32 pm):
+
+[
+  {
+    "output": {
+      "id": "10_0991_331330.s",
+      "transcript": "Instructions: Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. \n\nStudent: Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. \n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good. \n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. \n\nStudent: Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. \n\nStudent: Okay. And what does your vomit look like? \n\nPatient: It's just small bits of undigested food, whatever I eat. \n\nStudent: Any blood in it?\n\nPatient: No. No? No Bile? No Just the chunks of food? \n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never. \n\nStudent: Okay. And does anything make it worse? \n\nPatient: Uh, eating. Yeah. Yeah, anything makes it better?\n\nPatient: Not really, other than not eating \n\nStudent: Is there any associated pain with the vomiting? \n\nPatient: Yeah, I got a little mild pain in my abdomen there. \n\nStudent: Okay, on a scale of 1 to 10, about how bad, how would you describe it? \n\nPatient: Oh, it's like a 3. Yeah. \n\nStudent: Do you feel safe at home? \n\nPatient: Yeah! Do you get married? Yeah Or wife and I at home. \n\nStudent: Have you been diagnosed with any chronic illnesses? \n\nPatient: Hypertension, osteoarthritis in both my knees, and chronic back pain. \n\nStudent: Do you take any medications at home? \n\nPatient: Verapamil, hydrocortone and Tylenol. \n\nStudent: Let's just go over real quickly what I think you might have and what could be causing these symptoms. \n\nPatient: Oh, okay. \n\nStudent: The way you describe your vomiting sounds like it's not getting very far down your digestive tract. \n\nPatient: Okay. \n\nStudent: So most likely it could resolve on its own, but we're going to do those tests to make sure that it's not anything else that could be alarming. \n\nPatient: Okay, get this done today. Thank you. \n\nInstructions: Learners, your time is up. Please exit your patient station. Log into SimIQ using your UT credentials."
+    },
+    "status": "Completed"
+  }
+]

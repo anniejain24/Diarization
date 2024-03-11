@@ -30,11 +30,11 @@ nodes:
     path: summarize.jinja2
   inputs:
     deployment_name: annie-gpt35
-    max_tokens: 
+    max_tokens: null
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: annie_azure
+  connection: annie_azure_gpt35
   api: chat
 - name: diarize_transcript
   type: llm
@@ -48,5 +48,5 @@ nodes:
       type: text
     text1: ${read_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: annie_azure
+  connection: annie_azure_gpt35
   api: chat
