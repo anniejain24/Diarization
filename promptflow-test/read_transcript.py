@@ -15,5 +15,5 @@ def read_transcript_from_id(input1: str) -> dict:
     with open(path, 'r') as file:
         transcript = file.read()
 
-    return transcript[20:]
+    return transcript
     # return input1

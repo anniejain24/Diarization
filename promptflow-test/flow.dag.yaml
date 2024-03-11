@@ -30,7 +30,7 @@ nodes:
     path: summarize.jinja2
   inputs:
     deployment_name: annie-gpt35
-    max_tokens: 6000
+    max_tokens: 
     response_format:
       type: text
     text: ${read_transcript.output}

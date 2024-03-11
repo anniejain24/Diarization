@@ -23,6 +23,22 @@
       },
       "source": "read_transcript.py",
       "function": "read_transcript_from_id"
+    },
+    "diarize.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "text1": {
+          "type": [
+            "string"
+          ]
+        },
+        "text2": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "diarize.jinja2"
     }
   }
 }
