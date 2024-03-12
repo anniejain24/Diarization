@@ -34,7 +34,7 @@ nodes:
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: annie_azure_gpt35
+  connection: annie_azure_gpt3
   api: chat
 - name: diarize_transcript
   type: llm
@@ -48,5 +48,5 @@ nodes:
       type: text
     text1: ${read_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: annie_azure_gpt35
+  connection: annie_azure_gpt3
   api: chat
