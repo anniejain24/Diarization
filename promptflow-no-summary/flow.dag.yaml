@@ -1,0 +1,38 @@
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  id:
+    type: string
+    description: transcript_id
+    default: 10_0991_331330.s
+  score:
+    type: int
+    default: 1
+outputs:
+  id:
+    type: string
+    reference: ${inputs.id}
+  transcript:
+    type: string
+    reference: ${diarize_transcript.output}
+nodes:
+- name: read_transcript
+  type: python
+  source:
+    type: code
+    path: read_transcript.py
+  inputs:
+    input1: ${inputs.id}
+- name: diarize_transcript
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: annie-gpt35
+    max_tokens: 
+    response_format:
+      type: text
+    text: ${read_transcript.output}
+  connection: annie_azure_gpt3
+  api: chat
