@@ -1,0 +1,30 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 290,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 220,
+      "y": 578,
+      "index": -1
+    },
+    "read_transcript": {
+      "x": 140,
+      "y": 176,
+      "index": 0
+    },
+    "summarize_transcript": {
+      "x": 227.5,
+      "y": 310,
+      "index": 1
+    },
+    "diarize_transcript": {
+      "x": 140,
+      "y": 444,
+      "index": 2
+    }
+  },
+  "orientation": "Vertical"
+}
