@@ -29,10 +29,10 @@ nodes:
     type: code
     path: diarize.jinja2
   inputs:
-    deployment_name: annie-gpt35
-    max_tokens: 
+    deployment_name: annie-gpt4-1
+    max_tokens: null
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: annie_azure_gpt3
+  connection: annie_azure_gt4
   api: chat

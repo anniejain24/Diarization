@@ -1,8 +1,8 @@
-2024-03-11 14:30:39 -0500   45085 execution.flow     INFO     Start executing nodes in thread pool mode.
-2024-03-11 14:30:39 -0500   45085 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
-2024-03-11 14:30:39 -0500   45085 execution.flow     INFO     Executing node read_transcript. node run id: 2cfcb475-a4e3-4d4c-bf87-db11a6f182a6_read_transcript_0
-2024-03-11 14:30:39 -0500   45085 execution.flow     INFO     Node read_transcript completes.
-2024-03-11 14:30:39 -0500   45085 execution.flow     INFO     Executing node summarize_transcript. node run id: 2cfcb475-a4e3-4d4c-bf87-db11a6f182a6_summarize_transcript_0
-2024-03-11 14:30:41 -0500   45085 execution.flow     INFO     Node summarize_transcript completes.
-2024-03-11 14:30:41 -0500   45085 execution.flow     INFO     Executing node diarize_transcript. node run id: 2cfcb475-a4e3-4d4c-bf87-db11a6f182a6_diarize_transcript_0
-2024-03-11 14:30:46 -0500   45085 execution.flow     INFO     Node diarize_transcript completes.
+2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
+2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Executing node read_transcript. node run id: ac9c2bc8-7e82-464f-801d-f6c38f1edec5_read_transcript_0
+2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Node read_transcript completes.
+2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Executing node summarize_transcript. node run id: ac9c2bc8-7e82-464f-801d-f6c38f1edec5_summarize_transcript_0
+2024-03-13 13:17:22 -0500   38793 execution.flow     INFO     Node summarize_transcript completes.
+2024-03-13 13:17:22 -0500   38793 execution.flow     INFO     Executing node diarize_transcript. node run id: ac9c2bc8-7e82-464f-801d-f6c38f1edec5_diarize_transcript_0
+2024-03-13 13:17:50 -0500   38793 execution.flow     INFO     Node diarize_transcript completes.
