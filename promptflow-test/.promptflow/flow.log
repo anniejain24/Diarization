@@ -1,8 +1,58 @@
-2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Start executing nodes in thread pool mode.
-2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
-2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Executing node read_transcript. node run id: ac9c2bc8-7e82-464f-801d-f6c38f1edec5_read_transcript_0
-2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Node read_transcript completes.
-2024-03-13 13:16:48 -0500   38793 execution.flow     INFO     Executing node summarize_transcript. node run id: ac9c2bc8-7e82-464f-801d-f6c38f1edec5_summarize_transcript_0
-2024-03-13 13:17:22 -0500   38793 execution.flow     INFO     Node summarize_transcript completes.
-2024-03-13 13:17:22 -0500   38793 execution.flow     INFO     Executing node diarize_transcript. node run id: ac9c2bc8-7e82-464f-801d-f6c38f1edec5_diarize_transcript_0
-2024-03-13 13:17:50 -0500   38793 execution.flow     INFO     Node diarize_transcript completes.
+2024-03-14 11:47:56 -0500   30803 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-03-14 11:47:56 -0500   30803 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
+2024-03-14 11:47:56 -0500   30803 execution.flow     INFO     Executing node read_transcript. node run id: e6aa646c-2cd3-4bfb-ae3b-e165cd777d32_read_transcript_0
+2024-03-14 11:47:56 -0500   30803 execution.flow     INFO     Node read_transcript completes.
+2024-03-14 11:47:56 -0500   30803 execution.flow     INFO     Executing node summarize_transcript. node run id: e6aa646c-2cd3-4bfb-ae3b-e165cd777d32_summarize_transcript_0
+2024-03-14 11:48:14 -0500   30803 execution.flow     INFO     Node summarize_transcript completes.
+2024-03-14 11:48:14 -0500   30803 execution.flow     INFO     Executing node diarize_transcript. node run id: e6aa646c-2cd3-4bfb-ae3b-e165cd777d32_diarize_transcript_0
+2024-03-14 11:49:14 -0500   30803 execution          WARNING  diarize_transcript in line 0 has been running for 60 seconds, stacktrace of thread 46914865911552:
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/executor/flow_executor.py", line 1079, in wrapper
+    return f(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/tracer.py", line 528, in wrapped
+    output = func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/tools/common.py", line 207, in wrapper
+    return func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/tools/aoai.py", line 157, in chat
+    completion = self._client.chat.completions.create(**params)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 88, in wrapper
+    return f(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/tracer.py", line 528, in wrapped
+    output = func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/resources/chat/completions.py", line 663, in create
+    return self._post(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_base_client.py", line 889, in request
+    return self._request(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/openai/_base_client.py", line 918, in _request
+    response = self._client.send(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpx/_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpx/_transports/default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpcore/_sync/connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpcore/_sync/http_proxy.py", line 344, in handle_request
+    return self._connection.handle_request(request)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpcore/_sync/http11.py", line 113, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpcore/_sync/http11.py", line 186, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpcore/_sync/http11.py", line 224, in _receive_event
+    data = self._network_stream.read(
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/httpcore/_backends/sync.py", line 126, in read
+    return self._sock.recv(max_bytes)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/ssl.py", line 1260, in recv
+    return self.read(buflen)
+  File "/home2/s229618/.conda/envs/pf/lib/python3.9/ssl.py", line 1135, in read
+    return self._sslobj.read(len)
+
+2024-03-14 11:49:17 -0500   30803 execution.flow     INFO     Node diarize_transcript completes.
