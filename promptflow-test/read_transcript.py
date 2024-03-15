@@ -14,9 +14,13 @@ def read_transcript_from_id(input1: str) -> dict:
 
     with open(path, 'r') as file:
         transcript = file.read()
+    
+    #transcript_lines = ''
+    #for line in transcript:
+        #transcript_lines += line["text"]
 
-    #return transcript
+    return transcript
     #return transcript[:int(len(transcript)/3)]
     #return transcript[int(len(transcript)/3):2*int(len(transcript)/3)]
-    return transcript[2*int(len(transcript)/3):]
+    #return transcript[2*int(len(transcript)/3):]
     # return input1

@@ -1,11 +1,11 @@
-2024-03-12 13:05:07 -0500    5262 execution.flow     INFO     Start executing nodes in thread pool mode.
-2024-03-12 13:05:07 -0500    5262 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
-2024-03-12 13:05:07 -0500    5262 execution.flow     INFO     Executing node read_transcript. node run id: ead31e2f-9bd0-484b-a62a-0dd45c0a21d5_read_transcript_0
-2024-03-12 13:05:08 -0500    5262 execution.flow     INFO     Node read_transcript completes.
-2024-03-12 13:05:08 -0500    5262 execution.flow     INFO     Executing node summarize_transcript. node run id: ead31e2f-9bd0-484b-a62a-0dd45c0a21d5_summarize_transcript_0
-2024-03-12 13:05:20 -0500    5262 execution.flow     INFO     Node summarize_transcript completes.
-2024-03-12 13:05:20 -0500    5262 execution.flow     INFO     Executing node diarize_transcript. node run id: ead31e2f-9bd0-484b-a62a-0dd45c0a21d5_diarize_transcript_0
-2024-03-12 13:06:20 -0500    5262 execution          WARNING  diarize_transcript in line 0 has been running for 60 seconds, stacktrace of thread 46915184711424:
+2024-03-15 13:10:48 -0500   41778 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-03-15 13:10:48 -0500   41778 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
+2024-03-15 13:10:48 -0500   41778 execution.flow     INFO     Executing node read_transcript. node run id: a7a3df77-7f34-4250-b2a6-6eecd1ccb5dd_read_transcript_0
+2024-03-15 13:10:49 -0500   41778 execution.flow     INFO     Node read_transcript completes.
+2024-03-15 13:10:49 -0500   41778 execution.flow     INFO     Executing node summarize_transcript. node run id: a7a3df77-7f34-4250-b2a6-6eecd1ccb5dd_summarize_transcript_0
+2024-03-15 13:11:03 -0500   41778 execution.flow     INFO     Node summarize_transcript completes.
+2024-03-15 13:11:03 -0500   41778 execution.flow     INFO     Executing node diarize_transcript. node run id: a7a3df77-7f34-4250-b2a6-6eecd1ccb5dd_diarize_transcript_0
+2024-03-15 13:12:03 -0500   41778 execution          WARNING  diarize_transcript in line 0 has been running for 60 seconds, stacktrace of thread 46914865911552:
   File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/executor/flow_executor.py", line 1079, in wrapper
     return f(*args, **kwargs)
   File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/tracer.py", line 528, in wrapped
@@ -55,4 +55,4 @@
   File "/home2/s229618/.conda/envs/pf/lib/python3.9/ssl.py", line 1135, in read
     return self._sslobj.read(len)
 
-2024-03-12 13:07:14 -0500    5262 execution.flow     INFO     Node diarize_transcript completes.
+2024-03-15 13:12:38 -0500   41778 execution.flow     INFO     Node diarize_transcript completes.

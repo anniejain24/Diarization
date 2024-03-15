@@ -39,6 +39,22 @@
         }
       },
       "source": "diarize.jinja2"
+    },
+    "diarize-more-detailed.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "text1": {
+          "type": [
+            "string"
+          ]
+        },
+        "text2": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "diarize-more-detailed.jinja2"
     }
   }
 }
