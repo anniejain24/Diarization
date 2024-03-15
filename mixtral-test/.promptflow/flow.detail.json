@@ -1,0 +1,533 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "30d9d2dc-c76a-4466-8227-166698990b15_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "id": "10_0991_331330.s",
+        "score": 1
+      },
+      "output": {
+        "id": "10_0991_331330.s",
+        "transcript": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "30d9d2dc-c76a-4466-8227-166698990b15",
+      "root_run_id": "30d9d2dc-c76a-4466-8227-166698990b15",
+      "source_run_id": null,
+      "flow_id": "default_flow_id",
+      "start_time": "2024-03-15T19:01:24.751254Z",
+      "end_time": "2024-03-15T19:01:44.330230Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1710547284.751254,
+          "end_time": 1710547304.33023,
+          "children": [
+            {
+              "name": "read_transcript_from_id",
+              "type": "Tool",
+              "inputs": {
+                "input1": "10_0991_331330.s"
+              },
+              "output": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+              "start_time": 1710547284.753814,
+              "end_time": 1710547285.324324,
+              "error": null,
+              "children": [],
+              "node_name": "read_transcript",
+              "parent_id": "",
+              "id": "d1325f86-da86-40ec-b294-01325037faa5",
+              "system_metrics": {}
+            },
+            {
+              "name": "OpenAI.completion",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nPlease summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\n\nuser:\nText: {{text}}\nSummary: \n",
+                "max_tokens": 1000,
+                "response_format": {
+                  "type": "text"
+                },
+                "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                "text": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+              },
+              "output": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.",
+              "start_time": 1710547285.326529,
+              "end_time": 1710547287.819441,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "prompt": "system:\nPlease summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\n\nuser:\nText:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.\nSummary: \n",
+                    "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                    "suffix": null,
+                    "max_tokens": 1000,
+                    "temperature": 1.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "logprobs": null,
+                    "echo": false,
+                    "stop": null,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "logit_bias": {},
+                    "user": ""
+                  },
+                  "output": {
+                    "id": "cmpl-1d11414bad444d82b5f7a242ee6e3473",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "text": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain."
+                      }
+                    ],
+                    "created": 9312172,
+                    "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                    "object": "text_completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 122,
+                      "prompt_tokens": 735,
+                      "total_tokens": 857
+                    }
+                  },
+                  "start_time": 1710547285.329053,
+                  "end_time": 1710547287.819296,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "1f539709-3f2f-4bd1-ae5d-ee985870dff1",
+                  "id": "5f1655a8-4290-487c-afab-c0cc5389dff8",
+                  "system_metrics": {
+                    "completion_tokens": 122,
+                    "prompt_tokens": 735,
+                    "total_tokens": 857
+                  }
+                }
+              ],
+              "node_name": "summarize_transcript",
+              "parent_id": "",
+              "id": "1f539709-3f2f-4bd1-ae5d-ee985870dff1",
+              "system_metrics": {
+                "completion_tokens": 122,
+                "prompt_tokens": 735,
+                "total_tokens": 857
+              }
+            },
+            {
+              "name": "OpenAI.completion",
+              "type": "Tool",
+              "inputs": {
+                "prompt": "system:\nThe following text represents an audio transcript between a medical student and a patient, with the summary included below.\nPlease diarize the following transcript in order to indicate who speaks when, using the format in the following example, with the words \"Student\" and \"Patient\":\n\nStudent: Hello, how are you today?\n\nPatient: I am feeling sick.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: About two days. \n\nThe transcript may begin or end with some instructions for the student, coming from a third-party speaker. Please label this segment \"Instructions: \". \nIf there are no instructions in the transcript, disregard and proceed with the diarization. \n\nDo not remove or add any words other than the speaker labels.\n\nuser:\nText: {{text1}}\nSummary: {{text2}}\nDiarized transcript:",
+                "response_format": {
+                  "type": "text"
+                },
+                "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                "text1": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+                "text2": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.",
+                "max_tokens": 4000,
+                "stream": false
+              },
+              "output": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+              "start_time": 1710547287.822501,
+              "end_time": 1710547304.327992,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai.resources.completions.Completions.create",
+                  "type": "LLM",
+                  "inputs": {
+                    "prompt": "system:\nThe following text represents an audio transcript between a medical student and a patient, with the summary included below.\nPlease diarize the following transcript in order to indicate who speaks when, using the format in the following example, with the words \"Student\" and \"Patient\":\n\nStudent: Hello, how are you today?\n\nPatient: I am feeling sick.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: About two days. \n\nThe transcript may begin or end with some instructions for the student, coming from a third-party speaker. Please label this segment \"Instructions: \". \nIf there are no instructions in the transcript, disregard and proceed with the diarization. \n\nDo not remove or add any words other than the speaker labels.\n\nuser:\nText:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.\nSummary: Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.\nDiarized transcript:",
+                    "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                    "suffix": null,
+                    "max_tokens": 4000,
+                    "temperature": 1.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "logprobs": null,
+                    "echo": false,
+                    "stop": null,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "best_of": 1,
+                    "logit_bias": {},
+                    "user": ""
+                  },
+                  "output": {
+                    "id": "cmpl-0067e4a6603a4896897e6ba8866ed5f5",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "text": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+                      }
+                    ],
+                    "created": 9312174,
+                    "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                    "object": "text_completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 862,
+                      "prompt_tokens": 1006,
+                      "total_tokens": 1868
+                    }
+                  },
+                  "start_time": 1710547287.825063,
+                  "end_time": 1710547304.327832,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "7ed4fcf9-cf47-47f7-98ff-3accfa962538",
+                  "id": "7b76b00c-77a6-44da-bb29-9b88a8128cda",
+                  "system_metrics": {
+                    "completion_tokens": 862,
+                    "prompt_tokens": 1006,
+                    "total_tokens": 1868
+                  }
+                }
+              ],
+              "node_name": "diarize_transcript",
+              "parent_id": "",
+              "id": "7ed4fcf9-cf47-47f7-98ff-3accfa962538",
+              "system_metrics": {
+                "completion_tokens": 862,
+                "prompt_tokens": 1006,
+                "total_tokens": 1868
+              }
+            }
+          ],
+          "system_metrics": {
+            "duration": 19.578976,
+            "prompt_tokens": 1741,
+            "completion_tokens": 984,
+            "total_tokens": 2725
+          },
+          "inputs": {
+            "id": "10_0991_331330.s",
+            "score": 1
+          },
+          "output": {
+            "id": "10_0991_331330.s",
+            "transcript": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+          },
+          "error": null
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 19.578976,
+        "prompt_tokens": 1741,
+        "completion_tokens": 984,
+        "total_tokens": 2725
+      },
+      "result": {
+        "id": "10_0991_331330.s",
+        "transcript": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "read_transcript",
+      "flow_run_id": "30d9d2dc-c76a-4466-8227-166698990b15",
+      "run_id": "30d9d2dc-c76a-4466-8227-166698990b15_read_transcript_0",
+      "status": "Completed",
+      "inputs": {
+        "input1": "10_0991_331330.s"
+      },
+      "output": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "30d9d2dc-c76a-4466-8227-166698990b15_0",
+      "start_time": "2024-03-15T19:01:24.753410Z",
+      "end_time": "2024-03-15T19:01:25.324717Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "read_transcript_from_id",
+          "type": "Tool",
+          "inputs": {
+            "input1": "10_0991_331330.s"
+          },
+          "output": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+          "start_time": 1710547284.753814,
+          "end_time": 1710547285.324324,
+          "error": null,
+          "children": [],
+          "node_name": "read_transcript",
+          "parent_id": "",
+          "id": "d1325f86-da86-40ec-b294-01325037faa5",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.571307
+      },
+      "result": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+    },
+    {
+      "node": "summarize_transcript",
+      "flow_run_id": "30d9d2dc-c76a-4466-8227-166698990b15",
+      "run_id": "30d9d2dc-c76a-4466-8227-166698990b15_summarize_transcript_0",
+      "status": "Completed",
+      "inputs": {
+        "max_tokens": 1000,
+        "response_format": {
+          "type": "text"
+        },
+        "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+        "text": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+      },
+      "output": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "30d9d2dc-c76a-4466-8227-166698990b15_0",
+      "start_time": "2024-03-15T19:01:25.326222Z",
+      "end_time": "2024-03-15T19:01:27.820753Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "OpenAI.completion",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nPlease summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\n\nuser:\nText: {{text}}\nSummary: \n",
+            "max_tokens": 1000,
+            "response_format": {
+              "type": "text"
+            },
+            "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+            "text": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+          },
+          "output": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.",
+          "start_time": 1710547285.326529,
+          "end_time": 1710547287.819441,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "prompt": "system:\nPlease summarize the following text in one paragraph. 100 words.\nDo not add any information that is not in the text.\n\nuser:\nText:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.\nSummary: \n",
+                "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                "suffix": null,
+                "max_tokens": 1000,
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "logprobs": null,
+                "echo": false,
+                "stop": null,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "best_of": 1,
+                "logit_bias": {},
+                "user": ""
+              },
+              "output": {
+                "id": "cmpl-1d11414bad444d82b5f7a242ee6e3473",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "text": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain."
+                  }
+                ],
+                "created": 9312172,
+                "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                "object": "text_completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 122,
+                  "prompt_tokens": 735,
+                  "total_tokens": 857
+                }
+              },
+              "start_time": 1710547285.329053,
+              "end_time": 1710547287.819296,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "1f539709-3f2f-4bd1-ae5d-ee985870dff1",
+              "id": "5f1655a8-4290-487c-afab-c0cc5389dff8",
+              "system_metrics": {
+                "completion_tokens": 122,
+                "prompt_tokens": 735,
+                "total_tokens": 857
+              }
+            }
+          ],
+          "node_name": "summarize_transcript",
+          "parent_id": "",
+          "id": "1f539709-3f2f-4bd1-ae5d-ee985870dff1",
+          "system_metrics": {
+            "completion_tokens": 122,
+            "prompt_tokens": 735,
+            "total_tokens": 857
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 122,
+        "prompt_tokens": 735,
+        "total_tokens": 857,
+        "duration": 2.494531
+      },
+      "result": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain."
+    },
+    {
+      "node": "diarize_transcript",
+      "flow_run_id": "30d9d2dc-c76a-4466-8227-166698990b15",
+      "run_id": "30d9d2dc-c76a-4466-8227-166698990b15_diarize_transcript_0",
+      "status": "Completed",
+      "inputs": {
+        "response_format": {
+          "type": "text"
+        },
+        "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+        "text1": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+        "text2": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.",
+        "max_tokens": 4000
+      },
+      "output": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "30d9d2dc-c76a-4466-8227-166698990b15_0",
+      "start_time": "2024-03-15T19:01:27.822027Z",
+      "end_time": "2024-03-15T19:01:44.329352Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "OpenAI.completion",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nThe following text represents an audio transcript between a medical student and a patient, with the summary included below.\nPlease diarize the following transcript in order to indicate who speaks when, using the format in the following example, with the words \"Student\" and \"Patient\":\n\nStudent: Hello, how are you today?\n\nPatient: I am feeling sick.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: About two days. \n\nThe transcript may begin or end with some instructions for the student, coming from a third-party speaker. Please label this segment \"Instructions: \". \nIf there are no instructions in the transcript, disregard and proceed with the diarization. \n\nDo not remove or add any words other than the speaker labels.\n\nuser:\nText: {{text1}}\nSummary: {{text2}}\nDiarized transcript:",
+            "response_format": {
+              "type": "text"
+            },
+            "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+            "text1": " Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+            "text2": "Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.",
+            "max_tokens": 4000,
+            "stream": false
+          },
+          "output": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.",
+          "start_time": 1710547287.822501,
+          "end_time": 1710547304.327992,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.resources.completions.Completions.create",
+              "type": "LLM",
+              "inputs": {
+                "prompt": "system:\nThe following text represents an audio transcript between a medical student and a patient, with the summary included below.\nPlease diarize the following transcript in order to indicate who speaks when, using the format in the following example, with the words \"Student\" and \"Patient\":\n\nStudent: Hello, how are you today?\n\nPatient: I am feeling sick.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: About two days. \n\nThe transcript may begin or end with some instructions for the student, coming from a third-party speaker. Please label this segment \"Instructions: \". \nIf there are no instructions in the transcript, disregard and proceed with the diarization. \n\nDo not remove or add any words other than the speaker labels.\n\nuser:\nText:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today. I've been feeling sick to my stomach. Now I throw one up, I feel not good. Okay, when did this start? It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good. Okay, when did this start? I started getting nauseous two days ago. Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting? Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate. Okay. And what does your vomit look like? It's just small bits of undigested food, whatever I eat. Any blood in it? No. No? No Bile? No Just the chunks of food? No Okay Now this has been going on for just two days. Has this happened before? No, never. Okay. And does anything make it worse? Uh, eating. Yeah. Yeah, anything makes it better? Not really, other than not eating Okay Is there any associated with the vomiting? Yeah, I got a little mild pain in my abdomen there. Okay, on a scale of 1 to 10, about how bad, how would you describe it? Oh, it's like a 3. Yeah. Just kind of an irritation. Okay. And so if you don't eat, do you get nauseous still? Oh, yeah. So nausea is there all the time. Okay, nauseas. Any fevers? No, no fever. You mean chills? Chills? No. If you don't mind me asking, what are you usually eating at these meals? I don' know, like for breakfast I usually have scrambled eggs and bacon and toast. Okay. No changes in your diet? No change in diet. Okay, okay. Okay No changes in your diet? No change in diet. Okay. Have you taken any medication for this? Over the counter medications? No. Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind i'm sorry another comes up on mine okay and then i imagine loss of appetite I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up. Okay, if I could just ask you a few questions now about your past medical history. Sure. Have you been diagnosed with any chronic illnesses? Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all.\nSummary: Medical student Coleman is interviewing a patient with nausea and vomiting that has lasted for two days. The vomit consists of undigested food and has no blood or bile. The patient has been nauseous even when not eating, and there is no fever or chills. The patient's breakfast usually consists of scrambled eggs, bacon, and toast, with no recent changes in diet. The patient has not taken any medication for this issue. The patient has hypertension, osteoarthritis in both knees, and chronic back pain.\nDiarized transcript:",
+                "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                "suffix": null,
+                "max_tokens": 4000,
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "logprobs": null,
+                "echo": false,
+                "stop": null,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "best_of": 1,
+                "logit_bias": {},
+                "user": ""
+              },
+              "output": {
+                "id": "cmpl-0067e4a6603a4896897e6ba8866ed5f5",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "text": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+                  }
+                ],
+                "created": 9312174,
+                "model": "/archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1",
+                "object": "text_completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 862,
+                  "prompt_tokens": 1006,
+                  "total_tokens": 1868
+                }
+              },
+              "start_time": 1710547287.825063,
+              "end_time": 1710547304.327832,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "7ed4fcf9-cf47-47f7-98ff-3accfa962538",
+              "id": "7b76b00c-77a6-44da-bb29-9b88a8128cda",
+              "system_metrics": {
+                "completion_tokens": 862,
+                "prompt_tokens": 1006,
+                "total_tokens": 1868
+              }
+            }
+          ],
+          "node_name": "diarize_transcript",
+          "parent_id": "",
+          "id": "7ed4fcf9-cf47-47f7-98ff-3accfa962538",
+          "system_metrics": {
+            "completion_tokens": 862,
+            "prompt_tokens": 1006,
+            "total_tokens": 1868
+          }
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 862,
+        "prompt_tokens": 1006,
+        "total_tokens": 1868,
+        "duration": 16.507325
+      },
+      "result": "\nInstructions:  Learners, you may begin your patient station, remove your cover sheet, jot down any... Thank you. Come in. Come on in, man. Hello, Mr. Pimbleton.\n\nStudent: Hello, Mr. Pimbleton. Hi, my name is Coleman. I'm a medical student at UT Southwestern. I am here to ask you some questions. I just want to know how you are feeling today.\n\nPatient: I've been feeling sick to my stomach. Now I throw one up, I feel not good.\n\nStudent: Oh no, how long have you felt sick?\n\nPatient: It started getting nauseous. I was feeling nausea. I had a stomachache. I felt nause up. I am not good.\n\nStudent: Okay, when did this start?\n\nPatient: I started getting nauseous two days ago.\n\nStudent: Threw up the first time yesterday after breakfast, about 20 minutes after I ate. Any other episodes of vomiting?\n\nPatient: Yeah, I threw up three or four times yesterday and then after breakfast today about five minutes after I ate.\n\nStudent: Okay. And what does your vomit look like?\n\nPatient: It's just small bits of undigested food, whatever I eat. Any blood in it? No. No Bile? No Just the chunks of food? No\n\nStudent: Okay. Now this has been going on for just two days. Has this happened before?\n\nPatient: No, never.\n\nStudent: Okay. And does anything make it worse?\n\nPatient: Uh, eating. Yeah.\n\nStudent: Anything makes it better? Not really, other than not eating\n\nPatient: Okay Is there any associated with the vomiting?\n\nPatient: Yeah, I got a little mild pain in my abdomen there.\n\nStudent: On a scale of 1 to 10, about how bad, how would you describe it?\n\nPatient: Oh, it's like a 3. Yeah. Just kind of an irritation.\n\nStudent: Okay. And so if you don't eat, do you get nauseous still?\n\nPatient: Oh, yeah.\n\nStudent: So nausea is there all the time. Okay, nauseas.\n\nPatient: Any fevers?\n\nPatient: No, no fever. You mean chills? Chills? No.\n\nStudent: If you don't mind me asking, what are you usually eating at these meals?\n\nPatient: I usually have scrambled eggs and bacon and toast.\n\nStudent: Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Okay. Okay. Okay. No changes in your diet?\n\nPatient: No change in diet.\n\nStudent: Have you taken any medication for this? Over the counter medications?\n\nPatient: No.\n\nStudent: Alrighty. Anything else that you have to share that would help us like diagnose what this is any any other changes any others that that's you're having at home no no nothing specific nothing comes to mind\n\nPatient: I sorry another comes up on mine okay and then i imagine loss of appetite\n\nStudent: I imagine loss of appetite as well. Yeah, it's decreased as you start throwing up.\n\nPatient: Okay, if I could just ask you a few questions now about your past medical history. Sure.\n\nStudent: Have you been diagnosed with any chronic illnesses?\n\nPatient: Oh, let's see. Hypertension. I've got osteoarthritis in both my knees. I've got osteoarthritis in both my knees and then I get my lower back, I have chronic back pain from that. I think that's all."
+    }
+  ]
+}
