@@ -1,8 +1,8 @@
-2024-03-16 15:52:51 -0500    5547 execution.flow     INFO     Start executing nodes in thread pool mode.
-2024-03-16 15:52:51 -0500    5547 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
-2024-03-16 15:52:51 -0500    5547 execution.flow     INFO     Executing node read_transcript. node run id: 2ec042f3-1959-42df-bf1a-0e6b117bcdab_read_transcript_0
-2024-03-16 15:52:51 -0500    5547 execution.flow     INFO     Node read_transcript completes.
-2024-03-16 15:52:51 -0500    5547 execution.flow     INFO     Executing node summarize_transcript. node run id: 2ec042f3-1959-42df-bf1a-0e6b117bcdab_summarize_transcript_0
-2024-03-16 15:52:58 -0500    5547 execution.flow     INFO     Node summarize_transcript completes.
-2024-03-16 15:52:58 -0500    5547 execution.flow     INFO     Executing node diarize_transcript. node run id: 2ec042f3-1959-42df-bf1a-0e6b117bcdab_diarize_transcript_0
-2024-03-16 15:53:30 -0500    5547 execution.flow     INFO     Node diarize_transcript completes.
+2024-03-18 13:29:30 -0500   50073 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-03-18 13:29:30 -0500   50073 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
+2024-03-18 13:29:30 -0500   50073 execution.flow     INFO     Executing node read_transcript. node run id: cf03ee3b-97ea-4469-b79c-a77db03bd8e1_read_transcript_0
+2024-03-18 13:29:30 -0500   50073 execution.flow     INFO     Node read_transcript completes.
+2024-03-18 13:29:30 -0500   50073 execution.flow     INFO     Executing node summarize_transcript. node run id: cf03ee3b-97ea-4469-b79c-a77db03bd8e1_summarize_transcript_0
+2024-03-18 13:29:32 -0500   50073 execution.flow     INFO     Node summarize_transcript completes.
+2024-03-18 13:29:32 -0500   50073 execution.flow     INFO     Executing node diarize_transcript. node run id: cf03ee3b-97ea-4469-b79c-a77db03bd8e1_diarize_transcript_0
+2024-03-18 13:29:44 -0500   50073 execution.flow     INFO     Node diarize_transcript completes.
