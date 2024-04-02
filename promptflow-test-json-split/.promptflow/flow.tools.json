@@ -27,12 +27,12 @@
     "diarize.jinja2": {
       "type": "llm",
       "inputs": {
-        "text1": {
+        "text2": {
           "type": [
             "string"
           ]
         },
-        "text2": {
+        "text1": {
           "type": [
             "string"
           ]
