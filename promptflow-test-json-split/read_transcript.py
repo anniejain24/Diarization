@@ -26,7 +26,7 @@ def read_transcript_from_id(input1: str) -> dict:
 
     #json_transcript = json_transcript[:int(len(json_transcript)/3)]
     #json_transcript = json_transcript[int(len(json_transcript)/3):2*int(len(json_transcript)/3)]
-    #json_transcript = json_transcript[2*int(len(json_transcript)/3):]
+    json_transcript = json_transcript[2*int(len(json_transcript)/3):]
     
     transcript_lines = ''
     for line in json_transcript:

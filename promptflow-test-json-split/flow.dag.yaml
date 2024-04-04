@@ -4,7 +4,7 @@ inputs:
   id:
     type: string
     description: transcript_id
-    default: 09_0029_174582.s
+    default: 10_0991_331330.s
   score:
     type: int
     default: 1
@@ -29,12 +29,12 @@ nodes:
     type: code
     path: summarize.jinja2
   inputs:
-    deployment_name: annie-gpt35
+    deployment_name: annie-gpt4-1
     max_tokens: null
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: azure_gpt35
+  connection: annie_gpt_4
   api: chat
 - name: diarize_transcript
   type: llm
@@ -42,10 +42,10 @@ nodes:
     type: code
     path: diarize.jinja2
   inputs:
-    deployment_name: annie-gpt35
+    deployment_name: annie-gpt4-1
     response_format:
       type: text
     text1: ${read_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: azure_gpt35
+  connection: annie_gpt_4
   api: chat
