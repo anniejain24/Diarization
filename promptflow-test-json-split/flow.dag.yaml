@@ -4,7 +4,7 @@ inputs:
   id:
     type: string
     description: transcript_id
-    default: 10_0991_331330.s
+    default: 09_0029_174582.s
   score:
     type: int
     default: 1
