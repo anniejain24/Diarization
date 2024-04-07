@@ -1,0 +1,11 @@
+*.DS_Store
+*/.promptflow/flow.log
+*__pycache__/
+.env
+config.ini
+*/.promptflow/flow.detail.json
+*/.promptflow/flow.output.json
+*/*/.promptflow/flow.detail.json
+*/*/.promptflow/flow.output.json
+*/*/.promptflow/flow.log
+*/*/.promptflow/flow.layout.json

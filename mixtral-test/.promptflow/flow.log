@@ -1,8 +1,0 @@
-2024-03-16 16:24:05 -0500  174974 execution.flow     INFO     Start executing nodes in thread pool mode.
-2024-03-16 16:24:05 -0500  174974 execution.flow     INFO     Start to run 3 nodes with concurrency level 16.
-2024-03-16 16:24:05 -0500  174974 execution.flow     INFO     Executing node read_transcript. node run id: 4547a1f6-642a-403d-9aaa-c0e3cd2062d3_read_transcript_0
-2024-03-16 16:24:05 -0500  174974 execution.flow     INFO     Node read_transcript completes.
-2024-03-16 16:24:05 -0500  174974 execution.flow     INFO     Executing node summarize_transcript. node run id: 4547a1f6-642a-403d-9aaa-c0e3cd2062d3_summarize_transcript_0
-2024-03-16 16:24:08 -0500  174974 execution.flow     INFO     Node summarize_transcript completes.
-2024-03-16 16:24:08 -0500  174974 execution.flow     INFO     Executing node diarize_transcript. node run id: 4547a1f6-642a-403d-9aaa-c0e3cd2062d3_diarize_transcript_0
-2024-03-16 16:24:32 -0500  174974 execution.flow     INFO     Node diarize_transcript completes.
