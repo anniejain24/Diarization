@@ -35,7 +35,19 @@ def read_transcript_from_id(input1: str) -> dict:
     #json_transcript = json_transcript[2*int(len(json_transcript)/6):3*int(len(json_transcript)/6)]
     #json_transcript = json_transcript[3*int(len(json_transcript)/6):4*int(len(json_transcript)/6)]
     #json_transcript = json_transcript[4*int(len(json_transcript)/6):5*int(len(json_transcript)/6)]
-    json_transcript = json_transcript[5*int(len(json_transcript)/6):]
+    #json_transcript = json_transcript[5*int(len(json_transcript)/6):]
+
+    # segmenting the transcript in ninths:
+
+    #json_transcript = json_transcript[:int(len(json_transcript)/9)]
+    #json_transcript = json_transcript[int(len(json_transcript)/9):2*int(len(json_transcript)/9)]
+    #json_transcript = json_transcript[2*int(len(json_transcript)/9):3*int(len(json_transcript)/9)]
+    #json_transcript = json_transcript[3*int(len(json_transcript)/9):4*int(len(json_transcript)/9)]
+    #json_transcript = json_transcript[4*int(len(json_transcript)/9):5*int(len(json_transcript)/9)]
+    #json_transcript = json_transcript[5*int(len(json_transcript)/9):6*int(len(json_transcript)/9)]
+    #json_transcript = json_transcript[6*int(len(json_transcript)/9):7*int(len(json_transcript)/9)]  
+    #json_transcript = json_transcript[7*int(len(json_transcript)/9):8*int(len(json_transcript)/9)] 
+    json_transcript = json_transcript[8*int(len(json_transcript)/9):]  
     
     transcript_lines = ''
     for line in json_transcript:
