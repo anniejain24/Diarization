@@ -4,7 +4,7 @@ inputs:
   id:
     type: string
     description: transcript_id
-    default: 09_0029_174582.s
+    default: 06_0079_175106.s
   score:
     type: int
     default: 1
@@ -34,7 +34,7 @@ nodes:
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: annie-gpt4-1
+  connection: annie_gpt4_cnct
   api: chat
 - name: diarize_transcript
   type: llm
@@ -47,5 +47,5 @@ nodes:
       type: text
     text1: ${read_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: annie-gpt4-1
+  connection: annie_gpt4_cnct
   api: chat
