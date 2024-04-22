@@ -1,0 +1,1556 @@
+[
+  {
+    "timestamp": [
+      0.0,
+      42.0
+    ],
+    "text": " remove your cover sheet jot down any notes knock and then enter My name is Sarah, I'm one of the medical students working in clinic today."
+  },
+  {
+    "timestamp": [
+      42.0,
+      45.68
+    ],
+    "text": " How do you prefer to be addressed?"
+  },
+  {
+    "timestamp": [
+      46.36,
+      47.18
+    ],
+    "text": " You can call me Sean."
+  },
+  {
+    "timestamp": [
+      47.34,
+      50.02
+    ],
+    "text": " Hey, Sean, tell me what brings you into the clinic"
+  },
+  {
+    "timestamp": [
+      50.02,
+      50.34
+    ],
+    "text": " today?"
+  },
+  {
+    "timestamp": [
+      51.44,
+      53.4
+    ],
+    "text": " I've been feeling sick to my stomach."
+  },
+  {
+    "timestamp": [
+      53.68,
+      56.1
+    ],
+    "text": " I can see"
+  },
+  {
+    "timestamp": [
+      56.1,
+      57.26
+    ],
+    "text": " that you're in some discomfort."
+  },
+  {
+    "timestamp": [
+      57.9,
+      59.56
+    ],
+    "text": " When did this first start?"
+  },
+  {
+    "timestamp": [
+      59.9,
+      60.86
+    ],
+    "text": " About two days ago."
+  },
+  {
+    "timestamp": [
+      61.86,
+      63.8
+    ],
+    "text": " Do you remember"
+  },
+  {
+    "timestamp": [
+      63.8,
+      65.6
+    ],
+    "text": " if anything happened before it first started?"
+  },
+  {
+    "timestamp": [
+      65.78,
+      67.28
+    ],
+    "text": " New foods, anything like that?"
+  },
+  {
+    "timestamp": [
+      68.0,
+      69.28
+    ],
+    "text": " No, no."
+  },
+  {
+    "timestamp": [
+      69.46,
+      72.36
+    ],
+    "text": " I don't really eat new things except for what I normally eat."
+  },
+  {
+    "timestamp": [
+      72.64,
+      78.16
+    ],
+    "text": " Okay, so you've been feeling nauseous for the past few days, and then did you say you"
+  },
+  {
+    "timestamp": [
+      78.16,
+      79.3
+    ],
+    "text": " just recently started vomiting?"
+  },
+  {
+    "timestamp": [
+      80.04,
+      83.84
+    ],
+    "text": " First time was yesterday morning, about 20 minutes after I ate breakfast."
+  },
+  {
+    "timestamp": [
+      86.38,
+      87.96
+    ],
+    "text": " And have you vomited since then?"
+  },
+  {
+    "timestamp": [
+      88.32,
+      93.7
+    ],
+    "text": " Yeah, so yesterday I want to say I vomitted three to four times, and then I"
+  },
+  {
+    "timestamp": [
+      93.7,
+      95.26
+    ],
+    "text": " vomitated once today in the morning."
+  },
+  {
+    "timestamp": [
+      95.98,
+      96.24
+    ],
+    "text": " Okay."
+  },
+  {
+    "timestamp": [
+      98.04,
+      100.32
+    ],
+    "text": " And then what does the vomit look like?"
+  },
+  {
+    "timestamp": [
+      100.38,
+      101.68
+    ],
+    "text": " Does it kind of look Like food?"
+  },
+  {
+    "timestamp": [
+      102.52,
+      103.0
+    ],
+    "text": " Yeah."
+  },
+  {
+    "timestamp": [
+      103.0,
+      105.76
+    ],
+    "text": " It looks like a small amount of un-digested food."
+  },
+  {
+    "timestamp": [
+      107.68,
+      112.24
+    ],
+    "text": " Any blood in there? No. So it can look bright red or dark brown, dark"
+  },
+  {
+    "timestamp": [
+      112.24,
+      118.32
+    ],
+    "text": " brown like coffee. There's no blood. No blood okay and does it possibly look any like bright yellow or bright green?"
+  },
+  {
+    "timestamp": [
+      118.32,
+      123.84
+    ],
+    "text": " No, that's good to know. Have you had any fevers during this time period?"
+  },
+  {
+    "timestamp": [
+      124.0,
+      126.0
+    ],
+    "text": " That's good to know. Have you had any fevers during this time period? No, no fevors at all."
+  },
+  {
+    "timestamp": [
+      126.0,
+      131.0
+    ],
+    "text": " Okay. Anyone at home or at work kind of have similar symptoms?"
+  },
+  {
+    "timestamp": [
+      131.0,
+      132.0
+    ],
+    "text": " No."
+  },
+  {
+    "timestamp": [
+      132.0,
+      134.0
+    ],
+    "text": " So nobody's sick around you?"
+  },
+  {
+    "timestamp": [
+      134.0,
+      136.0
+    ],
+    "text": " Yeah, nobody is sick."
+  },
+  {
+    "timestamp": [
+      136.0,
+      137.0
+    ],
+    "text": " Okay, good."
+  },
+  {
+    "timestamp": [
+      137.0,
+      139.0
+    ],
+    "text": " Have ever had anything like this before?"
+  },
+  {
+    "timestamp": [
+      139.0,
+      141.0
+    ],
+    "text": " No never."
+  },
+  {
+    "timestamp": [
+      141.0,
+      145.0
+    ],
+    "text": " Are you having any pain in your abdomen?"
+  },
+  {
+    "timestamp": [
+      145.0,
+      148.0
+    ],
+    "text": " Yeah, I have some pain."
+  },
+  {
+    "timestamp": [
+      148.0,
+      150.0
+    ],
+    "text": " Where does it hurt?"
+  },
+  {
+    "timestamp": [
+      150.0,
+      152.0
+    ],
+    "text": " It's all over my abdomen."
+  },
+  {
+    "timestamp": [
+      152.0,
+      154.0
+    ],
+    "text": " Just the whole belly area?"
+  },
+  {
+    "timestamp": [
+      154.0,
+      155.0
+    ],
+    "text": " Yeah."
+  },
+  {
+    "timestamp": [
+      155.0,
+      156.0
+    ],
+    "text": " What does that pain feel like?"
+  },
+  {
+    "timestamp": [
+      156.0,
+      158.0
+    ],
+    "text": " It feels like a cramp."
+  },
+  {
+    "timestamp": [
+      158.0,
+      161.0
+    ],
+    "text": " Does anything make it better or worse?"
+  },
+  {
+    "timestamp": [
+      161.0,
+      163.0
+    ],
+    "text": " No, nothing makes it worse."
+  },
+  {
+    "timestamp": [
+      163.0,
+      169.8
+    ],
+    "text": " It has just been kind of constant since? Yeah, it's been the pain has been constant."
+  },
+  {
+    "timestamp": [
+      169.8,
+      189.58
+    ],
+    "text": " Does it come and go at all? It does, every 10 to 15 minutes. Okay. Have you noticed any changes to your bowel movements during this time? Yeah, actually I haven't really had one in five days."
+  },
+  {
+    "timestamp": [
+      189.92,
+      190.16
+    ],
+    "text": " Okay."
+  },
+  {
+    "timestamp": [
+      191.46,
+      196.06
+    ],
+    "text": " And how often do you usually have bowel movement, like when you're in your general state of health?"
+  },
+  {
+    "timestamp": [
+      196.26,
+      197.32
+    ],
+    "text": " Normally twice a day."
+  },
+  {
+    "timestamp": [
+      197.68,
+      199.58
+    ],
+    "text": " Okay, so that's definitely a big change."
+  },
+  {
+    "timestamp": [
+      201.98,
+      206.4
+    ],
+    "text": " Are you feeling like, do have feelings like constipation, like kind of like feeling"
+  },
+  {
+    "timestamp": [
+      206.4,
+      208.4
+    ],
+    "text": " like a back stab or tense in your abdomen?"
+  },
+  {
+    "timestamp": [
+      208.4,
+      210.4
+    ],
+    "text": " Um, I haven't felt like that yet."
+  },
+  {
+    "timestamp": [
+      210.4,
+      212.4
+    ],
+    "text": " Okay."
+  },
+  {
+    "timestamp": [
+      212.4,
+      214.4
+    ],
+    "text": " All right."
+  },
+  {
+    "timestamp": [
+      214.4,
+      216.4
+    ],
+    "text": " Um."
+  },
+  {
+    "timestamp": [
+      216.4,
+      221.9
+    ],
+    "text": " Tell me about, have you tried anything for these, any of these symptoms, anything"
+  },
+  {
+    "timestamp": [
+      221.9,
+      222.9
+    ],
+    "text": " for the nausea?"
+  },
+  {
+    "timestamp": [
+      222.9,
+      223.9
+    ],
+    "text": " No."
+  },
+  {
+    "timestamp": [
+      223.9,
+      226.0
+    ],
+    "text": " No medications for pain either?"
+  },
+  {
+    "timestamp": [
+      226.0,
+      227.0
+    ],
+    "text": " No"
+  },
+  {
+    "timestamp": [
+      227.0,
+      228.0
+    ],
+    "text": " Advil, ibuprofen?"
+  },
+  {
+    "timestamp": [
+      228.0,
+      229.0
+    ],
+    "text": " No nothing."
+  },
+  {
+    "timestamp": [
+      229.0,
+      230.0
+    ],
+    "text": " Gotcha."
+  },
+  {
+    "timestamp": [
+      230.0,
+      235.0
+    ],
+    "text": " Have you tried any stool softeners or anything to kind of help things move along?"
+  },
+  {
+    "timestamp": [
+      235.0,
+      236.0
+    ],
+    "text": " No I haven't."
+  },
+  {
+    "timestamp": [
+      236.0,
+      237.0
+    ],
+    "text": " Gotcha"
+  },
+  {
+    "timestamp": [
+      237.0,
+      238.0
+    ],
+    "text": " The last two days?"
+  },
+  {
+    "timestamp": [
+      238.0,
+      249.12
+    ],
+    "text": " I really haven´t had much of an appetite in the last 2 days. Okay, you said you were able to eat just a tiny bit of breakfast."
+  },
+  {
+    "timestamp": [
+      249.12,
+      254.98
+    ],
+    "text": " Did that help the other day, yesterday morning, correct? Yeah. Did"
+  },
+  {
+    "timestamp": [
+      254.98,
+      265.0
+    ],
+    "text": " that like make the symptoms worse when you ate? Well, whenever I ate in a high I threw up 20 minutes after."
+  },
+  {
+    "timestamp": [
+      265.0,
+      269.0
+    ],
+    "text": " It's kind of been the same kind"
+  },
+  {
+    "timestamp": [
+      269.0,
+      272.0
+    ],
+    "text": " of pattern like today in the morning I also threw"
+  },
+  {
+    "timestamp": [
+      272.0,
+      274.0
+    ],
+    "text": " up but today was five minutes"
+  },
+  {
+    "timestamp": [
+      274.0,
+      275.0
+    ],
+    "text": " after instead of 20"
+  },
+  {
+    "timestamp": [
+      275.0,
+      276.0
+    ],
+    "text": " minutes."
+  },
+  {
+    "timestamp": [
+      276.0,
+      277.0
+    ],
+    "text": " Okay and right after eating."
+  },
+  {
+    "timestamp": [
+      277.0,
+      278.0
+    ],
+    "text": " Yeah."
+  },
+  {
+    "timestamp": [
+      278.0,
+      279.0
+    ],
+    "text": " Okay."
+  },
+  {
+    "timestamp": [
+      279.0,
+      284.0
+    ],
+    "text": " Does the pain that you're having radiate anywhere else or does it stay kind"
+  },
+  {
+    "timestamp": [
+      284.0,
+      285.0
+    ],
+    "text": " of in your abdomen?"
+  },
+  {
+    "timestamp": [
+      285.0,
+      287.0
+    ],
+    "text": " No, it just stays in my abdomen."
+  },
+  {
+    "timestamp": [
+      289.0,
+      292.0
+    ],
+    "text": " That sounds like no fun. I'm sorry you've been going through all of that."
+  },
+  {
+    "timestamp": [
+      292.0,
+      294.0
+    ],
+    "text": " Thank you."
+  },
+  {
+    "timestamp": [
+      294.0,
+      300.0
+    ],
+    "text": " Do you have any past medical history? Any chronic illnesses?"
+  },
+  {
+    "timestamp": [
+      300.0,
+      307.28
+    ],
+    "text": " I do. So I've diagnosed with high blood pressure as well as some back pain, chronic back"
+  },
+  {
+    "timestamp": [
+      307.28,
+      312.64
+    ],
+    "text": " pain and then some osteoarthritis in both knees."
+  },
+  {
+    "timestamp": [
+      316.56,
+      323.04
+    ],
+    "text": " So back, some knee arthritis and hypertension. Back pain do you take ibuprofen, Tylenol?"
+  },
+  {
+    "timestamp": [
+      323.6,
+      326.76
+    ],
+    "text": " I don't take anything for the arthritis."
+  },
+  {
+    "timestamp": [
+      326.76,
+      332.2
+    ],
+    "text": " For the back pain I do take hydrocodone with Tylenol."
+  },
+  {
+    "timestamp": [
+      332.2,
+      335.24
+    ],
+    "text": " For blood pressure I take verapamil."
+  },
+  {
+    "timestamp": [
+      335.24,
+      341.84
+    ],
+    "text": " How many of the hydrocodones do you take per day?"
+  },
+  {
+    "timestamp": [
+      341.84,
+      346.0
+    ],
+    "text": " I think about 5 milligramsg per a day."
+  },
+  {
+    "timestamp": [
+      346.0,
+      348.0
+    ],
+    "text": " 5 mg total?"
+  },
+  {
+    "timestamp": [
+      348.0,
+      350.0
+    ],
+    "text": " 5 x 5 I get you."
+  },
+  {
+    "timestamp": [
+      350.0,
+      352.0
+    ],
+    "text": " Each pill is 5 mg then you 5 pills?"
+  },
+  {
+    "timestamp": [
+      352.0,
+      356.0
+    ],
+    "text": " I'll take 5."
+  },
+  {
+    "timestamp": [
+      356.0,
+      358.0
+    ],
+    "text": " Thanks for clarifying that for me."
+  },
+  {
+    "timestamp": [
+      358.0,
+      361.0
+    ],
+    "text": " How long have you been on the hydrocodone?"
+  },
+  {
+    "timestamp": [
+      361.0,
+      363.0
+    ],
+    "text": " About a week."
+  },
+  {
+    "timestamp": [
+      363.0,
+      365.0
+    ],
+    "text": " I got it recently for my back. Okay. Did you have an injury to your back?"
+  },
+  {
+    "timestamp": [
+      365.0,
+      366.0
+    ],
+    "text": " A fall?"
+  },
+  {
+    "timestamp": [
+      366.0,
+      367.0
+    ],
+    "text": " Well, I've had the back pain for about five years, but this last week it got more intense,"
+  },
+  {
+    "timestamp": [
+      367.0,
+      368.0
+    ],
+    "text": " so I went to go see my doctor for it, and he was the one that prescribed me the hydrocodone"
+  },
+  {
+    "timestamp": [
+      368.0,
+      369.0
+    ],
+    "text": " and the telanol to take."
+  },
+  {
+    "timestamp": [
+      369.0,
+      389.0
+    ],
+    "text": " Okay, so you've been taking it for doctor for it and he was the one that prescribed me the hydrocodone and the telomol to take."
+  },
+  {
+    "timestamp": [
+      389.0,
+      390.0
+    ],
+    "text": " Okay."
+  },
+  {
+    "timestamp": [
+      390.0,
+      395.0
+    ],
+    "text": " Okay, take anything else over the counter?"
+  },
+  {
+    "timestamp": [
+      395.0,
+      398.0
+    ],
+    "text": " And then any history of surgeries?"
+  },
+  {
+    "timestamp": [
+      398.0,
+      399.0
+    ],
+    "text": " No."
+  },
+  {
+    "timestamp": [
+      399.0,
+      400.0
+    ],
+    "text": " Okay"
+  },
+  {
+    "timestamp": [
+      400.0,
+      402.0
+    ],
+    "text": " Ever been in the hospital before?"
+  },
+  {
+    "timestamp": [
+      402.0,
+      403.0
+    ],
+    "text": " No"
+  },
+  {
+    "timestamp": [
+      403.0,
+      408.0
+    ],
+    "text": " Do you have any family history or chronic conditions that you know of?"
+  },
+  {
+    "timestamp": [
+      408.0,
+      413.0
+    ],
+    "text": " No, but I have brother and sister that are healthy from my family's cardiac hospital."
+  },
+  {
+    "timestamp": [
+      413.0,
+      415.0
+    ],
+    "text": " Okay, gotcha."
+  },
+  {
+    "timestamp": [
+      420.0,
+      423.0
+    ],
+    "text": " Okay so just to summarize and let me know if I'm missing anything,"
+  },
+  {
+    "timestamp": [
+      423.0,
+      429.12
+    ],
+    "text": " but it sounds like for about two days you've been feeling pretty nauseous, feeling some crampy pain kind of all over your"
+  },
+  {
+    "timestamp": [
+      429.12,
+      434.08
+    ],
+    "text": " stomach, your abdomen, and then yesterday morning you started vomiting and it happens right after"
+  },
+  {
+    "timestamp": [
+      434.08,
+      439.92
+    ],
+    "text": " you eat. You had it yesterday and once today before coming into the clinic and you're noticing"
+  },
+  {
+    "timestamp": [
+      439.92,
+      448.18
+    ],
+    "text": " really that it just happens after eating. It doesn't look like there's any blood in there, you haven't had any fevers or chills or been around anyone with similar symptoms."
+  },
+  {
+    "timestamp": [
+      448.92,
+      452.96
+    ],
+    "text": " You haven'T really been able to keep much down and haven' t tried really any like medications"
+  },
+  {
+    "timestamp": [
+      452.96,
+      459.0
+    ],
+    "text": " for this quite yet. Does that sound about right? Yeah. Okay. I'd like to do a physical exam and"
+  },
+  {
+    "timestamp": [
+      459.0,
+      462.04
+    ],
+    "text": " take a look at your abdomen and everything if that's okay. Yeah, would you be able"
+  },
+  {
+    "timestamp": [
+      462.04,
+      463.0
+    ],
+    "text": " to sit up here for me?"
+  },
+  {
+    "timestamp": [
+      461.7,
+      463.24
+    ],
+    "text": " and everything if that's okay. Would you be able to sit up here for me?"
+  },
+  {
+    "timestamp": [
+      463.24,
+      464.32
+    ],
+    "text": " Yes, that sounds good."
+  },
+  {
+    "timestamp": [
+      464.32,
+      466.04
+    ],
+    "text": " All right."
+  },
+  {
+    "timestamp": [
+      466.04,
+      469.44
+    ],
+    "text": " This bed is mine, let's get this to you."
+  },
+  {
+    "timestamp": [
+      469.44,
+      471.6
+    ],
+    "text": " If that makes it easier for you to get up there."
+  },
+  {
+    "timestamp": [
+      471.6,
+      472.44
+    ],
+    "text": " Perfect."
+  },
+  {
+    "timestamp": [
+      472.44,
+      474.78
+    ],
+    "text": " Yeah, of course."
+  },
+  {
+    "timestamp": [
+      474.78,
+      477.06
+    ],
+    "text": " And I'll grab some gloves."
+  },
+  {
+    "timestamp": [
+      477.06,
+      479.06
+    ],
+    "text": " Put some of this."
+  },
+  {
+    "timestamp": [
+      479.06,
+      480.24
+    ],
+    "text": " Yeah and you're welcome to,"
+  },
+  {
+    "timestamp": [
+      480.24,
+      481.08
+    ],
+    "text": " of cource."
+  },
+  {
+    "timestamp": [
+      487.0,
+      489.0
+    ],
+    "text": " These gloves are all falling on me."
+  },
+  {
+    "timestamp": [
+      492.0,
+      495.0
+    ],
+    "text": " And then just kind of a few questions to round out my history of you."
+  },
+  {
+    "timestamp": [
+      495.0,
+      498.0
+    ],
+    "text": " Do you, um, who lives with you at home?"
+  },
+  {
+    "timestamp": [
+      498.0,
+      500.0
+    ],
+    "text": " Um, I live with just my wife."
+  },
+  {
+    "timestamp": [
+      500.0,
+      503.0
+    ],
+    "text": " Okay. And do you use tobacco at all?"
+  },
+  {
+    "timestamp": [
+      503.0,
+      504.0
+    ],
+    "text": " No."
+  },
+  {
+    "timestamp": [
+      504.0,
+      506.1
+    ],
+    "text": " Okay, and then alcohol?"
+  },
+  {
+    "timestamp": [
+      506.86,
+      507.08
+    ],
+    "text": " No"
+  },
+  {
+    "timestamp": [
+      507.08,
+      507.62
+    ],
+    "text": " Okay"
+  },
+  {
+    "timestamp": [
+      507.62,
+      514.46
+    ],
+    "text": " I'm going to cover you up down here with a sheet and I'll lift up your gown to take a look at your belly"
+  },
+  {
+    "timestamp": [
+      514.46,
+      525.02
+    ],
+    "text": " I just want you to look, I don't's very much hard. It doesn't look very"
+  },
+  {
+    "timestamp": [
+      525.02,
+      526.16
+    ],
+    "text": " distended to me."
+  },
+  {
+    "timestamp": [
+      543.74,
+      546.14
+    ],
+    "text": " You can hear your vowel sounds in all quadrants."
+  },
+  {
+    "timestamp": [
+      546.22,
+      546.72
+    ],
+    "text": " That's good."
+  },
+  {
+    "timestamp": [
+      546.82,
+      549.52
+    ],
+    "text": " I'm going to take a, I'll kind of percuss a little bit."
+  },
+  {
+    "timestamp": [
+      549.56,
+      551.22
+    ],
+    "text": " Learners, you have five minutes remaining."
+  },
+  {
+    "timestamp": [
+      551.32,
+      552.08
+    ],
+    "text": " I don't have any pain, okay?"
+  },
+  {
+    "timestamp": [
+      554.88,
+      555.64
+    ],
+    "text": " Any pain?"
+  },
+  {
+    "timestamp": [
+      555.98,
+      556.38
+    ],
+    "text": " No pain."
+  },
+  {
+    "timestamp": [
+      556.78,
+      557.1
+    ],
+    "text": " Okay."
+  },
+  {
+    "timestamp": [
+      562.68,
+      563.6
+    ],
+    "text": " Any gain at all?"
+  },
+  {
+    "timestamp": [
+      563.94,
+      564.06
+    ],
+    "text": " No."
+  },
+  {
+    "timestamp": [
+      564.28,
+      565.0
+    ],
+    "text": " Okay, we're going back up. I want to let you sit up for the rest of the evening, okay?"
+  },
+  {
+    "timestamp": [
+      565.0,
+      566.0
+    ],
+    "text": " Thank you."
+  },
+  {
+    "timestamp": [
+      566.0,
+      567.0
+    ],
+    "text": " Thank listen to your heart and mind."
+  },
+  {
+    "timestamp": [
+      567.0,
+      568.0
+    ],
+    "text": " Okay, good."
+  },
+  {
+    "timestamp": [
+      568.0,
+      569.0
+    ],
+    "text": " Okay?"
+  },
+  {
+    "timestamp": [
+      569.0,
+      570.0
+    ],
+    "text": " Okay good, I think I got it."
+  },
+  {
+    "timestamp": [
+      570.0,
+      571.0
+    ],
+    "text": " Okay I can't hear you, can you hear me?"
+  },
+  {
+    "timestamp": [
+      571.0,
+      572.0
+    ],
+    "text": " Okay okay."
+  },
+  {
+    "timestamp": [
+      572.0,
+      573.0
+    ],
+    "text": " Okay so I have to go."
+  },
+  {
+    "timestamp": [
+      573.0,
+      574.0
+    ],
+    "text": " Okay you can go now."
+  },
+  {
+    "timestamp": [
+      574.0,
+      591.82
+    ],
+    "text": " Okay thank you so much. Okay bye. I'm just going to feel your pulses."
+  },
+  {
+    "timestamp": [
+      593.86,
+      598.72
+    ],
+    "text": " So just kind of to let you know what I think is going on, I'll let your sit back in your chairs."
+  },
+  {
+    "timestamp": [
+      599.4,
+      601.12
+    ],
+    "text": " I am just gonna listen to your lungs really quick."
+  },
+  {
+    "timestamp": [
+      614.88,
+      616.04
+    ],
+    "text": " Take a breath for me. Okay, perfect. I'm happy to let you have a seat back in your chair."
+  },
+  {
+    "timestamp": [
+      618.28,
+      622.98
+    ],
+    "text": " I've been really worried about this. Do you think it's something really serious?"
+  },
+  {
+    "timestamp": [
+      623.38,
+      625.14
+    ],
+    "text": " Yeah, so I'll tell you what I think."
+  },
+  {
+    "timestamp": [
+      629.02,
+      629.58
+    ],
+    "text": " The fact that you kind of have recently started this hydrocodone,"
+  },
+  {
+    "timestamp": [
+      633.26,
+      633.44
+    ],
+    "text": " something that medicines like that can cause is for people to,"
+  },
+  {
+    "timestamp": [
+      635.32,
+      635.44
+    ],
+    "text": " it makes it hard for you to have bowel movements,"
+  },
+  {
+    "timestamp": [
+      636.96,
+      637.02
+    ],
+    "text": " and so things kind to get backed up. I mean, I don't know."
+  },
+  {
+    "timestamp": [
+      637.02,
+      637.06
+    ],
+    "text": " I feel like I'm going to be able to do it."
+  },
+  {
+    "timestamp": [
+      637.06,
+      637.1
+    ],
+    "text": " I know that."
+  },
+  {
+    "timestamp": [
+      637.1,
+      648.8
+    ],
+    "text": " I do. I just think it's kind a this like lack of bowel movements for five days and then when you're having this nausea and vomiting sometimes like when things get really backed up there's"
+  },
+  {
+    "timestamp": [
+      648.8,
+      652.72
+    ],
+    "text": " nowhere for things to go forward and kind of just comes right back out so I"
+  },
+  {
+    "timestamp": [
+      652.72,
+      656.82
+    ],
+    "text": " think that's probably one of the likely reasons but it might be a medication by"
+  },
+  {
+    "timestamp": [
+      656.82,
+      661.74
+    ],
+    "text": " the side yeah so the fact that you haven't had any fevers or chills and no"
+  },
+  {
+    "timestamp": [
+      661.74,
+      664.28
+    ],
+    "text": " one around you is sick makes it a little less likely that"
+  },
+  {
+    "timestamp": [
+      664.28,
+      667.86
+    ],
+    "text": " you have kind an infection but still possible. Infections"
+  },
+  {
+    "timestamp": [
+      667.86,
+      671.32
+    ],
+    "text": " usually pass kind on their own in about a week because it's usually a viral"
+  },
+  {
+    "timestamp": [
+      671.32,
+      677.08
+    ],
+    "text": " infection, but like I said, same given that I just started this medication. And you know the"
+  },
+  {
+    "timestamp": [
+      677.08,
+      680.52
+    ],
+    "text": " fact that there's no blood or bile in your vomit is encouraging to me that"
+  },
+  {
+    "timestamp": [
+      680.52,
+      686.06
+    ],
+    "text": " it is not kind a real big damage to your mucosa or anything like that."
+  },
+  {
+    "timestamp": [
+      690.92,
+      691.9
+    ],
+    "text": " So I'd like to maybe start you on a bowel regimen that's going to kind of help things move."
+  },
+  {
+    "timestamp": [
+      692.06,
+      694.86
+    ],
+    "text": " So that means like laxatives like Miralax and things like"
+  },
+  {
+    "timestamp": [
+      694.86,
+      699.38
+    ],
+    "text": " that and I know you're in a lot of pain from your back pain but I think it might"
+  },
+  {
+    "timestamp": [
+      699.38,
+      702.2
+    ],
+    "text": " be worth kind revisiting what we're using to treat your"
+  },
+  {
+    "timestamp": [
+      702.2,
+      707.24
+    ],
+    "text": " back if it kind causes you these symptoms, nausea and vomiting. So the first thing to do is"
+  },
+  {
+    "timestamp": [
+      707.24,
+      709.94
+    ],
+    "text": " definitely to get you started on a bowel regimen. What do you think about that?"
+  },
+  {
+    "timestamp": [
+      709.94,
+      711.94
+    ],
+    "text": " Yeah, that's all good to me."
+  },
+  {
+    "timestamp": [
+      711.94,
+      715.64
+    ],
+    "text": " Yeah. Lots from you today just to make sure because you have this vomiting, make"
+  },
+  {
+    "timestamp": [
+      715.64,
+      720.2
+    ],
+    "text": " sure you're not, your electrolytes aren't out of balance or and nothing is kind"
+  },
+  {
+    "timestamp": [
+      720.2,
+      725.4
+    ],
+    "text": " of concerning from that standpoint. Would you be willing to get some lab work before you leave today?"
+  },
+  {
+    "timestamp": [
+      725.4,
+      726.58
+    ],
+    "text": " Yes."
+  },
+  {
+    "timestamp": [
+      726.58,
+      728.38
+    ],
+    "text": " What questions do you have for me?"
+  },
+  {
+    "timestamp": [
+      728.38,
+      732.02
+    ],
+    "text": " Um, I don't think I have any more questions."
+  },
+  {
+    "timestamp": [
+      732.02,
+      733.48
+    ],
+    "text": " Okay, all right."
+  },
+  {
+    "timestamp": [
+      733.48,
+      735.14
+    ],
+    "text": " Well, it was really nice to meet you."
+  },
+  {
+    "timestamp": [
+      735.14,
+      737.06
+    ],
+    "text": " Well I'll get you, get working on getting you"
+  },
+  {
+    "timestamp": [
+      737.06,
+      738.56
+    ],
+    "text": " a prescription for something to kind"
+  },
+  {
+    "timestamp": [
+      738.56,
+      740.12
+    ],
+    "text": " of help things move along."
+  },
+  {
+    "timestamp": [
+      740.12,
+      741.76
+    ],
+    "text": " And then maybe I will touch base with the doctor"
+  },
+  {
+    "timestamp": [
+      741.76,
+      746.62
+    ],
+    "text": " that was prescribing your back pain medication and see what they think about what we can do about your regimen."
+  },
+  {
+    "timestamp": [
+      747.1,
+      753.32
+    ],
+    "text": " A couple of days with these changes that we're making and you still can't really eat and keep anything down,"
+  },
+  {
+    "timestamp": [
+      753.4,
+      756.66
+    ],
+    "text": " that's definitely a reason to come back and call us and let us know, okay?"
+  },
+  {
+    "timestamp": [
+      756.8,
+      757.6
+    ],
+    "text": " Okay, that sounds good."
+  },
+  {
+    "timestamp": [
+      757.82,
+      758.98
+    ],
+    "text": " All right, so good to meet you."
+  },
+  {
+    "timestamp": [
+      759.06,
+      760.08
+    ],
+    "text": " Good to see you too, thank you, ma'am."
+  },
+  {
+    "timestamp": [
+      760.12,
+      829.06
+    ],
+    "text": " Of course. so Thank you. Learners, your time is up."
+  },
+  {
+    "timestamp": [
+      829.12,
+      830.84
+    ],
+    "text": " Please exit your patient station."
+  },
+  {
+    "timestamp": [
+      831.52,
+      834.08
+    ],
+    "text": " Log into Semi-Q using your UT credentials."
+  },
+  {
+    "timestamp": [
+      834.6,
+      910.18
+    ],
+    "text": " Select the blue Evaluate button and complete your note. so Thank you."
+  }
+]

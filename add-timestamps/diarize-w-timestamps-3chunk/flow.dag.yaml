@@ -1,0 +1,59 @@
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  id:
+    type: string
+    description: transcript_id
+    default: 10_1005_331402.s
+  score:
+    type: int
+    default: 1
+outputs:
+  id:
+    type: string
+    reference: ${inputs.id}
+  transcript:
+    type: string
+    reference: ${diarize_transcript.output}
+nodes:
+- name: read_transcript
+  type: python
+  source:
+    type: code
+    path: read_transcript.py
+  inputs:
+    input1: ${inputs.id}
+- name: split_transcript
+  type: python
+  source:
+    type: code
+    path: split_transcript.py
+  inputs:
+    input1: ${read_transcript.output}
+    input2: 1
+- name: summarize_transcript
+  type: llm
+  source:
+    type: code
+    path: summarize.jinja2
+  inputs:
+    deployment_name: annie-gpt4-1
+    max_tokens: null
+    response_format:
+      type: text
+    text: ${split_transcript.output}
+  connection: agpt4_5
+  api: chat
+- name: diarize_transcript
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: annie-gpt4-1
+    response_format:
+      type: text
+    text1: ${split_transcript.output}
+    text2: ${summarize_transcript.output}
+  connection: agpt4_5
+  api: chat
