@@ -42,7 +42,7 @@ nodes:
     response_format:
       type: text
     text: ${split_transcript.output}
-  connection: agpt4_5
+  connection: agpt4_7
   api: chat
 - name: diarize_transcript
   type: llm
@@ -55,5 +55,73 @@ nodes:
       type: text
     text1: ${split_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: agpt4_5
+  connection: agpt4_7
+  api: chat
+- name: split_transcript2
+  type: python
+  source:
+    type: code
+    path: split_transcript.py
+  inputs:
+    input1: ${read_transcript.output}
+    input2: 2
+- name: summarize_transcript2
+  type: llm
+  source:
+    type: code
+    path: summarize.jinja2
+  inputs:
+    deployment_name: annie-gpt4-1
+    max_tokens: null
+    response_format:
+      type: text
+    text: ${split_transcript2.output}
+  connection: agpt4_7
+  api: chat
+- name: diarize_transcript2
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: annie-gpt4-1
+    response_format:
+      type: text
+    text1: ${split_transcript2.output}
+    text2: ${summarize_transcript2.output}
+  connection: agpt4_7
+  api: chat
+- name: split_transcript3
+  type: python
+  source:
+    type: code
+    path: split_transcript.py
+  inputs:
+    input1: ${read_transcript.output}
+    input2: 3
+- name: summarize_transcript3
+  type: llm
+  source:
+    type: code
+    path: summarize.jinja2
+  inputs:
+    deployment_name: annie-gpt4-1
+    max_tokens: null
+    response_format:
+      type: text
+    text: ${split_transcript3.output}
+  connection: agpt4_7
+  api: chat
+- name: diarize_transcript3
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: annie-gpt4-1
+    response_format:
+      type: text
+    text1: ${split_transcript3.output}
+    text2: ${summarize_transcript3.output}
+  connection: agpt4_7
   api: chat

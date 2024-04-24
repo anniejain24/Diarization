@@ -4,7 +4,7 @@ inputs:
   id:
     type: string
     description: transcript_id
-    default: 10_1005_331402.s
+    default: 01_0542_298135.s
   score:
     type: int
     default: 1
@@ -14,7 +14,7 @@ outputs:
     reference: ${inputs.id}
   transcript:
     type: string
-    reference: ${diarize_transcript.output}
+    reference: ${levenshtein_timestamps.output}
 nodes:
 - name: read_transcript
   type: python
@@ -30,7 +30,7 @@ nodes:
     path: summarize.jinja2
   inputs:
     deployment_name: annie-gpt4-1
-    max_tokens: null
+    max_tokens: 200
     response_format:
       type: text
     text: ${read_transcript.output}
@@ -49,3 +49,11 @@ nodes:
     text2: ${summarize_transcript.output}
   connection: agpt4_7
   api: chat
+- name: levenshtein_timestamps
+  type: python
+  source:
+    type: code
+    path: levenshtein.py
+  inputs:
+    id: ${inputs.id}
+    diar: ${diarize_transcript.output}

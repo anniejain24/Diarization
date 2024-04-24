@@ -9,10 +9,9 @@ from promptflow import tool
 def my_python_tool(input1: list, input2: int) -> list:
     transcript = ''
 
-    if input2==1: transcript = input1[:int(len(input1)/5)]
-    if input2==2: transcript = input1[int(len(input1)/4):2*int(len(input1)/4)]
-    if input2==3: transcript = input1[2*int(len(input1)/4):3*int(len(input1)/4)]
-    if input2==4: transcript = input1[3*int(len(input1)/4):]
+    if input2==1: transcript = input1[:int(len(input1)/3)]
+    if input2==2: transcript = input1[int(len(input1)/3):2*int(len(input1)/3)]
+    if input2==3: transcript = input1[2*int(len(input1)/3):]
 
 
     return transcript

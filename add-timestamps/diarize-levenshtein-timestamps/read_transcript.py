@@ -3,7 +3,7 @@ from promptflow import tool
 import json
 
 @tool
-def read_transcript_from_id(input1: str) -> dict:
+def read_transcript_from_id(input1: str) -> str:
 
     input1 = input1.split('.')[0]
     path_to_data_folder = '/archive/shared/sim_center/shared/ameer/'
@@ -24,7 +24,7 @@ def read_transcript_from_id(input1: str) -> dict:
 
     # uncomment as necessary for segmenting the transcript in thirds:
 
-    #json_transcript = json_transcript[:int(len(json_transcript)/3)]
+    json_transcript = json_transcript[:int(len(json_transcript)/2)]
     #json_transcript = json_transcript[int(len(json_transcript)/3):2*int(len(json_transcript)/3)]
     #json_transcript = json_transcript[2*int(len(json_transcript)/3):]
 
@@ -47,7 +47,7 @@ def read_transcript_from_id(input1: str) -> dict:
     #json_transcript = json_transcript[5*int(len(json_transcript)/9):6*int(len(json_transcript)/9)]
     #json_transcript = json_transcript[6*int(len(json_transcript)/9):7*int(len(json_transcript)/9)]  
     #json_transcript = json_transcript[7*int(len(json_transcript)/9):8*int(len(json_transcript)/9)] 
-    #json_transcript = json_transcript[8*int(len(json_transcript)/9):]
+    #json_transcript = json_transcript[8*int(len(json_transcript)/9):]  
 
     transcript = ''
     for line in json_transcript:
