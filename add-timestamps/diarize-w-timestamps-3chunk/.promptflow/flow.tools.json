@@ -72,6 +72,28 @@
       },
       "source": "split_transcript.py",
       "function": "my_python_tool"
+    },
+    "concat_chunks.py": {
+      "type": "python",
+      "inputs": {
+        "input1": {
+          "type": [
+            "string"
+          ]
+        },
+        "input2": {
+          "type": [
+            "string"
+          ]
+        },
+        "input3": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "concat_chunks.py",
+      "function": "concatenate"
     }
   }
 }

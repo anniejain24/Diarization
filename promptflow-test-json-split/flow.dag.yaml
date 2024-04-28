@@ -34,7 +34,7 @@ nodes:
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: agpt4_7
+  connection: agpt4_8
   api: chat
 - name: diarize_transcript
   type: llm
@@ -47,5 +47,5 @@ nodes:
       type: text
     text1: ${read_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: agpt4_7
+  connection: agpt4_8
   api: chat

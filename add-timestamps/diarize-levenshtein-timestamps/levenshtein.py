@@ -6,10 +6,9 @@ from promptflow import tool
 
 @tool
 def timestamp(diar: str, id: str) -> list:
-
+    id = id.split('.')[0]
 
     def read_transcript(id):
-        id = id.split('.')[0]
 
         path_to_data_folder = '/archive/shared/sim_center/shared/ameer/'
         # lookinto this dictionary to find the path
@@ -43,7 +42,7 @@ def timestamp(diar: str, id: str) -> list:
     normalized_levenshtein = NormalizedLevenshtein() 
     new_transcript = []
 
-    for line in diar[1:]:
+    for line in diar:
         if line == '\n': continue
         max_sim = -math.inf
         timestamp = ''
@@ -55,7 +54,8 @@ def timestamp(diar: str, id: str) -> list:
         new_transcript.append({'text': line, 'timestamp': timestamp})
         #print({'text': line, 'timestamp': timestamp}, max_sim)
     
-    with open(id + ".json", "w") as outfile: 
+    path = '/archive/shared/sim_center/shared/annie/diarized-levenshteined-3chunk/'
+    with open(path + id + ".json", "w") as outfile: 
         json.dump(new_transcript, outfile)
 
     return new_transcript

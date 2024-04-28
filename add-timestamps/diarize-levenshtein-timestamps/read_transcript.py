@@ -22,9 +22,12 @@ def read_transcript_from_id(input1: str) -> str:
     # a dictionary
     json_transcript = json.load(f)
 
+    #debugging line, change as needed:
+    #json_transcript = json_transcript[:8*int(len(json_transcript)/9)]
+
     # uncomment as necessary for segmenting the transcript in thirds:
 
-    json_transcript = json_transcript[:int(len(json_transcript)/2)]
+    #json_transcript = json_transcript[:int(len(json_transcript)/2)]
     #json_transcript = json_transcript[int(len(json_transcript)/3):2*int(len(json_transcript)/3)]
     #json_transcript = json_transcript[2*int(len(json_transcript)/3):]
 

@@ -7,6 +7,13 @@
           "response_format": []
         }
       }
+    },
+    "summarize_transcript2": {
+      "variant_0": {
+        "inputs": {
+          "text": []
+        }
+      }
     }
   }
 }
