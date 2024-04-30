@@ -1,0 +1,2077 @@
+{
+  "flow_runs": [],
+  "node_runs": [
+    {
+      "node": "save_file",
+      "flow_run_id": "e4bcdffc-2b06-4050-82c4-037af4b0b5d2",
+      "run_id": "e4bcdffc-2b06-4050-82c4-037af4b0b5d2_save_file_41d9c685-629a-4dfd-bd36-7073545da16e",
+      "status": "Completed",
+      "inputs": {
+        "input1": "Student: Learners, you may begin your patient station. Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you. (0.0, 6.6)\nPatient: so so I don't know. Hello? (59.84, 91.28)\nStudent: Hi, this is Mrs. Miller. (91.92, 93.58)\nPatient: Yes, yes it is. (94.16, 95.18)\nStudent: Hi Mrs Miller, my name is Jackson Agroz. I'm the medical student working at the clinic today. I am calling to speak about your daughter. What was your name again? (95.18, 103.34)\nPatient: Jackson Agrroz. (104.74, 105.98)\nStudent: Okay. Your S-47024. That's your OSCE number? (106.46, 111.24)\nPatient: 427024, yes. (113.96, 115.26)\nStudent: Okay, well, OSCENumber21, sorry. There we go, thank you. (116.08, 120.24)\nPatient: Well, I am glad you called. I was very worried because my daughter has had a cough for a long time, and it just seems it won't go away. (123.18, 129.12)\nStudent: Okay. How long has it been going on for? (132.78, 134.52)\nPatient: Five weeks is when it started. (135.34, 137.28)\nStudent: Okay, and can you describe the cough to me? (137.72, 140.66)\nPatient: It's a dry cough that's almost nonstop. (141.12, 143.94)\nStudent: Okay? And you said it's been getting worse over these five weeks? (146.6, 154.86)\nPatient: Yes. At first it was on and off, but now it is constant. (??, ??)\nStudent: Okay, has she been vomiting at all? (155.22, 162.2)\nPatient: No. (162.2, 162.92)\nStudent: Has she has been sick other than the cough? Any fevers, chills, runny nose, anything like that? (162.92, 165.96)\nPatient: Well, five weeks ago she had had a fever and some nasal congestion and the cough, and it lasted two days. But the coughing is the only thing that didn't go away. (166.7, 178.32)\nStudent: Okay. So was she seen in clinic at that time, or did she seem like her symptoms got better except for the cough? (179.16, 183.26)\nPatient: It seemed that her systems got worse. Her symptoms went better. Well, the coughing and the head congestion went away. (183.38, 192.18)\nStudent: Do you think she'll need like an antibiotic or something? (193.2, 195.02)\nPatient: So why don't we, I'll kind of talk you through what I'm thinking of towards the end if you don't mind. I'M just trying to flesh out everything and make sure I don't miss anything. Does that make sense? (195.96, 203.84)\nStudent: Yes. I appreciate your concern, though. I know that it's got to be scary for you. (208.9, 210.68)\nPatient: Yes (213.2, 213.6)\nStudent: Has she been doing okay in school with the cough or has she just been staying home? (213.6, 218.28)\nPatient: She's been going to school. She went to the school at the cough, but the last week she stayed out of gym class. (220.0, 227.34)\nStudent: Okay. Is the coughing worse with running or activity or anything like that? (230.0, 233.26)\nPatient: Yes, very, much worse. With the running and the playing with friends. (233.26, 238.24)\nStudent: Okay, has she ever had issues with exercise in the past? (239.76, 244.88)\nPatient: I don't understand. (246.18, 246.98)\nStudent: Like, for example, when she runs, does she ever have coughing fits or anything like that? (247.4, 252.28)\nPatient: Yes. (252.28, 255.02)\nStudent: Okay, and that has happened in the last five weeks? Or just these past five weeks. (255.4, 259.0)\nPatient: These past five weeks (260.52, 264.88)\nStudent: Okay and since the initial start she hasn't had any more fevers or chills or anything like that? (264.88, 266.92)\nPatient: No, nothing like that. (266.92, 267.42)\nStudent: Has there been anybody sick around her? (267.42, 272.16)\nPatient: No one around here has been sick at all. (272.16, 272.48)\nStudent: Before she got sick initially, do you remember if she was, if anybody around had been Sick? (272.48, 279.12)\nPatient: No. Not that I know of. (279.12, 282.64)\nStudent: Okay. Alright. I'm just going to move on to her past medical history. Has Bailey been ill? Has she been in the past? Does she have any medical conditions, I should say? (286.12, 291.56)\nPatient: No. No nothing like that. She had like a bout of eczema around two years old. And every once in a while she'll get itchy eyes, nose, throat. (296.96, 303.94)\nStudent: Okay, does she take anything for allergies? (305.06, 306.88)\nPatient: No. (307.4, 307.68)\nStudent: Okay, any surgeries that she's had in the past? (308.2, 312.7)\nPatient: No, okay. (313.38, 314.5)\nStudent: And as far as family history goes, has there ever been a history of asthma in the family? (315.1, 319.74)\nPatient: Her dad has a story of as a child, but not now. (320.66, 324.26)\nStudent: Okay? Okay any family histories of high blood pressure? (324.94, 327.68)\nPatient: Her dad has a history of asthma as a child, but not now. (327.68, 328.82)\nStudent: Okay. Any family history of high blood pressure, diabetes? (329.04, 331.08)\nPatient: No. No? (331.38, 332.26)\nStudent: Okay, and does she live at home with you and her father? (332.26, 337.38)\nPatient: She does. My uncle just, I mean her uncle, my brother just moved in with us about a month ago. (339.26, 343.66)\nStudent: Okay does anybody in the house smoke? (343.88, 345.18)\nPatient: Only outside. (347.04, 348.4)\nStudent: Okay, and who smokes? Your brother or? (351.0, 353.28)\nPatient: Yeah, me. My brother and her dad. (354.06, 355.96)\nStudent: Okay and does she have any siblings? (356.34, 361.84)\nPatient: No. (362.64, 362.96)\nStudent: Okay any pets at home? (363.42, 365.84)\nPatient: We have a dog and two cats, and they go inside and out. (366.18, 368.64)\nStudent: Okay? And Bailey hasn't ever had any issues with the dog or cats before? (371.62, 374.26)\nPatient: No, no. (376.88, 379.46)\nStudent: Okay Ms. Miller, so just to kind of, do you mind if I summarize what I've heard of before and just so you can interject if I'm missing anything? (381.78, 383.16)\nPatient: Okay. (383.84, 384.14)\nStudent: of fever, runny nose. But ever since then, she has this worsening cough that's kind of progressing and now preventing her from doing everything that she wants to do. No past medical history except for some eczema and maybe some runny nose occasionally. And then her father had asthma. Anything else in particular I'm missing? (395.76, 412.36)\nPatient: No, not that I can think of. (412.36, 412.72)\nStudent: So just to walk you through, Ms. Miller, what I'm thinking, I think it's possible that your daughter might have some asthma. She's, especially the fact that there is some smoke exposure. I know that, I mean, I don't know if you've heard of it, but I do know, I feel that you're family members are smoking outside and that can help lessen her exposure, but still considering that she's got a family history of family history asthma and past medical history those tend to kind of run together with asthma it's not definite that that's this is what she has but I would advise coming in to get further pulmonary workup for her to see if she needs an inhaler or something. (420.02, 428.14)\nPatient: Okay. (428.14, 428.44)\nStudent: Does that sound agreeable to you? Is that something that you can do to bring her in sometime? (470.44, 473.26)\nPatient: Yeah. Okay, perfect. Yeah, absolutely. We can try to make an appointment as soon as possible. It's also possible that she could have just had a viral illness, considering her fever and chills and cough. Those also tend to run together. And cough is something that it usually lasts much longer than the other two and can get really irritating. So it's possible this is just a virus. It could be a real illness. But I would rather be safer than sorry and make sure she gets checked out for asthma as well. (503.3, 506.1)\nPatient: Okay. That's great. I'm really worried about this. I'd like to get it cleared up. (506.68, 509.36)\nStudent: Yeah, absolutely. We can see you as soon as possible. (510.42, 512.64)\nPatient: Okay, any other questions you have? (513.14, 514.84)\nStudent: No, I think I've got it. (515.2, 516.08)\nPatient: All right. Thank you so much. Thank your call. Thanks. Bye. (517.48, 525.04)\nStudent: All right. I'm going to turn it over to you, and I'll see you in a minute. (525.04, 528.0)\nPatient: Thank you. (528.0, 528.42)\nStudent: Thank you for your time. (528.42, 530.08)\nPatient: Thank you for your time, and I hope okay Thank you. (530.08, 533.3)\nStudent: Learners, you have five minutes remaining. so I'm going to go ahead and do that. so Thank you. (550.0, 552.0)\nStudent: Learners, your time is up. Please exit",
+        "input2": "01_0542_298135.s"
+      },
+      "output": [
+        {
+          "speaker": "Student",
+          "text": " Learners, you may begin your patient station. Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you. ",
+          "timestamp": [
+            0.0,
+            6.6
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " so so I don't know. Hello? ",
+          "timestamp": [
+            59.84,
+            91.28
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Hi, this is Mrs. Miller. ",
+          "timestamp": [
+            91.92,
+            93.58
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes, yes it is. ",
+          "timestamp": [
+            94.16,
+            95.18
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Hi Mrs Miller, my name is Jackson Agroz. I'm the medical student working at the clinic today. I am calling to speak about your daughter. What was your name again? ",
+          "timestamp": [
+            95.18,
+            103.34
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Jackson Agrroz. ",
+          "timestamp": [
+            104.74,
+            105.98
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Your S-47024. That's your OSCE number? ",
+          "timestamp": [
+            106.46,
+            111.24
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " 427024, yes. ",
+          "timestamp": [
+            113.96,
+            115.26
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, well, OSCENumber21, sorry. There we go, thank you. ",
+          "timestamp": [
+            116.08,
+            120.24
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Well, I am glad you called. I was very worried because my daughter has had a cough for a long time, and it just seems it won't go away. ",
+          "timestamp": [
+            123.18,
+            129.12
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. How long has it been going on for? ",
+          "timestamp": [
+            132.78,
+            134.52
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Five weeks is when it started. ",
+          "timestamp": [
+            135.34,
+            137.28
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and can you describe the cough to me? ",
+          "timestamp": [
+            137.72,
+            140.66
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " It's a dry cough that's almost nonstop. ",
+          "timestamp": [
+            141.12,
+            143.94
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay? And you said it's been getting worse over these five weeks? ",
+          "timestamp": [
+            146.6,
+            154.86
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes. At first it was on and off, but now it is constant. ",
+          "timestamp": []
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, has she been vomiting at all? ",
+          "timestamp": [
+            155.22,
+            162.2
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. ",
+          "timestamp": [
+            162.2,
+            162.92
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Has she has been sick other than the cough? Any fevers, chills, runny nose, anything like that? ",
+          "timestamp": [
+            162.92,
+            165.96
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Well, five weeks ago she had had a fever and some nasal congestion and the cough, and it lasted two days. But the coughing is the only thing that didn't go away. ",
+          "timestamp": [
+            166.7,
+            178.32
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. So was she seen in clinic at that time, or did she seem like her symptoms got better except for the cough? ",
+          "timestamp": [
+            179.16,
+            183.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " It seemed that her systems got worse. Her symptoms went better. Well, the coughing and the head congestion went away. ",
+          "timestamp": [
+            183.38,
+            192.18
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Do you think she'll need like an antibiotic or something? ",
+          "timestamp": [
+            193.2,
+            195.02
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " So why don't we, I'll kind of talk you through what I'm thinking of towards the end if you don't mind. I'M just trying to flesh out everything and make sure I don't miss anything. Does that make sense? ",
+          "timestamp": [
+            195.96,
+            203.84
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Yes. I appreciate your concern, though. I know that it's got to be scary for you. ",
+          "timestamp": [
+            208.9,
+            210.68
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes ",
+          "timestamp": [
+            213.2,
+            213.6
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Has she been doing okay in school with the cough or has she just been staying home? ",
+          "timestamp": [
+            213.6,
+            218.28
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " She's been going to school. She went to the school at the cough, but the last week she stayed out of gym class. ",
+          "timestamp": [
+            220.0,
+            227.34
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Is the coughing worse with running or activity or anything like that? ",
+          "timestamp": [
+            230.0,
+            233.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes, very, much worse. With the running and the playing with friends. ",
+          "timestamp": [
+            233.26,
+            238.24
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, has she ever had issues with exercise in the past? ",
+          "timestamp": [
+            239.76,
+            244.88
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " I don't understand. ",
+          "timestamp": [
+            246.18,
+            246.98
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Like, for example, when she runs, does she ever have coughing fits or anything like that? ",
+          "timestamp": [
+            247.4,
+            252.28
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes. ",
+          "timestamp": [
+            252.28,
+            255.02
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and that has happened in the last five weeks? Or just these past five weeks. ",
+          "timestamp": [
+            255.4,
+            259.0
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " These past five weeks ",
+          "timestamp": [
+            260.52,
+            264.88
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay and since the initial start she hasn't had any more fevers or chills or anything like that? ",
+          "timestamp": [
+            264.88,
+            266.92
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, nothing like that. ",
+          "timestamp": [
+            266.92,
+            267.42
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Has there been anybody sick around her? ",
+          "timestamp": [
+            267.42,
+            272.16
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No one around here has been sick at all. ",
+          "timestamp": [
+            272.16,
+            272.48
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Before she got sick initially, do you remember if she was, if anybody around had been Sick? ",
+          "timestamp": [
+            272.48,
+            279.12
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. Not that I know of. ",
+          "timestamp": [
+            279.12,
+            282.64
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Alright. I'm just going to move on to her past medical history. Has Bailey been ill? Has she been in the past? Does she have any medical conditions, I should say? ",
+          "timestamp": [
+            286.12,
+            291.56
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. No nothing like that. She had like a bout of eczema around two years old. And every once in a while she'll get itchy eyes, nose, throat. ",
+          "timestamp": [
+            296.96,
+            303.94
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, does she take anything for allergies? ",
+          "timestamp": [
+            305.06,
+            306.88
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. ",
+          "timestamp": [
+            307.4,
+            307.68
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, any surgeries that she's had in the past? ",
+          "timestamp": [
+            308.2,
+            312.7
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, okay. ",
+          "timestamp": [
+            313.38,
+            314.5
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " And as far as family history goes, has there ever been a history of asthma in the family? ",
+          "timestamp": [
+            315.1,
+            319.74
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Her dad has a story of as a child, but not now. ",
+          "timestamp": [
+            320.66,
+            324.26
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay? Okay any family histories of high blood pressure? ",
+          "timestamp": [
+            324.94,
+            327.68
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Her dad has a history of asthma as a child, but not now. ",
+          "timestamp": [
+            327.68,
+            328.82
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Any family history of high blood pressure, diabetes? ",
+          "timestamp": [
+            329.04,
+            331.08
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. No? ",
+          "timestamp": [
+            331.38,
+            332.26
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and does she live at home with you and her father? ",
+          "timestamp": [
+            332.26,
+            337.38
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " She does. My uncle just, I mean her uncle, my brother just moved in with us about a month ago. ",
+          "timestamp": [
+            339.26,
+            343.66
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay does anybody in the house smoke? ",
+          "timestamp": [
+            343.88,
+            345.18
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Only outside. ",
+          "timestamp": [
+            347.04,
+            348.4
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and who smokes? Your brother or? ",
+          "timestamp": [
+            351.0,
+            353.28
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yeah, me. My brother and her dad. ",
+          "timestamp": [
+            354.06,
+            355.96
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay and does she have any siblings? ",
+          "timestamp": [
+            356.34,
+            361.84
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. ",
+          "timestamp": [
+            362.64,
+            362.96
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay any pets at home? ",
+          "timestamp": [
+            363.42,
+            365.84
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " We have a dog and two cats, and they go inside and out. ",
+          "timestamp": [
+            366.18,
+            368.64
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay? And Bailey hasn't ever had any issues with the dog or cats before? ",
+          "timestamp": [
+            371.62,
+            374.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, no. ",
+          "timestamp": [
+            376.88,
+            379.46
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay Ms. Miller, so just to kind of, do you mind if I summarize what I've heard of before and just so you can interject if I'm missing anything? ",
+          "timestamp": [
+            381.78,
+            383.16
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay. ",
+          "timestamp": [
+            383.84,
+            384.14
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " of fever, runny nose. But ever since then, she has this worsening cough that's kind of progressing and now preventing her from doing everything that she wants to do. No past medical history except for some eczema and maybe some runny nose occasionally. And then her father had asthma. Anything else in particular I'm missing? ",
+          "timestamp": [
+            395.76,
+            412.36
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, not that I can think of. ",
+          "timestamp": [
+            412.36,
+            412.72
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " So just to walk you through, Ms. Miller, what I'm thinking, I think it's possible that your daughter might have some asthma. She's, especially the fact that there is some smoke exposure. I know that, I mean, I don't know if you've heard of it, but I do know, I feel that you're family members are smoking outside and that can help lessen her exposure, but still considering that she's got a family history of family history asthma and past medical history those tend to kind of run together with asthma it's not definite that that's this is what she has but I would advise coming in to get further pulmonary workup for her to see if she needs an inhaler or something. ",
+          "timestamp": [
+            420.02,
+            428.14
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay. ",
+          "timestamp": [
+            428.14,
+            428.44
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Does that sound agreeable to you? Is that something that you can do to bring her in sometime? ",
+          "timestamp": [
+            470.44,
+            473.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yeah. Okay, perfect. Yeah, absolutely. We can try to make an appointment as soon as possible. It's also possible that she could have just had a viral illness, considering her fever and chills and cough. Those also tend to run together. And cough is something that it usually lasts much longer than the other two and can get really irritating. So it's possible this is just a virus. It could be a real illness. But I would rather be safer than sorry and make sure she gets checked out for asthma as well. ",
+          "timestamp": [
+            503.3,
+            506.1
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay. That's great. I'm really worried about this. I'd like to get it cleared up. ",
+          "timestamp": [
+            506.68,
+            509.36
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Yeah, absolutely. We can see you as soon as possible. ",
+          "timestamp": [
+            510.42,
+            512.64
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay, any other questions you have? ",
+          "timestamp": [
+            513.14,
+            514.84
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " No, I think I've got it. ",
+          "timestamp": [
+            515.2,
+            516.08
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " All right. Thank you so much. Thank your call. Thanks. Bye. ",
+          "timestamp": [
+            517.48,
+            525.04
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " All right. I'm going to turn it over to you, and I'll see you in a minute. ",
+          "timestamp": [
+            525.04,
+            528.0
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Thank you. ",
+          "timestamp": [
+            528.0,
+            528.42
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Thank you for your time. ",
+          "timestamp": [
+            528.42,
+            530.08
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Thank you for your time, and I hope okay Thank you. ",
+          "timestamp": [
+            530.08,
+            533.3
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Learners, you have five minutes remaining. so I'm going to go ahead and do that. so Thank you. ",
+          "timestamp": [
+            550.0,
+            552.0
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Learners, your time is up. Please exi",
+          "timestamp": []
+        }
+      ],
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "e4bcdffc-2b06-4050-82c4-037af4b0b5d2",
+      "start_time": "2024-04-29T18:04:52.197769Z",
+      "end_time": "2024-04-29T18:04:52.940680Z",
+      "index": null,
+      "api_calls": [
+        {
+          "name": "save_file",
+          "type": "Tool",
+          "inputs": {
+            "input1": "Student: Learners, you may begin your patient station. Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you. (0.0, 6.6)\nPatient: so so I don't know. Hello? (59.84, 91.28)\nStudent: Hi, this is Mrs. Miller. (91.92, 93.58)\nPatient: Yes, yes it is. (94.16, 95.18)\nStudent: Hi Mrs Miller, my name is Jackson Agroz. I'm the medical student working at the clinic today. I am calling to speak about your daughter. What was your name again? (95.18, 103.34)\nPatient: Jackson Agrroz. (104.74, 105.98)\nStudent: Okay. Your S-47024. That's your OSCE number? (106.46, 111.24)\nPatient: 427024, yes. (113.96, 115.26)\nStudent: Okay, well, OSCENumber21, sorry. There we go, thank you. (116.08, 120.24)\nPatient: Well, I am glad you called. I was very worried because my daughter has had a cough for a long time, and it just seems it won't go away. (123.18, 129.12)\nStudent: Okay. How long has it been going on for? (132.78, 134.52)\nPatient: Five weeks is when it started. (135.34, 137.28)\nStudent: Okay, and can you describe the cough to me? (137.72, 140.66)\nPatient: It's a dry cough that's almost nonstop. (141.12, 143.94)\nStudent: Okay? And you said it's been getting worse over these five weeks? (146.6, 154.86)\nPatient: Yes. At first it was on and off, but now it is constant. (??, ??)\nStudent: Okay, has she been vomiting at all? (155.22, 162.2)\nPatient: No. (162.2, 162.92)\nStudent: Has she has been sick other than the cough? Any fevers, chills, runny nose, anything like that? (162.92, 165.96)\nPatient: Well, five weeks ago she had had a fever and some nasal congestion and the cough, and it lasted two days. But the coughing is the only thing that didn't go away. (166.7, 178.32)\nStudent: Okay. So was she seen in clinic at that time, or did she seem like her symptoms got better except for the cough? (179.16, 183.26)\nPatient: It seemed that her systems got worse. Her symptoms went better. Well, the coughing and the head congestion went away. (183.38, 192.18)\nStudent: Do you think she'll need like an antibiotic or something? (193.2, 195.02)\nPatient: So why don't we, I'll kind of talk you through what I'm thinking of towards the end if you don't mind. I'M just trying to flesh out everything and make sure I don't miss anything. Does that make sense? (195.96, 203.84)\nStudent: Yes. I appreciate your concern, though. I know that it's got to be scary for you. (208.9, 210.68)\nPatient: Yes (213.2, 213.6)\nStudent: Has she been doing okay in school with the cough or has she just been staying home? (213.6, 218.28)\nPatient: She's been going to school. She went to the school at the cough, but the last week she stayed out of gym class. (220.0, 227.34)\nStudent: Okay. Is the coughing worse with running or activity or anything like that? (230.0, 233.26)\nPatient: Yes, very, much worse. With the running and the playing with friends. (233.26, 238.24)\nStudent: Okay, has she ever had issues with exercise in the past? (239.76, 244.88)\nPatient: I don't understand. (246.18, 246.98)\nStudent: Like, for example, when she runs, does she ever have coughing fits or anything like that? (247.4, 252.28)\nPatient: Yes. (252.28, 255.02)\nStudent: Okay, and that has happened in the last five weeks? Or just these past five weeks. (255.4, 259.0)\nPatient: These past five weeks (260.52, 264.88)\nStudent: Okay and since the initial start she hasn't had any more fevers or chills or anything like that? (264.88, 266.92)\nPatient: No, nothing like that. (266.92, 267.42)\nStudent: Has there been anybody sick around her? (267.42, 272.16)\nPatient: No one around here has been sick at all. (272.16, 272.48)\nStudent: Before she got sick initially, do you remember if she was, if anybody around had been Sick? (272.48, 279.12)\nPatient: No. Not that I know of. (279.12, 282.64)\nStudent: Okay. Alright. I'm just going to move on to her past medical history. Has Bailey been ill? Has she been in the past? Does she have any medical conditions, I should say? (286.12, 291.56)\nPatient: No. No nothing like that. She had like a bout of eczema around two years old. And every once in a while she'll get itchy eyes, nose, throat. (296.96, 303.94)\nStudent: Okay, does she take anything for allergies? (305.06, 306.88)\nPatient: No. (307.4, 307.68)\nStudent: Okay, any surgeries that she's had in the past? (308.2, 312.7)\nPatient: No, okay. (313.38, 314.5)\nStudent: And as far as family history goes, has there ever been a history of asthma in the family? (315.1, 319.74)\nPatient: Her dad has a story of as a child, but not now. (320.66, 324.26)\nStudent: Okay? Okay any family histories of high blood pressure? (324.94, 327.68)\nPatient: Her dad has a history of asthma as a child, but not now. (327.68, 328.82)\nStudent: Okay. Any family history of high blood pressure, diabetes? (329.04, 331.08)\nPatient: No. No? (331.38, 332.26)\nStudent: Okay, and does she live at home with you and her father? (332.26, 337.38)\nPatient: She does. My uncle just, I mean her uncle, my brother just moved in with us about a month ago. (339.26, 343.66)\nStudent: Okay does anybody in the house smoke? (343.88, 345.18)\nPatient: Only outside. (347.04, 348.4)\nStudent: Okay, and who smokes? Your brother or? (351.0, 353.28)\nPatient: Yeah, me. My brother and her dad. (354.06, 355.96)\nStudent: Okay and does she have any siblings? (356.34, 361.84)\nPatient: No. (362.64, 362.96)\nStudent: Okay any pets at home? (363.42, 365.84)\nPatient: We have a dog and two cats, and they go inside and out. (366.18, 368.64)\nStudent: Okay? And Bailey hasn't ever had any issues with the dog or cats before? (371.62, 374.26)\nPatient: No, no. (376.88, 379.46)\nStudent: Okay Ms. Miller, so just to kind of, do you mind if I summarize what I've heard of before and just so you can interject if I'm missing anything? (381.78, 383.16)\nPatient: Okay. (383.84, 384.14)\nStudent: of fever, runny nose. But ever since then, she has this worsening cough that's kind of progressing and now preventing her from doing everything that she wants to do. No past medical history except for some eczema and maybe some runny nose occasionally. And then her father had asthma. Anything else in particular I'm missing? (395.76, 412.36)\nPatient: No, not that I can think of. (412.36, 412.72)\nStudent: So just to walk you through, Ms. Miller, what I'm thinking, I think it's possible that your daughter might have some asthma. She's, especially the fact that there is some smoke exposure. I know that, I mean, I don't know if you've heard of it, but I do know, I feel that you're family members are smoking outside and that can help lessen her exposure, but still considering that she's got a family history of family history asthma and past medical history those tend to kind of run together with asthma it's not definite that that's this is what she has but I would advise coming in to get further pulmonary workup for her to see if she needs an inhaler or something. (420.02, 428.14)\nPatient: Okay. (428.14, 428.44)\nStudent: Does that sound agreeable to you? Is that something that you can do to bring her in sometime? (470.44, 473.26)\nPatient: Yeah. Okay, perfect. Yeah, absolutely. We can try to make an appointment as soon as possible. It's also possible that she could have just had a viral illness, considering her fever and chills and cough. Those also tend to run together. And cough is something that it usually lasts much longer than the other two and can get really irritating. So it's possible this is just a virus. It could be a real illness. But I would rather be safer than sorry and make sure she gets checked out for asthma as well. (503.3, 506.1)\nPatient: Okay. That's great. I'm really worried about this. I'd like to get it cleared up. (506.68, 509.36)\nStudent: Yeah, absolutely. We can see you as soon as possible. (510.42, 512.64)\nPatient: Okay, any other questions you have? (513.14, 514.84)\nStudent: No, I think I've got it. (515.2, 516.08)\nPatient: All right. Thank you so much. Thank your call. Thanks. Bye. (517.48, 525.04)\nStudent: All right. I'm going to turn it over to you, and I'll see you in a minute. (525.04, 528.0)\nPatient: Thank you. (528.0, 528.42)\nStudent: Thank you for your time. (528.42, 530.08)\nPatient: Thank you for your time, and I hope okay Thank you. (530.08, 533.3)\nStudent: Learners, you have five minutes remaining. so I'm going to go ahead and do that. so Thank you. (550.0, 552.0)\nStudent: Learners, your time is up. Please exit",
+            "input2": "01_0542_298135.s"
+          },
+          "output": [
+            {
+              "speaker": "Student",
+              "text": " Learners, you may begin your patient station. Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you. ",
+              "timestamp": [
+                0.0,
+                6.6
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " so so I don't know. Hello? ",
+              "timestamp": [
+                59.84,
+                91.28
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Hi, this is Mrs. Miller. ",
+              "timestamp": [
+                91.92,
+                93.58
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yes, yes it is. ",
+              "timestamp": [
+                94.16,
+                95.18
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Hi Mrs Miller, my name is Jackson Agroz. I'm the medical student working at the clinic today. I am calling to speak about your daughter. What was your name again? ",
+              "timestamp": [
+                95.18,
+                103.34
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Jackson Agrroz. ",
+              "timestamp": [
+                104.74,
+                105.98
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay. Your S-47024. That's your OSCE number? ",
+              "timestamp": [
+                106.46,
+                111.24
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " 427024, yes. ",
+              "timestamp": [
+                113.96,
+                115.26
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, well, OSCENumber21, sorry. There we go, thank you. ",
+              "timestamp": [
+                116.08,
+                120.24
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Well, I am glad you called. I was very worried because my daughter has had a cough for a long time, and it just seems it won't go away. ",
+              "timestamp": [
+                123.18,
+                129.12
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay. How long has it been going on for? ",
+              "timestamp": [
+                132.78,
+                134.52
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Five weeks is when it started. ",
+              "timestamp": [
+                135.34,
+                137.28
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, and can you describe the cough to me? ",
+              "timestamp": [
+                137.72,
+                140.66
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " It's a dry cough that's almost nonstop. ",
+              "timestamp": [
+                141.12,
+                143.94
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay? And you said it's been getting worse over these five weeks? ",
+              "timestamp": [
+                146.6,
+                154.86
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yes. At first it was on and off, but now it is constant. ",
+              "timestamp": []
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, has she been vomiting at all? ",
+              "timestamp": [
+                155.22,
+                162.2
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No. ",
+              "timestamp": [
+                162.2,
+                162.92
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Has she has been sick other than the cough? Any fevers, chills, runny nose, anything like that? ",
+              "timestamp": [
+                162.92,
+                165.96
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Well, five weeks ago she had had a fever and some nasal congestion and the cough, and it lasted two days. But the coughing is the only thing that didn't go away. ",
+              "timestamp": [
+                166.7,
+                178.32
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay. So was she seen in clinic at that time, or did she seem like her symptoms got better except for the cough? ",
+              "timestamp": [
+                179.16,
+                183.26
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " It seemed that her systems got worse. Her symptoms went better. Well, the coughing and the head congestion went away. ",
+              "timestamp": [
+                183.38,
+                192.18
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Do you think she'll need like an antibiotic or something? ",
+              "timestamp": [
+                193.2,
+                195.02
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " So why don't we, I'll kind of talk you through what I'm thinking of towards the end if you don't mind. I'M just trying to flesh out everything and make sure I don't miss anything. Does that make sense? ",
+              "timestamp": [
+                195.96,
+                203.84
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Yes. I appreciate your concern, though. I know that it's got to be scary for you. ",
+              "timestamp": [
+                208.9,
+                210.68
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yes ",
+              "timestamp": [
+                213.2,
+                213.6
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Has she been doing okay in school with the cough or has she just been staying home? ",
+              "timestamp": [
+                213.6,
+                218.28
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " She's been going to school. She went to the school at the cough, but the last week she stayed out of gym class. ",
+              "timestamp": [
+                220.0,
+                227.34
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay. Is the coughing worse with running or activity or anything like that? ",
+              "timestamp": [
+                230.0,
+                233.26
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yes, very, much worse. With the running and the playing with friends. ",
+              "timestamp": [
+                233.26,
+                238.24
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, has she ever had issues with exercise in the past? ",
+              "timestamp": [
+                239.76,
+                244.88
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " I don't understand. ",
+              "timestamp": [
+                246.18,
+                246.98
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Like, for example, when she runs, does she ever have coughing fits or anything like that? ",
+              "timestamp": [
+                247.4,
+                252.28
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yes. ",
+              "timestamp": [
+                252.28,
+                255.02
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, and that has happened in the last five weeks? Or just these past five weeks. ",
+              "timestamp": [
+                255.4,
+                259.0
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " These past five weeks ",
+              "timestamp": [
+                260.52,
+                264.88
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay and since the initial start she hasn't had any more fevers or chills or anything like that? ",
+              "timestamp": [
+                264.88,
+                266.92
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No, nothing like that. ",
+              "timestamp": [
+                266.92,
+                267.42
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Has there been anybody sick around her? ",
+              "timestamp": [
+                267.42,
+                272.16
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No one around here has been sick at all. ",
+              "timestamp": [
+                272.16,
+                272.48
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Before she got sick initially, do you remember if she was, if anybody around had been Sick? ",
+              "timestamp": [
+                272.48,
+                279.12
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No. Not that I know of. ",
+              "timestamp": [
+                279.12,
+                282.64
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay. Alright. I'm just going to move on to her past medical history. Has Bailey been ill? Has she been in the past? Does she have any medical conditions, I should say? ",
+              "timestamp": [
+                286.12,
+                291.56
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No. No nothing like that. She had like a bout of eczema around two years old. And every once in a while she'll get itchy eyes, nose, throat. ",
+              "timestamp": [
+                296.96,
+                303.94
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, does she take anything for allergies? ",
+              "timestamp": [
+                305.06,
+                306.88
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No. ",
+              "timestamp": [
+                307.4,
+                307.68
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, any surgeries that she's had in the past? ",
+              "timestamp": [
+                308.2,
+                312.7
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No, okay. ",
+              "timestamp": [
+                313.38,
+                314.5
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " And as far as family history goes, has there ever been a history of asthma in the family? ",
+              "timestamp": [
+                315.1,
+                319.74
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Her dad has a story of as a child, but not now. ",
+              "timestamp": [
+                320.66,
+                324.26
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay? Okay any family histories of high blood pressure? ",
+              "timestamp": [
+                324.94,
+                327.68
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Her dad has a history of asthma as a child, but not now. ",
+              "timestamp": [
+                327.68,
+                328.82
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay. Any family history of high blood pressure, diabetes? ",
+              "timestamp": [
+                329.04,
+                331.08
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No. No? ",
+              "timestamp": [
+                331.38,
+                332.26
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, and does she live at home with you and her father? ",
+              "timestamp": [
+                332.26,
+                337.38
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " She does. My uncle just, I mean her uncle, my brother just moved in with us about a month ago. ",
+              "timestamp": [
+                339.26,
+                343.66
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay does anybody in the house smoke? ",
+              "timestamp": [
+                343.88,
+                345.18
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Only outside. ",
+              "timestamp": [
+                347.04,
+                348.4
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay, and who smokes? Your brother or? ",
+              "timestamp": [
+                351.0,
+                353.28
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yeah, me. My brother and her dad. ",
+              "timestamp": [
+                354.06,
+                355.96
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay and does she have any siblings? ",
+              "timestamp": [
+                356.34,
+                361.84
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No. ",
+              "timestamp": [
+                362.64,
+                362.96
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay any pets at home? ",
+              "timestamp": [
+                363.42,
+                365.84
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " We have a dog and two cats, and they go inside and out. ",
+              "timestamp": [
+                366.18,
+                368.64
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay? And Bailey hasn't ever had any issues with the dog or cats before? ",
+              "timestamp": [
+                371.62,
+                374.26
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No, no. ",
+              "timestamp": [
+                376.88,
+                379.46
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Okay Ms. Miller, so just to kind of, do you mind if I summarize what I've heard of before and just so you can interject if I'm missing anything? ",
+              "timestamp": [
+                381.78,
+                383.16
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Okay. ",
+              "timestamp": [
+                383.84,
+                384.14
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " of fever, runny nose. But ever since then, she has this worsening cough that's kind of progressing and now preventing her from doing everything that she wants to do. No past medical history except for some eczema and maybe some runny nose occasionally. And then her father had asthma. Anything else in particular I'm missing? ",
+              "timestamp": [
+                395.76,
+                412.36
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " No, not that I can think of. ",
+              "timestamp": [
+                412.36,
+                412.72
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " So just to walk you through, Ms. Miller, what I'm thinking, I think it's possible that your daughter might have some asthma. She's, especially the fact that there is some smoke exposure. I know that, I mean, I don't know if you've heard of it, but I do know, I feel that you're family members are smoking outside and that can help lessen her exposure, but still considering that she's got a family history of family history asthma and past medical history those tend to kind of run together with asthma it's not definite that that's this is what she has but I would advise coming in to get further pulmonary workup for her to see if she needs an inhaler or something. ",
+              "timestamp": [
+                420.02,
+                428.14
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Okay. ",
+              "timestamp": [
+                428.14,
+                428.44
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Does that sound agreeable to you? Is that something that you can do to bring her in sometime? ",
+              "timestamp": [
+                470.44,
+                473.26
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Yeah. Okay, perfect. Yeah, absolutely. We can try to make an appointment as soon as possible. It's also possible that she could have just had a viral illness, considering her fever and chills and cough. Those also tend to run together. And cough is something that it usually lasts much longer than the other two and can get really irritating. So it's possible this is just a virus. It could be a real illness. But I would rather be safer than sorry and make sure she gets checked out for asthma as well. ",
+              "timestamp": [
+                503.3,
+                506.1
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Okay. That's great. I'm really worried about this. I'd like to get it cleared up. ",
+              "timestamp": [
+                506.68,
+                509.36
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Yeah, absolutely. We can see you as soon as possible. ",
+              "timestamp": [
+                510.42,
+                512.64
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Okay, any other questions you have? ",
+              "timestamp": [
+                513.14,
+                514.84
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " No, I think I've got it. ",
+              "timestamp": [
+                515.2,
+                516.08
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " All right. Thank you so much. Thank your call. Thanks. Bye. ",
+              "timestamp": [
+                517.48,
+                525.04
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " All right. I'm going to turn it over to you, and I'll see you in a minute. ",
+              "timestamp": [
+                525.04,
+                528.0
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Thank you. ",
+              "timestamp": [
+                528.0,
+                528.42
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Thank you for your time. ",
+              "timestamp": [
+                528.42,
+                530.08
+              ]
+            },
+            {
+              "speaker": "Patient",
+              "text": " Thank you for your time, and I hope okay Thank you. ",
+              "timestamp": [
+                530.08,
+                533.3
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Learners, you have five minutes remaining. so I'm going to go ahead and do that. so Thank you. ",
+              "timestamp": [
+                550.0,
+                552.0
+              ]
+            },
+            {
+              "speaker": "Student",
+              "text": " Learners, your time is up. Please exi",
+              "timestamp": []
+            }
+          ],
+          "start_time": 1714431892.198994,
+          "end_time": 1714431892.914808,
+          "error": null,
+          "children": [],
+          "node_name": "save_file",
+          "parent_id": "",
+          "id": "ed0c7c84-f83d-4123-bded-abcd948b920b",
+          "system_metrics": {}
+        }
+      ],
+      "variant_id": null,
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.742911
+      },
+      "result": [
+        {
+          "speaker": "Student",
+          "text": " Learners, you may begin your patient station. Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you. ",
+          "timestamp": [
+            0.0,
+            6.6
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " so so I don't know. Hello? ",
+          "timestamp": [
+            59.84,
+            91.28
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Hi, this is Mrs. Miller. ",
+          "timestamp": [
+            91.92,
+            93.58
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes, yes it is. ",
+          "timestamp": [
+            94.16,
+            95.18
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Hi Mrs Miller, my name is Jackson Agroz. I'm the medical student working at the clinic today. I am calling to speak about your daughter. What was your name again? ",
+          "timestamp": [
+            95.18,
+            103.34
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Jackson Agrroz. ",
+          "timestamp": [
+            104.74,
+            105.98
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Your S-47024. That's your OSCE number? ",
+          "timestamp": [
+            106.46,
+            111.24
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " 427024, yes. ",
+          "timestamp": [
+            113.96,
+            115.26
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, well, OSCENumber21, sorry. There we go, thank you. ",
+          "timestamp": [
+            116.08,
+            120.24
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Well, I am glad you called. I was very worried because my daughter has had a cough for a long time, and it just seems it won't go away. ",
+          "timestamp": [
+            123.18,
+            129.12
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. How long has it been going on for? ",
+          "timestamp": [
+            132.78,
+            134.52
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Five weeks is when it started. ",
+          "timestamp": [
+            135.34,
+            137.28
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and can you describe the cough to me? ",
+          "timestamp": [
+            137.72,
+            140.66
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " It's a dry cough that's almost nonstop. ",
+          "timestamp": [
+            141.12,
+            143.94
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay? And you said it's been getting worse over these five weeks? ",
+          "timestamp": [
+            146.6,
+            154.86
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes. At first it was on and off, but now it is constant. ",
+          "timestamp": []
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, has she been vomiting at all? ",
+          "timestamp": [
+            155.22,
+            162.2
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. ",
+          "timestamp": [
+            162.2,
+            162.92
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Has she has been sick other than the cough? Any fevers, chills, runny nose, anything like that? ",
+          "timestamp": [
+            162.92,
+            165.96
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Well, five weeks ago she had had a fever and some nasal congestion and the cough, and it lasted two days. But the coughing is the only thing that didn't go away. ",
+          "timestamp": [
+            166.7,
+            178.32
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. So was she seen in clinic at that time, or did she seem like her symptoms got better except for the cough? ",
+          "timestamp": [
+            179.16,
+            183.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " It seemed that her systems got worse. Her symptoms went better. Well, the coughing and the head congestion went away. ",
+          "timestamp": [
+            183.38,
+            192.18
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Do you think she'll need like an antibiotic or something? ",
+          "timestamp": [
+            193.2,
+            195.02
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " So why don't we, I'll kind of talk you through what I'm thinking of towards the end if you don't mind. I'M just trying to flesh out everything and make sure I don't miss anything. Does that make sense? ",
+          "timestamp": [
+            195.96,
+            203.84
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Yes. I appreciate your concern, though. I know that it's got to be scary for you. ",
+          "timestamp": [
+            208.9,
+            210.68
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes ",
+          "timestamp": [
+            213.2,
+            213.6
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Has she been doing okay in school with the cough or has she just been staying home? ",
+          "timestamp": [
+            213.6,
+            218.28
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " She's been going to school. She went to the school at the cough, but the last week she stayed out of gym class. ",
+          "timestamp": [
+            220.0,
+            227.34
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Is the coughing worse with running or activity or anything like that? ",
+          "timestamp": [
+            230.0,
+            233.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes, very, much worse. With the running and the playing with friends. ",
+          "timestamp": [
+            233.26,
+            238.24
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, has she ever had issues with exercise in the past? ",
+          "timestamp": [
+            239.76,
+            244.88
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " I don't understand. ",
+          "timestamp": [
+            246.18,
+            246.98
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Like, for example, when she runs, does she ever have coughing fits or anything like that? ",
+          "timestamp": [
+            247.4,
+            252.28
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yes. ",
+          "timestamp": [
+            252.28,
+            255.02
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and that has happened in the last five weeks? Or just these past five weeks. ",
+          "timestamp": [
+            255.4,
+            259.0
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " These past five weeks ",
+          "timestamp": [
+            260.52,
+            264.88
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay and since the initial start she hasn't had any more fevers or chills or anything like that? ",
+          "timestamp": [
+            264.88,
+            266.92
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, nothing like that. ",
+          "timestamp": [
+            266.92,
+            267.42
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Has there been anybody sick around her? ",
+          "timestamp": [
+            267.42,
+            272.16
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No one around here has been sick at all. ",
+          "timestamp": [
+            272.16,
+            272.48
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Before she got sick initially, do you remember if she was, if anybody around had been Sick? ",
+          "timestamp": [
+            272.48,
+            279.12
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. Not that I know of. ",
+          "timestamp": [
+            279.12,
+            282.64
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Alright. I'm just going to move on to her past medical history. Has Bailey been ill? Has she been in the past? Does she have any medical conditions, I should say? ",
+          "timestamp": [
+            286.12,
+            291.56
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. No nothing like that. She had like a bout of eczema around two years old. And every once in a while she'll get itchy eyes, nose, throat. ",
+          "timestamp": [
+            296.96,
+            303.94
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, does she take anything for allergies? ",
+          "timestamp": [
+            305.06,
+            306.88
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. ",
+          "timestamp": [
+            307.4,
+            307.68
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, any surgeries that she's had in the past? ",
+          "timestamp": [
+            308.2,
+            312.7
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, okay. ",
+          "timestamp": [
+            313.38,
+            314.5
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " And as far as family history goes, has there ever been a history of asthma in the family? ",
+          "timestamp": [
+            315.1,
+            319.74
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Her dad has a story of as a child, but not now. ",
+          "timestamp": [
+            320.66,
+            324.26
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay? Okay any family histories of high blood pressure? ",
+          "timestamp": [
+            324.94,
+            327.68
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Her dad has a history of asthma as a child, but not now. ",
+          "timestamp": [
+            327.68,
+            328.82
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay. Any family history of high blood pressure, diabetes? ",
+          "timestamp": [
+            329.04,
+            331.08
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. No? ",
+          "timestamp": [
+            331.38,
+            332.26
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and does she live at home with you and her father? ",
+          "timestamp": [
+            332.26,
+            337.38
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " She does. My uncle just, I mean her uncle, my brother just moved in with us about a month ago. ",
+          "timestamp": [
+            339.26,
+            343.66
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay does anybody in the house smoke? ",
+          "timestamp": [
+            343.88,
+            345.18
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Only outside. ",
+          "timestamp": [
+            347.04,
+            348.4
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay, and who smokes? Your brother or? ",
+          "timestamp": [
+            351.0,
+            353.28
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yeah, me. My brother and her dad. ",
+          "timestamp": [
+            354.06,
+            355.96
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay and does she have any siblings? ",
+          "timestamp": [
+            356.34,
+            361.84
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No. ",
+          "timestamp": [
+            362.64,
+            362.96
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay any pets at home? ",
+          "timestamp": [
+            363.42,
+            365.84
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " We have a dog and two cats, and they go inside and out. ",
+          "timestamp": [
+            366.18,
+            368.64
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay? And Bailey hasn't ever had any issues with the dog or cats before? ",
+          "timestamp": [
+            371.62,
+            374.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, no. ",
+          "timestamp": [
+            376.88,
+            379.46
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Okay Ms. Miller, so just to kind of, do you mind if I summarize what I've heard of before and just so you can interject if I'm missing anything? ",
+          "timestamp": [
+            381.78,
+            383.16
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay. ",
+          "timestamp": [
+            383.84,
+            384.14
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " of fever, runny nose. But ever since then, she has this worsening cough that's kind of progressing and now preventing her from doing everything that she wants to do. No past medical history except for some eczema and maybe some runny nose occasionally. And then her father had asthma. Anything else in particular I'm missing? ",
+          "timestamp": [
+            395.76,
+            412.36
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " No, not that I can think of. ",
+          "timestamp": [
+            412.36,
+            412.72
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " So just to walk you through, Ms. Miller, what I'm thinking, I think it's possible that your daughter might have some asthma. She's, especially the fact that there is some smoke exposure. I know that, I mean, I don't know if you've heard of it, but I do know, I feel that you're family members are smoking outside and that can help lessen her exposure, but still considering that she's got a family history of family history asthma and past medical history those tend to kind of run together with asthma it's not definite that that's this is what she has but I would advise coming in to get further pulmonary workup for her to see if she needs an inhaler or something. ",
+          "timestamp": [
+            420.02,
+            428.14
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay. ",
+          "timestamp": [
+            428.14,
+            428.44
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Does that sound agreeable to you? Is that something that you can do to bring her in sometime? ",
+          "timestamp": [
+            470.44,
+            473.26
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Yeah. Okay, perfect. Yeah, absolutely. We can try to make an appointment as soon as possible. It's also possible that she could have just had a viral illness, considering her fever and chills and cough. Those also tend to run together. And cough is something that it usually lasts much longer than the other two and can get really irritating. So it's possible this is just a virus. It could be a real illness. But I would rather be safer than sorry and make sure she gets checked out for asthma as well. ",
+          "timestamp": [
+            503.3,
+            506.1
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay. That's great. I'm really worried about this. I'd like to get it cleared up. ",
+          "timestamp": [
+            506.68,
+            509.36
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Yeah, absolutely. We can see you as soon as possible. ",
+          "timestamp": [
+            510.42,
+            512.64
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Okay, any other questions you have? ",
+          "timestamp": [
+            513.14,
+            514.84
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " No, I think I've got it. ",
+          "timestamp": [
+            515.2,
+            516.08
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " All right. Thank you so much. Thank your call. Thanks. Bye. ",
+          "timestamp": [
+            517.48,
+            525.04
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " All right. I'm going to turn it over to you, and I'll see you in a minute. ",
+          "timestamp": [
+            525.04,
+            528.0
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Thank you. ",
+          "timestamp": [
+            528.0,
+            528.42
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Thank you for your time. ",
+          "timestamp": [
+            528.42,
+            530.08
+          ]
+        },
+        {
+          "speaker": "Patient",
+          "text": " Thank you for your time, and I hope okay Thank you. ",
+          "timestamp": [
+            530.08,
+            533.3
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Learners, you have five minutes remaining. so I'm going to go ahead and do that. so Thank you. ",
+          "timestamp": [
+            550.0,
+            552.0
+          ]
+        },
+        {
+          "speaker": "Student",
+          "text": " Learners, your time is up. Please exi",
+          "timestamp": []
+        }
+      ]
+    }
+  ]
+}

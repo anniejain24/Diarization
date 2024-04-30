@@ -1,0 +1,84 @@
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  id:
+    type: string
+    description: transcript_id
+    default: 02_0036_174595.s
+  score:
+    type: int
+    default: 1
+outputs:
+  id:
+    type: string
+    reference: ${inputs.id}
+  transcript:
+    type: string
+    reference: ${save_file.output}
+nodes:
+- name: read_transcript
+  type: python
+  source:
+    type: code
+    path: read_transcript.py
+  inputs:
+    input1: ${inputs.id}
+    input2: false
+- name: read_diarized_transcript
+  type: python
+  source:
+    type: code
+    path: read_transcript.py
+  inputs:
+    input1: ${inputs.id}
+    input2: true
+- name: split_diarized_1
+  type: python
+  source:
+    type: code
+    path: split_diarized.py
+  inputs:
+    input1: ${read_diarized_transcript.output}
+    input2: 0
+- name: split_diarized_2
+  type: python
+  source:
+    type: code
+    path: split_diarized.py
+  inputs:
+    input1: ${read_diarized_transcript.output}
+    input2: 1
+- name: add_timestamps_1
+  type: llm
+  source:
+    type: code
+    path: timestamps1.jinja2
+  inputs:
+    deployment_name: annie-gpt35
+    response_format:
+      type: text
+    text1: ${read_transcript.output}
+    text2: ${split_diarized_1.output}
+  connection: agpt35_1
+  api: chat
+- name: add_timestamps_2
+  type: llm
+  source:
+    type: code
+    path: timestamps2.jinja2
+  inputs:
+    deployment_name: annie-gpt35
+    text1: ${read_transcript.output}
+    text2: ${add_timestamps_1.output}
+    text3: ${split_diarized_2.output}
+  connection: agpt35_1
+  api: chat
+- name: save_file
+  type: python
+  source:
+    type: code
+    path: save_file.py
+  inputs:
+    input1: ${add_timestamps_1.output}
+    input2: ${add_timestamps_2.output}
+    input3: ${inputs.id}
