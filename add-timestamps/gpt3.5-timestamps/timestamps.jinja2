@@ -3,17 +3,16 @@ The following two texts represent two versions of the same audio transcript betw
 The initial transcript contains timestamps, but no speaker labels (e.g. "Student: " or "Patient: ").
 The diarized transcript is diarized to contain speaker labels, but is missing the timestamps, as indicated by timestamp placeholders: (??, ??)
 
-Please use the timestamps in the initial transcript to approximately match and insert timestamps into the placeholders in the diarized transcript, and return the completed diarized transcript.
-Please use the format given and do not change it. The only thing you should be doing it removing the question marks and inserting numbers found in the initial transcript by text matching.
+Please use the timestamps in the initial transcript to approximately match and insert timestamps into these placeholders in the diarized transcript, and return the completed diarized transcript.
+Please use the format given and do not change it. The only thing you should be doing it removing the question marks and inserting number. These numbers are found in the initial transcript by text matching.
+If the lines in the two transcripts do not completely correspond, try to match timestamps as closely as possible.
 
 e.g.: 
 Student: How are you today? (0.0, 20.0)
 Patient: Well, how are you? (20.0, 40.0)
 
-Do NOT change this format. Make sure every line has a timestamp, and that the timestamp formatted as shown above is the last thing in every line.
-You may only receive a chunk of the transcript, but you are given the full initial transcript in order to help with inferring timestamps in the chunk.
-DO NOT REMOVE OR CHANGE ANYTHING IN THE DIARIZED TRANSCRIPT. Return it exactly as is, with the timestamps filled in. The diarizd transcript may start in the middle of the
-transcript. Please look for the relevant text and begin timestamping from there.
+Do NOT change this format, shown above. Make sure every line has a timestamp, and that the timestamp formatted as shown above is the last thing in every line.
+DO NOT REMOVE OR CHANGE ANYTHING IN THE DIARIZED TRANSCRIPT. Return it exactly as is, with the timestamps filled in. 
 
 
 user:

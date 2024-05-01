@@ -73,11 +73,6 @@
           "type": [
             "string"
           ]
-        },
-        "input3": {
-          "type": [
-            "string"
-          ]
         }
       },
       "source": "save_file.py",

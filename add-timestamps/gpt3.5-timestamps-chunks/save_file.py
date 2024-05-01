@@ -7,8 +7,8 @@ import json
 # Adding type to arguments and return value will help the system show the types properly
 # Please update the function name/signature per need
 @tool
-def save_file(input1: str, input2: str) -> str:
-    lines = input1.split('\n') 
+def save_file(input1: str, input2: str, input3: str) -> str:
+    lines = input1.split('\n') + input2.split('\n')
     out = []
     
     for line in lines:
@@ -22,7 +22,7 @@ def save_file(input1: str, input2: str) -> str:
         out.append(temp)
     
     path = '/archive/shared/sim_center/shared/annie/diarized-gpt35timestamped-3chunk/'
-    with open(path + input2.split('.')[0] + ".json", "w") as outfile:
+    with open(path + input3.split('.')[0] + ".json", "w") as outfile:
         json.dump(out, outfile)
     
     return out
