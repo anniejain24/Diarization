@@ -1,0 +1,110 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 990,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 755,
+      "y": 1114,
+      "index": -1
+    },
+    "read_transcript": {
+      "x": 577.5,
+      "y": 176,
+      "index": 0
+    },
+    "summarize_transcript": {
+      "x": 412.5,
+      "y": 444,
+      "index": 2
+    },
+    "diarize_transcript": {
+      "x": 335,
+      "y": 578,
+      "index": 3
+    },
+    "add_timestamps_1": {
+      "x": 140,
+      "y": 444,
+      "index": -1
+    },
+    "read_diarized_transcript": {
+      "x": 470,
+      "y": 176,
+      "index": -1
+    },
+    "save_file": {
+      "x": 675,
+      "y": 980,
+      "index": 13
+    },
+    "add_timestamps_2": {
+      "x": 567.5,
+      "y": 578,
+      "index": -1
+    },
+    "split_diarized_1": {
+      "x": 470,
+      "y": 310,
+      "index": -1
+    },
+    "split_diarized_2": {
+      "x": 665,
+      "y": 444,
+      "index": -1
+    },
+    "add_timestamps": {
+      "x": 412.5,
+      "y": 846,
+      "index": 12
+    },
+    "split_transcript": {
+      "x": 335,
+      "y": 310,
+      "index": 1
+    },
+    "split_transcript2": {
+      "x": 685,
+      "y": 310,
+      "index": 4
+    },
+    "summarize_transcript2": {
+      "x": 762.5,
+      "y": 444,
+      "index": 5
+    },
+    "diarize_transcript2": {
+      "x": 685,
+      "y": 578,
+      "index": 6
+    },
+    "split_transcript3": {
+      "x": 1035,
+      "y": 310,
+      "index": 7
+    },
+    "summarize_transcript3": {
+      "x": 1112.5,
+      "y": 444,
+      "index": 8
+    },
+    "diarize_transcript3": {
+      "x": 1035,
+      "y": 578,
+      "index": 9
+    },
+    "concatenate_chunks": {
+      "x": 675,
+      "y": 712,
+      "index": 10
+    },
+    "get_timestamps": {
+      "x": 140,
+      "y": 712,
+      "index": 11
+    }
+  },
+  "orientation": "Vertical"
+}

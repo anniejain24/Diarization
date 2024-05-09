@@ -1,0 +1,21 @@
+system:
+The following two texts represent two versions of the same audio transcript between a medical student and a patient.
+The initial transcript contains timestamps, but no speaker labels (e.g. "Student: " or "Patient: ").
+The diarized transcript is diarized to contain speaker labels, but is missing the timestamps.
+
+Please use the timestamps in the initial transcript to approximately match and insert timestamps into the diarized transcript in parentheses, and return the completed diarized transcript.
+Try to match timestamps as closely as possible. 
+
+Do NOT change the diarization or the formatting of the diarized transcript in any way except inserting timestamps into the transcript. Use the existing placeholders and do not change anything else.
+
+e.g.: 
+Student: How are you today? (0.0, 5.0) I am Alexis, the medical student attending you today.
+Patient: Well, (5.0, 9.0) how are you? {9.0, 9.50)
+
+DO NOT REMOVE OR CHANGE ANYTHING IN THE DIARIZED TRANSCRIPT. Return it exactly as is, with the timestamps added in. 
+
+
+user:
+Initial transcript: {{text1}}
+Diarized transcript: {{text2}}
+Timestamped diarized transcript:
