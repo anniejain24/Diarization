@@ -13,6 +13,7 @@ def save_file(input1: str, input2: str) -> str:
     
     for line in lines:
         temp = {}
+        if line.find(':') == -1: continue
         temp['speaker'] = line[:line.find(':')]
         temp['text'] = line[line.find(':') + 1: line.find('(')]
         temp['timestamp'] = []

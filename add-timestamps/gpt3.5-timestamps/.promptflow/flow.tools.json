@@ -131,6 +131,22 @@
         }
       },
       "source": "timestamps2.jinja2"
+    },
+    "timestamps_unformatted.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "text1": {
+          "type": [
+            "string"
+          ]
+        },
+        "text2": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "timestamps_unformatted.jinja2"
     }
   }
 }

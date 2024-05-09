@@ -1,17 +1,2 @@
-2024-04-29 12:25:07 -0500   12203 execution.flow     INFO     Executing node read_diarized_transcript. node run id: 302d9699-a47c-4004-a101-85f1c2994ac8_read_diarized_transcript_d7909010-64e1-40dd-a21d-a3e2c62fbbd8
-2024-04-29 12:25:07 -0500   12203 execution          ERROR    Node read_diarized_transcript in line None failed. Exception: Execution failure in 'read_diarized_transcript': (TypeError) read_transcript_from_id() missing 1 required positional argument: 'input2'.
-Traceback (most recent call last):
-  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 190, in _invoke_tool_with_timer
-    return f(**kwargs)
-  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/tracer.py", line 528, in wrapped
-    output = func(*args, **kwargs)
-TypeError: read_transcript_from_id() missing 1 required positional argument: 'input2'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 88, in invoke_tool
-    result = self._invoke_tool_with_timer(node, f, kwargs)
-  File "/home2/s229618/.conda/envs/pf/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 201, in _invoke_tool_with_timer
-    raise ToolExecutionError(node_name=node_name, module=module) from e
-promptflow._core._errors.ToolExecutionError: Execution failure in 'read_diarized_transcript': (TypeError) read_transcript_from_id() missing 1 required positional argument: 'input2'
+2024-05-07 14:43:54 -0500   37009 execution.flow     INFO     Executing node read_diarized_transcript. node run id: c95a6251-7c16-461e-820e-bb8dbf398345_read_diarized_transcript_1c7c5290-d8c0-4ff4-b7b6-819652e9a8a9
+2024-05-07 14:43:54 -0500   37009 execution.flow     INFO     Node read_diarized_transcript completes.

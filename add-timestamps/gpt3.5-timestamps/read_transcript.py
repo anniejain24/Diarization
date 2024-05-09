@@ -40,7 +40,8 @@ def read_transcript_from_id(input1: str, input2: bool) -> str:
         transcript = ''
         for line in lines:
             if line == '\n': continue
-            transcript +=  line[:-1] + ' (??, ??)' + '\n' 
+            transcript +=  line + '\n' 
+            #transcript +=  line[:-1] +  '(??, ??)' + '\n' 
         
         '''transcript2 = ''
         for line in lines[int(len(lines)/2):3*int(len(lines)/4)]:
