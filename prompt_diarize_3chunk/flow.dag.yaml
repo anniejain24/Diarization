@@ -4,7 +4,7 @@ inputs:
   id:
     type: string
     description: transcript_id
-    default: 01_0542_298135.s
+    default: 05_1066_380195.s
   score:
     type: int
     default: 1
@@ -42,7 +42,7 @@ nodes:
     response_format:
       type: text
     text: ${split_transcript.output}
-  connection: agpt4_9
+  connection: azure_cnxn_1
   api: chat
 - name: diarize_transcript
   type: llm
@@ -55,7 +55,7 @@ nodes:
       type: text
     text1: ${split_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: agpt4_9
+  connection: azure_cnxn_1
   api: chat
 - name: split_transcript2
   type: python
@@ -76,7 +76,7 @@ nodes:
     response_format:
       type: text
     text: ${split_transcript2.output}
-  connection: agpt4_9
+  connection: azure_cnxn_1
   api: chat
 - name: diarize_transcript2
   type: llm
@@ -89,7 +89,7 @@ nodes:
       type: text
     text1: ${split_transcript2.output}
     text2: ${summarize_transcript2.output}
-  connection: agpt4_9
+  connection: azure_cnxn_1
   api: chat
 - name: split_transcript3
   type: python
@@ -110,7 +110,7 @@ nodes:
     response_format:
       type: text
     text: ${split_transcript3.output}
-  connection: agpt4_9
+  connection: azure_cnxn_1
   api: chat
 - name: diarize_transcript3
   type: llm
@@ -123,7 +123,7 @@ nodes:
       type: text
     text1: ${split_transcript3.output}
     text2: ${summarize_transcript3.output}
-  connection: agpt4_9
+  connection: azure_cnxn_1
   api: chat
 - name: concatenate_chunks
   type: python

@@ -39,6 +39,39 @@
         }
       },
       "source": "diarize.jinja2"
+    },
+    "diarize-finalprompt.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "text2": {
+          "type": [
+            "string"
+          ]
+        },
+        "text1": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "diarize-finalprompt.jinja2"
+    },
+    "save_file.py": {
+      "type": "python",
+      "inputs": {
+        "input1": {
+          "type": [
+            "string"
+          ]
+        },
+        "input2": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "save_file.py",
+      "function": "save_file"
     }
   }
 }
