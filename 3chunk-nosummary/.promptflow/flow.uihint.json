@@ -7,13 +7,6 @@
           "response_format": []
         }
       }
-    },
-    "diarize_transcript": {
-      "variant_0": {
-        "inputs": {
-          "text1": []
-        }
-      }
     }
   }
 }

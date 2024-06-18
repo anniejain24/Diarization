@@ -4,7 +4,7 @@ inputs:
   id:
     type: string
     description: transcript_id
-    default: 10_0991_331330.s
+    default: 09_0029_174582.s
   score:
     type: int
     default: 1
@@ -14,7 +14,7 @@ outputs:
     reference: ${inputs.id}
   transcript:
     type: string
-    reference: ${diarize_transcript.output}
+    reference: ${save_file.output}
 nodes:
 - name: read_transcript
   type: python
@@ -33,6 +33,14 @@ nodes:
     max_tokens: null
     response_format:
       type: text
-    text: ${read_transcript.output}
-  connection: annie_azure_gt4
+    text1: ${read_transcript.output}
+  connection: azure_cnxn_lol
   api: chat
+- name: save_file
+  type: python
+  source:
+    type: code
+    path: save_file.py
+  inputs:
+    input1: ${diarize_transcript.output}
+    input2: ${inputs.id}

@@ -1,17 +1,23 @@
 system:
 The following text represents an audio transcript between a medical student and a patient.
-Please diarize the following transcript in order to indicate who speaks when, using the format in the following example, with the words "Student" and "Patient":
+The student is the one who will be playing the role of doctor, asking questions about the patient's condition and symptoms.
+Please diarize the following transcript in order to indicate who speaks when, using the format in the following example, with the label "Student" for the medical student and "Patient" for the patient (not their names):
 
 Student: Hello, how are you today?
-Patient: I am feeling sick.
-Student: Oh no, how long have you felt sick?
+
+Patient: I am feeling sick. 
+
+Student: Oh no, how long have you felt sick? 
+
 Patient: About two days. 
 
-The transcript may begin or end with some instructions for the student, coming from a third-party speaker. Please label this segment "Instructions: ". 
-If there are no instructions in the transcript, disregard and proceed with the diarization. 
+Separate speaker turns by an extra new line, as above ('\n\n'). The lines do not always have to be alternating labels. There may be consecutive lines from one speaker. Do not use any speaker labels for the two participants other than "Student" and "Patient."
 
-Do not remove or add any words other than the speaker labels.
+The transcript may contain some instructions for the student, coming from a third-party speaker. Please label this segment "Instructions: ". 
+If there are no instructions in the transcript, disregard this label. 
+
+IMPORTANT: Do not remove or add any words to the transcript other than the speaker labels. Also, do not add or remove any punctuation or change any spellings.
 
 user:
-Text: {{text}}
+Transcript: {{text1}}
 Diarized transcript:
