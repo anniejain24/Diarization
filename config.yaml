@@ -1,0 +1,4 @@
+temperature: 0
+mod_name: llama-8b
+summary: True
+claude_key: <user-input> # path to .txt file
