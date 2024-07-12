@@ -9,7 +9,7 @@ import json
 @tool
 def save_file(input1: str, input2: str) -> str:
     
-    path = '/archive/shared/sim_center/shared/annie/gpt4-3chunk-nosum/'
+    path = '/archive/shared/sim_center/shared/annie/testing_scripts/'
     with open(path + input2.split('.')[0] + ".txt", "w") as outfile:
         outfile.write('ID: ' + input2.split('.')[0] + '\n\n' + input1)
     

@@ -1,0 +1,3 @@
+huggingface-cli download meta-llama/Meta-Llama-3-8B-Instruct --local-dir /archive/shared/sim_center/shared/annie/hf_models/8b-instruct
+
+huggingface-cli download meta-llama/Meta-Llama-3-70B-Instruct --local-dir /archive/shared/sim_center/shared/annie/hf_models/70b-instruct
