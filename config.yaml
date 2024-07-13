@@ -1,4 +1,5 @@
 temperature: 0
 mod_name: llama-8b
+chunk_num: 1
 summary: True
 claude_key: <user-input> # path to .txt file
