@@ -1,5 +1,15 @@
-temperature: 0
-mod_name: llama-8b
-chunk_num: 1
+temperature_summary: 0.6
+temperature_diarize: 0.6
+top_p_summary: 0.9
+top_p_diarize: 0.9
+max_new_tokens_summary: 256
+max_new_tokens_diarize: 4096
+do_sample_summary: True
+do_sample_diarize: True
+mod_name_summary: 'claude-sonnet' # choose from llama-8b, llama-70b, claude-opus, or claude-sonnet
+mod_name_diarize: 'claude-sonnet' # same as above
+chunk_num: 3
 summary: True
-claude_key: <user-input> # path to .txt file
+summary_chunking: True # summarize whole transcript for each chunk or summarize corresponding chunk only (if True)
+return_chunked: True # if True return list of diarized chunks for each transcript rather than entire diarized transcript
+claude_key: '/work/bioinformatics/s229618/api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models

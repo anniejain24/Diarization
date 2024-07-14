@@ -1,22 +1,18 @@
 import json
-import os
-import uuid
 import argparse
 import yaml
-import logging
 import transformers
 import torch
 import anthropic
 import pandas as pd
 from typing import List
 
-# run model, called from main
-def run_model(config: dict, data_path: str = 'helper_files/ids.jsonl'):
 
-    temperature = config['temperature']
-    mod_name = config['mod_name']
-    chunk_num = config['chunk_num']
-    summary = config['summary']
+# run model, called from main
+def run_model(config: dict, data_path: str = 'helper_files/ids.jsonl', 
+              summary_path: str = 'helper_files/summary_prompt.txt', 
+              diarize_path: str = 'helper_files/diarize_prompt_w_summary.txt'):
+
 
     # extract transcript ids from file
     # Load data from JSON file into list of ids
@@ -25,34 +21,57 @@ def run_model(config: dict, data_path: str = 'helper_files/ids.jsonl'):
     id_list = []
     for id in ids:
         id = json.loads(id)
-        id_list.append(id['id'])
+        id_list.append(id['id'].split('.')[0])
     ids = id_list
+
+    # some relevant configs
+    chunk_num = config['chunk_num']
+    summary = config['summary']
+    mod_name_summary = config['mod_name_summary']
+    mod_name_diarize = config['mod_name_diarize']
     
-    # can use these paths or change to own model paths
-    if mod_name == 'llama-8b': 
-        model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
-        output = llama_run(model_id, summary, chunk_num, ids)
+    output = []
+    # run pipeline
+    for id in ids:
+        print('diarizing: ' + id)
 
-    elif mod_name == 'llama-70b':
-        model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
-        output = llama_run(model_id, summary, chunk_num, ids)
+        # extract transcript (chunks)
+        transcript = read_transcript_from_id(id, chunk_num=chunk_num)
 
-    if mod_name == 'claude-opus': 
-        model_id = "claude-3-opus-20240229"
-        key_path = config['claude_key']
-        with open(key_path, 'r') as file: key = file.read()
-        output = claude_run(key, model_id, summary)
+        # if summary is True, extract summar(ies)
+        if summary:
+            if 'llama' in mod_name_summary: 
+                s = llama_summarize(transcript, config, 
+                                    summary_path=summary_path)
+            elif 'claude' in mod_name_summary:
+                s = claude_summarize(transcript, config, 
+                                     summary_path=summary_path)
+            else: s = None
 
-    elif mod_name == 'claude-sonnet': 
-        model_id = "claude-3-sonnet-20240229"
-        key_path = config['claude_key']
-        with open(key_path, 'r') as file: key = file.read()
-        output = claude_run(key, model_id, summary)
+        if 'llama' in mod_name_diarize:
+            diarized = llama_diarize(transcript, config, 
+                                     diarize_path=diarize_path, summary_list=s)
+        
+        elif 'claude' in mod_name_diarize:
+            diarized = claude_diarize(transcript, config, 
+                                      diarize_path=diarize_path, summary_list=s)
+        
+        # return chunks if parameter true
+        if config['return_chunked']: 
+            output.append(diarized)
 
+        # return entire diarized transcript
+        else: 
+            final = ''
+            for chunk in diarized:
+                final += chunk + '\n\n'
+            output.append(final)
+    
+    
     return output
 
 
-def read_transcript_from_id(transcript_id: str, chunk_num: int=1)->List[str]:
+def read_transcript_from_id(transcript_id: str, chunk_num: int)->List[str]:
 
     path_to_data_folder = '/archive/shared/sim_center/shared/ameer/'
     # path_to_data_folder = '/archive/shared/sim_center/shared/annie/GPT4 3-chunk/'
@@ -105,6 +124,8 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int=1)->List[str]:
         
         transcript = transcript_chunks
 
+    print(transcript)
+    print(len(transcript))
     return transcript
 
 def summary_prompt(path: str)->str:
@@ -113,39 +134,6 @@ def summary_prompt(path: str)->str:
         prompt = f.read()
     return prompt
 
-# summarize helper
-def llama_summarize(transcript: list, pipeline: transformers.pipeline, 
-                    summary_path='helper_files/summary_prompt.txt')->List[str]:
-
-    prompt = summary_prompt(summary_path)
-
-    terminators = [
-        pipeline.tokenizer.eos_token_id,
-        pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>")
-    ]
-
-    s = []
-    
-    for chunk in transcript:
-        
-        messages = [
-        {"role": "system", "content": prompt},
-        {"role": "user", "content": chunk},
-        ]
-
-        outputs = pipeline(
-                messages,
-                max_new_tokens=256,
-                eos_token_id=terminators,
-                do_sample=True,
-                temperature=0.6,
-                top_p=0.9,
-                )
-
-        s.append(outputs[0]["generated_text"][-1])
-
-    # list of summaries from each chunk
-    return s
 
 def diarize_prompt(path: str)->str:
 
@@ -153,48 +141,110 @@ def diarize_prompt(path: str)->str:
         prompt = f.read()
     return prompt
 
-# diarizer
-def llama_diarize(transcript: list, pipeline: transformers.pipeline, diarize_path='helper_files/diarize_prompt_w_summary.txt', summary=None)->List[str]:
- 
+
+# summarize helper
+def llama_summarize(transcript: list, config: dict,
+                    summary_path: str='helper_files/summary_prompt.txt')->List[str]:
+    
+    temperature = config['temperature_summary']
+    max_new_tokens = config['max_new_tokens_summary']
+    top_p = config['top_p_summary']
+    mod_name = config['mod_name_summary']
+    do_sample = config['do_sample_summary']
+
+    prompt = summary_prompt(summary_path)
+
+    # change these paths if you wish to use llama instances stored elsewhere
+    if mod_name == 'llama-8b': 
+        model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
+
+    elif mod_name == 'llama-70b':
+        model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
+
+    pipeline = transformers.pipeline(
+                "text-generation",
+                model=model_id,
+                model_kwargs={"torch_dtype": torch.bfloat16},
+                device_map="auto",
+            )
+    
     terminators = [
         pipeline.tokenizer.eos_token_id,
         pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>")
     ]
 
-    diarized = []
+    s = []
 
-    for chunk in transcript:
+    # if summarizing entire transcript instead of each chunk
+    if not config['summary_chunking']:
+        
+        transcript = ''
+        for chunk in transcript: transcript += chunk + '\n\n'
 
-        if summary: 
-            messages = [
-        {"role": "system", "content": diarize_prompt(diarize_path)},
-        {"role": "user", "content": 'summary: ' + summary["content"] 
-         + '\n\ntranscript: ' + chunk},
-        ]
-
-        else:
-            messages = [
-        {"role": "system", "content": diarize_prompt(diarize_path)},
-        {"role": "user", "content": 'transcript: ' + chunk}      
+        messages = [
+        {"role": "system", "content": prompt},
+        {"role": "user", "content": transcript},
         ]
 
         outputs = pipeline(
-            messages,
-            max_new_tokens=10000,
-            eos_token_id=terminators,
-            do_sample=True,
-            temperature=0.6,
-            top_p=0.9,
-        )
+                messages,
+                max_new_tokens=max_new_tokens,
+                eos_token_id=terminators,
+                do_sample=do_sample,
+                temperature=temperature,
+                top_p=top_p,
+                )
 
-        diarized_chunk = outputs[0]["generated_text"][-1]
-        diarized.append(diarized_chunk['content'])
+        summary_chunk = outputs[0]["generated_text"][-1]
+        s.append(summary_chunk['content'])
+    
+    # summarize each chunk
+    else: 
+        for chunk in transcript:
+        
+            messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": chunk},
+            ]
 
-    return diarized
-   
+            outputs = pipeline(
+                    messages,
+                    max_new_tokens=max_new_tokens,
+                    eos_token_id=terminators,
+                    do_sample=True,
+                    temperature=temperature,
+                    top_p=top_p,
+                    )
 
-# run a llama model
-def llama_run(model_id: str, summary: bool, chunk_num: int, ids: list):
+            summary_chunk = outputs[0]["generated_text"][-1]
+            s.append(summary_chunk['content'])
+
+    # list of summaries from each chunk
+    print(s)
+    return s
+
+
+# diarizer
+def llama_diarize(transcript: list, config: dict,
+                  diarize_path: str='helper_files/diarize_prompt_w_summary.txt', 
+                  summary_list: list=None)->List[str]:
+    
+    temperature = config['temperature_diarize']
+    max_new_tokens = config['max_new_tokens_diarize']
+    top_p = config['top_p_diarize']
+    do_sample = config['do_sample_diarize']
+    mod_name = config['mod_name_diarize']
+    summary = config['summary']
+
+
+    prompt = diarize_prompt(diarize_path)
+
+    # change these paths if you wish to use llama instances stored elsewhere
+    if mod_name == 'llama-8b': 
+        model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
+
+    elif mod_name == 'llama-70b':
+        model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
 
     pipeline = transformers.pipeline(
                 "text-generation",
@@ -203,27 +253,133 @@ def llama_run(model_id: str, summary: bool, chunk_num: int, ids: list):
                 device_map="auto",
             )
 
-    for id in ids: 
-        print('diarizing: ' + id)
-        transcript = read_transcript_from_id(id, chunk_num=chunk_num)
+    terminators = [
+        pipeline.tokenizer.eos_token_id,
+        pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>")
+    ]
+
+    diarized = []
+
+    for i in range(len(transcript)):
+
         if summary: 
-            s = llama_summarize(transcript, pipeline)
-            diarized = llama_diarize(transcript, summary=s)
+            messages = [
+        {"role": "system", "content": prompt},
+        {"role": "user", "content": 'summary: ' + summary_list[i] 
+         + '\n\ntranscript: ' + transcript[i]},
+        ]
+
         else:
-            diarized = llama_diarize(transcript)
+            messages = [
+        {"role": "system", "content": prompt},
+        {"role": "user", "content": 'transcript: ' + transcript[i]}      
+        ]
 
-    final = ''
-    for chunk in diarized:
-        final += chunk + '\n'
+        outputs = pipeline(
+            messages,
+            max_new_tokens=max_new_tokens,
+            eos_token_id=terminators,
+            do_sample=do_sample,
+            temperature=temperature,
+            top_p=top_p,
+        )
 
-    return final
+        diarized_chunk = outputs[0]["generated_text"][-1]
+        diarized.append(diarized_chunk['content'])
 
-# run a claude model
-def claude_run(key: str, model_id: str, summary: bool):
+    # list of diarized chunks
+    return diarized
+   
 
-    return 'hi'
+
+# summarize using claude
+def claude_summarize(transcript, config: dict, summary_path: str='helper_files/summary_prompt.txt')->List[str]:
+
+    key_path = config['claude_key']
+    with open(key_path, 'r') as file: 
+        key = file.read()
+
+    mod_name = config['mod_name_summary']
+    max_new_tokens = config['max_new_tokens_summary']
+    temperature = config['temperature_summary']
+    prompt = summary_prompt(summary_path)
 
 
+    if mod_name == 'claude-opus': 
+        model_id = "claude-3-opus-20240229"
+    
+
+    elif mod_name == 'claude-sonnet': 
+        model_id = "claude-3-sonnet-20240229"
+    
+    client = anthropic.Anthropic(api_key=key,)
+
+    s = []
+    for chunk in transcript:
+        summary = client.messages.create(
+            model=model_id,
+            max_tokens=max_new_tokens,
+            temperature=temperature,
+            system=prompt,
+            messages=[
+                {"role": "user", "content": chunk}
+            ]
+        )
+        
+        s.append(summary.content[0].text)
+    
+    return s
+
+
+# summarize using claude
+def claude_diarize(transcript, config: dict, diarize_path: str='helper_files/diarize_prompt_w_summary.txt', summary_list=None)->List[str]:
+
+    key_path = config['claude_key']
+    with open(key_path, 'r') as file: key = file.read()
+
+    mod_name = config['mod_name_diarize']
+    max_new_tokens = config['max_new_tokens_diarize']
+    temperature = config['temperature_diarize']
+    summary = config['summary']
+    prompt = diarize_prompt(diarize_path)
+
+    if mod_name == 'claude-opus': 
+        model_id = "claude-3-opus-20240229"
+    
+    elif mod_name == 'claude-sonnet': 
+        model_id = "claude-3-sonnet-20240229"
+    
+    client = anthropic.Anthropic(api_key=key,)
+
+    diarized = []
+
+    for i in range(len(transcript)):
+
+        if summary: 
+            diarization = client.messages.create(
+                model=model_id,
+                max_tokens=max_new_tokens,
+                temperature=temperature,
+                system=prompt,
+                messages=[
+                    {"role": "user", "content": 'transcript: ' + transcript[i]}
+                ]
+            )
+        
+        else: 
+            diarization = client.messages.create(
+                model=model_id,
+                max_tokens=max_new_tokens,
+                temperature=temperature,
+                system=prompt,
+                messages=[
+                    {"role": "user", "content": 'summary: ' + summary_list[i] + '\n\ntranscript: ' + transcript[i]}
+                ]
+            )
+        
+        diarized.append(diarization.content[0].text)
+    
+    return diarized
 
 
 def main():
@@ -265,8 +421,8 @@ def main():
 
     # specify path to jsonl file with ids
     data_path = args.data_path
-    summary_path = args.summary_prompt
-    diarize_path = args.diarize_prompt
+    summary_path = args.summary_path
+    diarize_path = args.diarize_path
 
     output = run_model(config, data_path=data_path, summary_path=summary_path, 
                        diarize_path=diarize_path)

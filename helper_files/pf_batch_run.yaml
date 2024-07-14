@@ -1,0 +1,8 @@
+name: promptflow batch run
+display_name: batch-run_${variant_id}_${timestamp} # supported macros: ${variant_id},${timestamp},${run}
+flow: /work/bioinformatics/s229618/diarization/promptflow-no-summary/1chunk-nosummary # change path
+data: /work/bioinformatics/s229618/diarization/helper_files/test-id.jsonl # change data file
+#run: <Uncomment to select a run input>
+column_mapping:
+  id: ${data.id}
+  score: 1
