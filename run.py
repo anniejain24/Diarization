@@ -57,18 +57,10 @@ def run_model(config: dict, data_path: str = 'helper_files/ids.jsonl',
                                       diarize_path=diarize_path, summary_list=s)
         
         # return chunks if parameter true
-        if config['return_chunked']: 
-            output.append(diarized)
-
-        # return entire diarized transcript
-        else: 
-            final = ''
-            for chunk in diarized:
-                final += chunk + '\n\n'
-            output.append(final)
+        
+        output.append(diarized)
     
-    
-    return output
+    return ids, output
 
 
 def read_transcript_from_id(transcript_id: str, chunk_num: int)->List[str]:
@@ -124,8 +116,6 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int)->List[str]:
         
         transcript = transcript_chunks
 
-    print(transcript)
-    print(len(transcript))
     return transcript
 
 def summary_prompt(path: str)->str:
@@ -220,7 +210,6 @@ def llama_summarize(transcript: list, config: dict,
             s.append(summary_chunk['content'])
 
     # list of summaries from each chunk
-    print(s)
     return s
 
 
@@ -408,7 +397,7 @@ def main():
     parser.add_argument(
         "--output_dir", required=False, 
         help="Directory to save diarized transcript files", 
-        default='/archive/shared/sim_center/shared/annie/testing_scripts/'
+        default='temp/'
     )
     parser.add_argument("--config",required=True, 
                         help="File path to a config.yaml")
@@ -424,14 +413,32 @@ def main():
     summary_path = args.summary_path
     diarize_path = args.diarize_path
 
-    output = run_model(config, data_path=data_path, summary_path=summary_path, 
-                       diarize_path=diarize_path)
-    print(output)
+    ids, output = run_model(config, data_path=data_path, 
+                            summary_path=summary_path, 
+                            diarize_path=diarize_path)
+    print(ids, output)
 
     # seeing main output to debug
+    i = 0
     with open('out.txt', 'w') as f:
         for element in output:
+            f.write(ids[i])
+            i += 1
             f.write(str(element) + '\n')
+    
+    # saving outputs to files
+    output_dir = args.output_dir
+    i = 0
+    for element in output:
+        with open(output_dir + ids[i] + '.txt', 'w') as f:
+            j = 0
+            for chunk in element:
+                if config['return_chunked']:
+                    f.write('chunk ' + str(j) + ':\n\n' + str(chunk) + '\n\n')
+                else: 
+                    f.write(str(chunk) + '\n\n')
+                j += 1
+        i += 1   #next id
 
     
 if __name__ == "__main__":

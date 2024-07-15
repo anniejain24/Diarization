@@ -13,6 +13,6 @@ Please diarize the following transcript in order to indicate who speaks when, us
 Separate speaker turns by an extra new line, as above ('\n\n'). The lines do not always have to be alternating labels. There may be consecutive lines from one speaker. Do not use any speaker labels for the two participants other than "Student" and "Patient."
 
 The transcript may contain some instructions for the student, coming from a third-party speaker. Please label this segment "Instructions: ". 
- If there are no instructions in the transcript, disregard this label. 
+If there are no instructions in the transcript, disregard this label. 
 
- IMPORTANT: Do not remove or add any words to the transcript other than the speaker labels. Also, do not add or remove any punctuation or change any spellings.
+IMPORTANT: Do not remove or add any words to the transcript other than the speaker labels. Also, do not add or remove any punctuation or change any spellings.

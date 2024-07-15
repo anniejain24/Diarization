@@ -31,10 +31,8 @@ hello `run.py`
 ## set up environment
 
 ```shell
-
 conda env create -f diarize_env.yaml -y
 conda activate diarize
-
 ```
 ## input data
 format and where they are from
@@ -85,9 +83,7 @@ python -m promptflow._cli._pf.entry run create --stream --file helper_files/pf_b
 --config_path required argument, default configs stored in config.yaml:
 
 ```shell
-
 python run.py --config_path config.yaml 
-
 ```
 
 *description of configs and allowed values:*
@@ -106,9 +102,7 @@ python run.py --config_path config.yaml
 With additional optional args (change paths to desired paths):
 
 ```shell
-
 python run.py --config_path config.yaml --data_path 'path.jsonl' --summary_path 'summarypath.txt' --diarize_path 'diarizepath.txt' --output_dir 'path/diarized/'
-
 ```
 **data_path:** path to jsonl file with IDs to diarize (see helper_files/ids.jsonl)
 

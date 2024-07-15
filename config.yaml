@@ -11,5 +11,5 @@ mod_name_diarize: 'claude-sonnet' # same as above
 chunk_num: 3
 summary: True
 summary_chunking: True # summarize whole transcript for each chunk or summarize corresponding chunk only (if True)
-return_chunked: True # if True return list of diarized chunks for each transcript rather than entire diarized transcript
+return_chunked: False # if True label each chunk in final transcript (chunk 0, chunk 1...)
 claude_key: '/work/bioinformatics/s229618/api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models
