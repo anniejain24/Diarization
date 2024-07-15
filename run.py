@@ -11,7 +11,8 @@ from typing import List
 # run model, called from main
 def run_model(config: dict, data_path: str = 'helper_files/ids.jsonl', 
               summary_path: str = 'helper_files/summary_prompt.txt', 
-              diarize_path: str = 'helper_files/diarize_prompt_w_summary.txt'):
+              diarize_path: str = 'helper_files/diarize_prompt_w_summary.txt',
+              output_dir: str='temp/'):
 
 
     # extract transcript ids from file
@@ -59,6 +60,15 @@ def run_model(config: dict, data_path: str = 'helper_files/ids.jsonl',
         # return chunks if parameter true
         
         output.append(diarized)
+
+        with open(output_dir + id + '.txt', 'w') as f:
+            j = 0
+            for chunk in diarized:
+                if config['return_chunked']:
+                    f.write('chunk ' + str(j) + ':\n\n' + str(chunk) + '\n\n')
+                else: 
+                    f.write(str(chunk) + '\n\n')
+                j += 1
     
     return ids, output
 
@@ -412,10 +422,12 @@ def main():
     data_path = args.data_path
     summary_path = args.summary_path
     diarize_path = args.diarize_path
+    output_dir = args.output_dir
 
     ids, output = run_model(config, data_path=data_path, 
                             summary_path=summary_path, 
-                            diarize_path=diarize_path)
+                            diarize_path=diarize_path,
+                            output_dir=output_dir)
     print(ids, output)
 
     # seeing main output to debug
@@ -425,20 +437,6 @@ def main():
             f.write(ids[i])
             i += 1
             f.write(str(element) + '\n')
-    
-    # saving outputs to files
-    output_dir = args.output_dir
-    i = 0
-    for element in output:
-        with open(output_dir + ids[i] + '.txt', 'w') as f:
-            j = 0
-            for chunk in element:
-                if config['return_chunked']:
-                    f.write('chunk ' + str(j) + ':\n\n' + str(chunk) + '\n\n')
-                else: 
-                    f.write(str(chunk) + '\n\n')
-                j += 1
-        i += 1   #next id
 
     
 if __name__ == "__main__":
