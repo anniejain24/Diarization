@@ -6,7 +6,7 @@ max_new_tokens_summary: 256
 max_new_tokens_diarize: 4096
 do_sample_summary: True
 do_sample_diarize: True
-mod_name_summary: 'claude-sonnet' # choose from llama-8b, llama-70b, claude-opus, or claude-sonnet
+mod_name_summary: 'claude-sonnet' # choose from llama-8b, llama-70b, claude-opus-3, claude-sonnet-3, or claude-sonnet-3.5
 mod_name_diarize: 'claude-sonnet' # same as above
 chunk_num: 3
 summary: True

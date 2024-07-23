@@ -7,7 +7,7 @@ from promptflow import tool
 @tool
 def save_file(input1: str, input2: str, input3: str) -> str:
     
-    path = input3
+    path = input3 + '1chunk-nosummary_'
     with open(path + input2.split('.')[0] + ".txt", "w") as outfile:
         outfile.write('ID: ' + input2.split('.')[0] + '\n\n' + input1)
     

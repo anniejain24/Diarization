@@ -5,6 +5,16 @@ inputs:
     type: string
     description: transcript_id
     default: 05_1066_380195.s
+  output_dir:
+    type: string
+    description: output directory 
+    default: temp/
+  deployment_name:
+    type: string 
+    default: annie-gpt4-1
+  connection_name:
+    type: string
+    default: azure_cnxn_lol
   score:
     type: int
     default: 1
@@ -37,11 +47,11 @@ nodes:
     type: code
     path: diarize.jinja2
   inputs:
-    deployment_name: annie-gpt4-1
+    deployment_name: ${inputs.deployment_name}
     response_format:
       type: text
     text1: ${split_transcript.output}
-  connection: azure_cnxn_lol
+  connection: gpt4_cnxn
   api: chat
 - name: split_transcript2
   type: python
@@ -57,11 +67,11 @@ nodes:
     type: code
     path: diarize.jinja2
   inputs:
-    deployment_name: annie-gpt4-1
+    deployment_name: ${inputs.deployment_name}
     response_format:
       type: text
     text1: ${split_transcript2.output}
-  connection: azure_cnxn_lol
+  connection: gpt4_cnxn
   api: chat
 - name: split_transcript3
   type: python
@@ -77,11 +87,11 @@ nodes:
     type: code
     path: diarize.jinja2
   inputs:
-    deployment_name: annie-gpt4-1
+    deployment_name: ${inputs.deployment_name}
     response_format:
       type: text
     text1: ${split_transcript3.output}
-  connection: azure_cnxn_lol
+  connection: gpt4_cnxn
   api: chat
 - name: concatenate_chunks
   type: python
@@ -100,3 +110,4 @@ nodes:
   inputs:
     input1: ${concatenate_chunks.output}
     input2: ${inputs.id}
+    input3: ${inputs.output_dir}

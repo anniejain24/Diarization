@@ -5,6 +5,16 @@ inputs:
     type: string
     description: transcript_id
     default: 05_1066_380195.s
+  output_dir:
+    type: string
+    description: output directory 
+    default: temp/
+  deployment_name:
+    type: string 
+    default: annie-gpt4-1
+  connection_name:
+    type: string
+    default: gpt4_cnxn
   score:
     type: int
     default: 1
@@ -29,11 +39,11 @@ nodes:
     type: code
     path: summarize.jinja2
   inputs:
-    deployment_name: annie-gpt4-1
+    deployment_name: ${inputs.deployment_name}
     response_format:
       type: text
     text: ${read_transcript.output}
-  connection: azure_cnxn_1
+  connection: gpt4_cnxn
   api: chat
 - name: diarize_transcript
   type: llm
@@ -41,12 +51,12 @@ nodes:
     type: code
     path: diarize-finalprompt.jinja2
   inputs:
-    deployment_name: annie-gpt4-1
+    deployment_name: ${inputs.deployment_name}
     response_format:
       type: text
     text1: ${read_transcript.output}
     text2: ${summarize_transcript.output}
-  connection: azure_cnxn_1
+  connection: gpt4_cnxn
   api: chat
 - name: save_file
   type: python
@@ -56,3 +66,4 @@ nodes:
   inputs:
     input1: ${diarize_transcript.output}
     input2: ${inputs.id}
+    input3: ${inputs.output_dir}
