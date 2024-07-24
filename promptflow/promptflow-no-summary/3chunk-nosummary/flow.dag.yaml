@@ -1,0 +1,113 @@
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  id:
+    type: string
+    description: transcript_id
+    default: 05_1066_380195.s
+  output_dir:
+    type: string
+    description: output directory 
+    default: temp/
+  deployment_name:
+    type: string 
+    default: annie-gpt4-1
+  connection_name:
+    type: string
+    default: azure_cnxn_lol
+  score:
+    type: int
+    default: 1
+outputs:
+  id:
+    type: string
+    reference: ${inputs.id}
+  transcript:
+    type: string
+    reference: ${save_file.output}
+nodes:
+- name: read_transcript
+  type: python
+  source:
+    type: code
+    path: read_transcript.py
+  inputs:
+    input1: ${inputs.id}
+- name: split_transcript
+  type: python
+  source:
+    type: code
+    path: split_transcript.py
+  inputs:
+    input1: ${read_transcript.output}
+    input2: 1
+- name: diarize_transcript
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: ${inputs.deployment_name}
+    response_format:
+      type: text
+    text1: ${split_transcript.output}
+  connection: gpt4_cnxn
+  api: chat
+- name: split_transcript2
+  type: python
+  source:
+    type: code
+    path: split_transcript.py
+  inputs:
+    input1: ${read_transcript.output}
+    input2: 2
+- name: diarize_transcript2
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: ${inputs.deployment_name}
+    response_format:
+      type: text
+    text1: ${split_transcript2.output}
+  connection: gpt4_cnxn
+  api: chat
+- name: split_transcript3
+  type: python
+  source:
+    type: code
+    path: split_transcript.py
+  inputs:
+    input1: ${read_transcript.output}
+    input2: 3
+- name: diarize_transcript3
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: ${inputs.deployment_name}
+    response_format:
+      type: text
+    text1: ${split_transcript3.output}
+  connection: gpt4_cnxn
+  api: chat
+- name: concatenate_chunks
+  type: python
+  source:
+    type: code
+    path: concat_chunks.py
+  inputs:
+    input1: ${diarize_transcript.output}
+    input2: ${diarize_transcript2.output}
+    input3: ${diarize_transcript3.output}
+- name: save_file
+  type: python
+  source:
+    type: code
+    path: save_file.py
+  inputs:
+    input1: ${concatenate_chunks.output}
+    input2: ${inputs.id}
+    input3: ${inputs.output_dir}

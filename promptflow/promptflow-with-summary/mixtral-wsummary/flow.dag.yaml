@@ -1,0 +1,54 @@
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  id:
+    type: string
+    description: transcript_id
+    default: 09_0029_174582.s
+  score:
+    type: int
+    default: 1
+outputs:
+  id:
+    type: string
+    reference: ${inputs.id}
+  transcript:
+    type: string
+    reference: ${diarize_transcript.output}
+nodes:
+- name: read_transcript
+  type: python
+  source:
+    type: code
+    path: read_transcript.py
+  inputs:
+    input1: ${inputs.id}
+- name: summarize_transcript
+  type: llm
+  source:
+    type: code
+    path: summarize.jinja2
+  inputs:
+    deployment_name: null
+    max_tokens: 1000
+    response_format:
+      type: text
+    model: /archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1
+    text: ${read_transcript.output}
+  connection: Mixtral
+  api: completion
+- name: diarize_transcript
+  type: llm
+  source:
+    type: code
+    path: diarize.jinja2
+  inputs:
+    deployment_name: null
+    response_format:
+      type: text
+    model: /archive/shared/sim_center/shared/mixtral/data/Mixtral-8x7B-Instruct-v0.1
+    text1: ${read_transcript.output}
+    text2: ${summarize_transcript.output}
+    max_tokens: 4000
+  connection: Mixtral
+  api: completion

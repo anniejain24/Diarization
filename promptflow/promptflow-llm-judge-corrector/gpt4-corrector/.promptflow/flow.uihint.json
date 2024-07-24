@@ -1,0 +1,12 @@
+{
+  "nodes": {
+    "summarize_transcript": {
+      "variant_0": {
+        "inputs": {
+          "text": [],
+          "response_format": []
+        }
+      }
+    }
+  }
+}
