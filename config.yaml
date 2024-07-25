@@ -1,8 +1,11 @@
-run_name: test_azure # save files with this name
-temperature_summary: 0.6
-temperature_diarize: 0.6
-top_p_summary: 0.9
-top_p_diarize: 0.9
+run_name: test_json_azure # save files with this name appended to front (optional)
+raw_transcript: False # if true, return only raw transcripts corresponding to each ID (in chunks if chunk_num > 1)
+return_json: True # if true, return output as json. if false, return as .txt file line delimited for diarization
+json_and_txt: False # if true, override the above and return both the .txt and json file
+temperature_summary: 1
+temperature_diarize: 1
+top_p_summary: 1
+top_p_diarize: 1
 max_new_tokens_summary: 256
 max_new_tokens_diarize: 4096
 do_sample_summary: True
@@ -13,10 +16,10 @@ mod_name_summary: 'azure' # choose from azure, llama-8b, llama-70b, claude-opus-
 mod_name_diarize: 'azure' # same as above
 azure_deployment_summary: 'annie-gpt4-1' # only relevant if using azure deployment
 azure_deployment_diarize: 'annie-gpt4-1'
-chunk_num: 3
+chunk_num: 1
 summary: True
 summary_chunking: True # summarize whole transcript for each chunk or summarize corresponding chunk only (if True)
-return_chunked: False # if True label each chunk in final transcript (chunk 0, chunk 1...)
+return_chunked: True # if True label each chunk in final transcript (chunk 0, chunk 1...)
 claude_key: '/work/bioinformatics/s229618/api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models
 
 # If using an azure deployment: be sure to set the following environment variables using these command line prompts:

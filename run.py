@@ -33,17 +33,34 @@ def run_model(
     summary = config["summary"]
     mod_name_summary = config["mod_name_summary"]
     mod_name_diarize = config["mod_name_diarize"]
+    return_json = config["return_json"]
+    json_and_txt = config["json_and_txt"]
 
     output = []
+
     # run pipeline
+    raw_transcript = config["raw_transcript"]  # check if user wanted to return only raw transcripts
+
     for id in ids:
-        print("diarizing: " + id)
 
         # extract transcript (chunks)
         transcript = read_transcript_from_id(id, chunk_num=chunk_num)
+        print(transcript)
+
+        if raw_transcript:
+            output.append(transcript)
+
+            if return_json or json_and_txt:
+                json_transcript = read_transcript_from_id(id, chunk_num=chunk_num, return_json=True)
+                print(json_transcript)
+
+        print("getting: " + id)
 
         # if summary is True, extract summar(ies)
-        if summary:
+        if (not raw_transcript) and summary:
+
+            print("summarizing: " + id)
+
             if "llama" in mod_name_summary:
                 s = llama_summarize(transcript, config, summary_path=summary_path)
             elif "claude" in mod_name_summary:
@@ -54,40 +71,60 @@ def run_model(
                 s = None
                 print("check summary model name")
 
-        if "llama" in mod_name_diarize:
-            diarized = llama_diarize(
-                transcript, config, diarize_path=diarize_path, summary_list=s
-            )
+        if not raw_transcript:
 
-        elif "claude" in mod_name_diarize:
-            diarized = claude_diarize(
-                transcript, config, diarize_path=diarize_path, summary_list=s
-            )
+            print("diarizing: " + id)
 
-        elif "azure" in mod_name_diarize:
-            diarized = azure_diarize(
-                transcript, config, diarize_path=diarize_path, summary_list=s
-            )
+            if "llama" in mod_name_diarize:
+                diarized = llama_diarize(
+                    transcript, config, diarize_path=diarize_path, summary_list=s
+                )
+
+            elif "claude" in mod_name_diarize:
+                diarized = claude_diarize(
+                    transcript, config, diarize_path=diarize_path, summary_list=s
+                )
+
+            elif "azure" in mod_name_diarize:
+                diarized = azure_diarize(
+                    transcript, config, diarize_path=diarize_path, summary_list=s
+                )
+
+            else:
+                diarized = None
+                print("check diarization model name")
+
+            output.append(diarized)
+
+        run_name = config["run_name"]
+
+        if run_name is not None:
+            filename = output_dir + run_name + '_' + id
 
         else:
-            diarized = None
-            print("check diarization model name")
+            filename = output_dir + id
 
-        output.append(diarized)
+        if (not return_json) or (json_and_txt):
+            with open(filename + '.txt', "w") as f:
+                j = 0
+                for chunk in output[-1]:
+                    if config["return_chunked"]:
+                        f.write("chunk " + str(j) + ":\n\n" + str(chunk) + "\n\n")
+                    else:
+                        f.write(str(chunk) + "\n\n")
+                    j += 1
 
-        with open(output_dir + config["run_name"] + '_' + id + ".txt", "w") as f:
-            j = 0
-            for chunk in diarized:
-                if config["return_chunked"]:
-                    f.write("chunk " + str(j) + ":\n\n" + str(chunk) + "\n\n")
-                else:
-                    f.write(str(chunk) + "\n\n")
-                j += 1
+        # construct json transcript
+        json_transcript = json_construct(diarized)
+
+        if (return_json) or (json_and_txt):
+            with open(filename + '.json', "w") as f:
+                json.dump(json_transcript, f)
 
     return ids, output
 
 
-def read_transcript_from_id(transcript_id: str, chunk_num: int) -> List[str]:
+def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: bool = False) -> List[str]:
 
     path_to_data_folder = "/archive/shared/sim_center/shared/ameer/"
     # path_to_data_folder = '/archive/shared/sim_center/shared/annie/GPT4 3-chunk/'
@@ -113,6 +150,10 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int) -> List[str]:
     lines = json_transcript
 
     if chunk_num == 1:
+
+        if return_json:
+            return json_transcript
+
         for line in lines:
             if line["text"] != "\n":
                 tok_line = line["text"].split(" ")
@@ -121,6 +162,22 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int) -> List[str]:
         transcript.append(transcript_txt)
 
     else:
+
+        if return_json:
+
+            json_transcript = {}
+
+            for n in range(chunk_num):
+
+                start = n * int(len(lines) / chunk_num)
+                end = (n + 1) * int(len(lines) / chunk_num)
+                if n == chunk_num - 1:
+                    end = len(lines)
+
+                json_transcript["chunk " + str(n)] = lines[start:end]
+
+            return json_transcript
+
         transcript_chunks = []
         # for each chunk
         for n in range(chunk_num):
@@ -142,6 +199,34 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int) -> List[str]:
         transcript = transcript_chunks
 
     return transcript
+
+
+# helper function to construct json from text diarization output
+def json_construct(diarized: List[str]):
+
+    out = []
+
+    i = 0
+    for chunk in diarized:
+        lines = chunk.split('\n')
+
+        for line in lines:
+            if line.find(':') == -1:
+                continue
+            temp = {}
+            temp['chunk'] = i
+            temp['speaker'] = line[:line.find(':')]
+            temp['text'] = line[line.find(':') + 1: line.find('(')]
+            temp['timestamp'] = []
+            if (line.find('(') != -1) and ('?' not in line[line.find('('): line.find(')')]):
+                temp['timestamp'].append(float(line[line.find('(') + 1: line.rfind(',')]))
+                temp['timestamp'].append(float(line[line.rfind(',') + 2: line.find(')')]))
+
+            out.append(temp)
+
+        i += 1
+
+    return out
 
 
 def summary_prompt(path: str) -> str:
@@ -430,10 +515,10 @@ def azure_summarize(
         config: dict,
         summary_path: str = "helper_files/summary_prompt.txt") -> List[str]:
 
-    print(
+    '''print(
         os.environ.get("OPENAI_API_VERSION"),
         os.environ.get("AZURE_OPENAI_ENDPOINT"),
-        os.environ.get("AZURE_OPENAI_API_KEY"))  # for debugging if connection error
+        os.environ.get("AZURE_OPENAI_API_KEY"))  # for debugging if connection error'''
 
     client = AzureOpenAI(
         azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
