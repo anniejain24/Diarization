@@ -1,3 +1,4 @@
+out.txt
 promptflow/
 *.DS_Store
 */.promptflow/flow.log
