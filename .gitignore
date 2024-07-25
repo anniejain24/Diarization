@@ -9,3 +9,4 @@ config.ini
 */*/.promptflow/flow.output.json
 */*/.promptflow/flow.log
 */*/.promptflow/flow.layout.json
+promptflow/

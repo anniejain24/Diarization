@@ -1,33 +1,48 @@
 
 - [**Overview**](#overview)
   - [diarization](#diarization)
-  - [types of models and pipelines](#types-of-models-and-pipelines)
+  - [types of models and possible pipelines](#types-of-models-and-possible-pipelines)
   - [evaluation and metrics](#evaluation-and-metrics)
-- [usage](#usage)
+- [Diarization usage](#diarization-usage)
   - [set up environment](#set-up-environment)
   - [input data](#input-data)
-  - [creating promptflow connection](#creating-promptflow-connection)
-  - [edit promptflow yaml with connection name and output directory](#edit-promptflow-yaml-with-connection-name-and-output-directory)
-  - [run gpt4, gpt4o, gpt3.5, or mixtral using promptflow](#run-gpt4-gpt4o-gpt35-or-mixtral-using-promptflow)
-  - [run a test promptflow](#run-a-test-promptflow)
-  - [run a batch promptflow](#run-a-batch-promptflow)
-  - [run llama or claude model using python](#run-llama-or-claude-model-using-python)
+  - [set azure environment variables](#set-azure-environment-variables)
+  - [run a model](#run-a-model)
 
 # <span style="color:purple">**Overview**</span>
 
 ## diarization
 
-## types of models and pipelines
+## types of models and possible pipelines
+
+Models:
+
+llama:
+
+- llama 8 billion
+- llama 70 billion
+
+claude:
+
+- claude sonnet 3 or 3.5
+- claude opus 3
+- claude haiku 3
+
+azure:
+
+- any deployment which is hosted on azure (e.g. gpt4o, gpt4, gpt3.5, gpt3.5 turbo, mixtral, etc.)
 
 ## evaluation and metrics
 
 *creation of gold-standard set:*
 
+UNDER CONSTRUCTION
 
 
+# Diarization usage
+All pipelines can be run using `run.py` 
+Customize by editing `config.yaml` with the desired models, pipeline components, and parameters
 
-# usage
-hello `run.py`
 ## set up environment
 
 ```shell
@@ -37,53 +52,22 @@ conda activate diarize
 ## input data
 format and where they are from
 
-## creating promptflow connection
-see promptflow's instructions for creating a connection to your model deployment (e.g. via azure):
 
-
-describe briefly
-
-## edit promptflow yaml with connection name and output directory
-
-In the desired flow folder, there will be a file called "flow.dag.yaml". Open this file and you will see, for each LLM node, a place to edit the connection name and associated deployment name. Change "deployment_name" to whatever your model deployment is called on azure, and "connection" to whatever you named your connection.
-
-<p align="center">
-  <img src="misc/edit_pf_connection.png" width="350" title="hover text">
-</p>
-
-
-
-## run gpt4, gpt4o, gpt3.5, or mixtral using promptflow
-describe each one
-
-
-## run a test promptflow
-describe jsonl
+## set azure environment variables
+In order to run an azure deployment, you will have to set the following environment variables by using the following command line prompts
 
 ```shell
-export BASE_FLOW_PATH="/work/bioinformatics/s229618/diarization/"
-# edit path with flow name [e.g. prompt_diarize_3chunk, prompt_diarize_1chunk]
-# change below to batch command
-python -m promptflow._cli._pf.entry flow test --flow $BASE_FLOW_PATH/prompt_diarize_3chunk
-
+export OPENAI_API_VERSION="2024-05-01-preview" (or other model version)
+export AZURE_OPENAI_ENDPOINT="https://<your-endpoint>.openai.azure.com/"
+export AZURE_OPENAI_API_KEY= "<your-api-key>"
 ```
 
-## run a batch promptflow
-Run a batch of transcripts using jsonl file with IDs (see input data)
+## run a model
+
+--config is required argument, and default configs are stored in `config.yaml`:
 
 ```shell
-export BASE_FLOW_PATH="/work/bioinformatics/s229618/diarization/"
-# edit yaml file with desired flow (and/or file path if using separate yaml)
-python -m promptflow._cli._pf.entry run create --stream --file helper_files/pf_batch_run.yaml
-
-```
-
-## run llama or claude model using python
-
---config_path required argument, default configs stored in config.yaml:
-
-```shell
-python run.py --config_path config.yaml 
+python run.py --config config.yaml 
 ```
 
 *description of configs and allowed values:*
@@ -99,15 +83,15 @@ python run.py --config_path config.yaml
 **mod_name:**
 
 
-With additional optional args (change paths to desired paths):
+**OPTIONAL** With additional optional args (change paths to desired paths):
 
 ```shell
-python run.py --config_path config.yaml --data_path 'path.jsonl' --summary_path 'summarypath.txt' --diarize_path 'diarizepath.txt' --output_dir 'path/diarized/'
+python run.py --config config.yaml --data_path 'helper_files/test-id.jsonl' --summary_path 'helper_files/summary_prompt.txt' --diarize_path 'helper_files/diarize_prompt.txt' --output_dir '<insert alternative path>'
 ```
-**data_path:** path to jsonl file with IDs to diarize (see helper_files/ids.jsonl)
+**data_path:** path to jsonl file with IDs to diarize (see `helper_files/test-id.jsonl`, or `helper_files/ids.jsonl` for longer batch)
 
-**summary_path:** path to summary prompt, default in helper_files/summary_prompt.txt
+**summary_path:** path to summary prompt, default in `helper_files/summary_prompt.txt`
 
-**diarize_path:** path to diarization prompt, default in helper_files/diarize_prompt.txt
+**diarize_path:** path to diarization prompt, default in `helper_files/diarize_prompt.txt`
 
-**output_dir:** path to directory to save diarization output
+**output_dir:** path to directory to save diarization output, default saves tp `temp/`
