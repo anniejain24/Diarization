@@ -45,14 +45,12 @@ def run_model(
 
         # extract transcript (chunks)
         transcript = read_transcript_from_id(id, chunk_num=chunk_num)
-        print(transcript)
 
         if raw_transcript:
             output.append(transcript)
 
             if return_json or json_and_txt:
                 json_transcript = read_transcript_from_id(id, chunk_num=chunk_num, return_json=True)
-                print(json_transcript)
 
         print("getting: " + id)
 
@@ -72,6 +70,9 @@ def run_model(
                 print("check summary model name")
 
         if not raw_transcript:
+
+            if not summary:
+                s = None
 
             print("diarizing: " + id)
 
@@ -96,16 +97,31 @@ def run_model(
 
             output.append(diarized)
 
+        # set file name
         run_name = config["run_name"]
 
         if run_name is not None:
-            filename = output_dir + run_name + '_' + id
+            filename = run_name + '_' + id
 
         else:
-            filename = output_dir + id
+            filename = id
 
+        # create subfolders if returning both txt and json transcripts
+        if json_and_txt:
+            if not os.path.isdir(output_dir + '/json'):
+                os.mkdir(output_dir + '/json')
+            if not os.path.isdir(output_dir + '/text'):
+                os.mkdir(output_dir + '/text')
+
+        # write to txt file
         if (not return_json) or (json_and_txt):
-            with open(filename + '.txt', "w") as f:
+
+            if json_and_txt:
+                thisfile = output_dir + 'text/' + filename + '.txt'
+            else:
+                thisfile = output_dir + filename + '.txt'
+
+            with open(thisfile, "w") as f:
                 j = 0
                 for chunk in output[-1]:
                     if config["return_chunked"]:
@@ -114,11 +130,17 @@ def run_model(
                         f.write(str(chunk) + "\n\n")
                     j += 1
 
-        # construct json transcript
+        # construct json transcript and write to .json file
         json_transcript = json_construct(diarized)
 
         if (return_json) or (json_and_txt):
-            with open(filename + '.json', "w") as f:
+
+            if json_and_txt:
+                thisfile = output_dir + 'json/' + filename + '.json'
+            else:
+                thisfile = output_dir + filename + '.json'
+
+            with open(thisfile, "w") as f:
                 json.dump(json_transcript, f)
 
     return ids, output
@@ -561,10 +583,10 @@ def azure_diarize(
         diarize_path: str = "helper_files/diarize_prompt.txt",
         summary_list: list = None) -> List[str]:
 
-    print(
+    '''print(
         os.environ.get("OPENAI_API_VERSION"),
         os.environ.get("AZURE_OPENAI_ENDPOINT"),
-        os.environ.get("AZURE_OPENAI_API_KEY"))  # for debugging if connection error
+        os.environ.get("AZURE_OPENAI_API_KEY"))  # for debugging if connection error'''
 
     client = AzureOpenAI(
         azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
