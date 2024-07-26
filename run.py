@@ -669,7 +669,7 @@ def main():
         help="Directory to save diarized transcript files",
         default="temp/",
     )
-    parser.add_argument("--config", required=True, help="File path to a config.yaml")
+    parser.add_argument("--config", required=False, help="File path to a config.yaml", default="config.yaml")
 
     args = parser.parse_args()
 
