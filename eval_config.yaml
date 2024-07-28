@@ -1,7 +1,9 @@
 levenshtein: True # if True run evaluations using normalized levenshtein distance
-diff: False # if True run evaluations using diff ratio
-transcript_preservation: True # if true, return transcript preservation scores
-transcript_accuracy_basic: False # if true, return basic transcript accuracy score between diarized and gold standard
-transcript_accuracy_baseline_normed: False # if true, return baseline normed transcript accuracy score between diarized and gold standard
-transcript_accuracy_opposite_normed: False # if true, return opposite normed transcript accuracy score between diarized and gold standard
-chunk_num: 1 # if higher than 1, calculate accuracy for each chunk of transcript
+diff: True # if True run evaluations using diff ratio
+preservation: True # if true, return transcript preservation scores
+accuracy_basic: False # if true, return basic transcript accuracy score between diarized and gold standard
+accuracy_baseline_normed: False # if true, return baseline normed transcript accuracy score between diarized and gold standard
+accuracy_opposite_normed: False # if true, return opposite normed transcript accuracy score between diarized and gold standard
+chunk_num: 3 # if higher than 1, calculate accuracy for each chunk of transcript
+input_json: True # if true, txt files not available as input. If False, txt available assumed
+input_json_and_txt: False # if true, both json and txt paths available and ignores input_json value

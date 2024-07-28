@@ -4,13 +4,15 @@ import pandas as pd
 import os
 from typing import List
 import json
+from strsimpy.normalized_levenshtein import NormalizedLevenshtein
+import difflib
 
 
 def run_eval(
         config: dict,
         data_path: str,
         diarized_path_txt: str,
-        diarize_path_json: str,
+        diarized_path_json: str,
         output_dir: str
 ) -> tuple[List[str], List[str]]:
     
@@ -31,6 +33,25 @@ def run_eval(
     accuracy_baseline_normed = config["accuracy_baseline_normed"]
     accuracy_opposite_normed = config["accuracy_opposite_normed"]
     chunk_num = config["chunk_num"]
+    input_json = config["input_json"]
+    input_json_and_txt = config["input_json_and_txt"]
+
+    if input_json and not input_json_and_txt:
+        diarized_path_txt = None
+    
+    if not input_json and not input_json_and_txt:
+        diarized_path_json = None
+
+
+    scores = {}
+
+    if preservation:
+        scores['preservation'] = {}
+        if levenshtein:
+            scores['preservation'] = calc_preservation(config, ids, diar_path_txt=diarized_path_txt, diar_path_json=diarized_path_json)
+
+    return ids, scores
+
     
 
 def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: bool = False) -> List[str]:
@@ -109,6 +130,111 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: boo
 
     return transcript
 
+def reconstruct_transcript(path: str, id: str, chunk_num: int) -> List[str]:
+
+    transcript = ''
+    path = path + id + '.txt'
+    with open(path, 'r') as file:
+        lines = file.readlines()
+    
+    transcript_chunks = []
+        # for each chunk
+    for n in range(chunk_num):
+        transcript = ""
+        # get the relevant lines
+        start = n * int(len(lines) / chunk_num)
+        end = (n + 1) * int(len(lines) / chunk_num)
+        if n == chunk_num - 1:
+            end = len(lines)
+
+        for line in lines[start:end]:
+            if line != '\n':
+                tok_line = line.split(' ')
+
+                # add all tokens except for diarization label
+                for i in range(1, len(tok_line)):
+                    transcript += ' ' + tok_line[i]
+                
+        
+        # clean up any line breaks
+        resid_lines = transcript.split('\n')
+        transcript = ''
+        for line in resid_lines:
+            transcript += line
+
+            # append to transcript
+        transcript_chunks.append(transcript)
+
+    transcript = transcript_chunks
+
+    return transcript
+
+def reconstruct_transcript_from_json(path: str, id: str, chunk_num: int) -> List[str]:
+
+    path = path + id + '.json'
+    with open(path, 'r') as file:
+        lines = json.load(file)
+    
+    transcript_chunks = []
+    for n in range(chunk_num):
+        transcript = ''
+        # get the relevant lines
+        start = n * int(len(lines) / chunk_num)
+        end = (n + 1) * int(len(lines) / chunk_num)
+        if n == chunk_num - 1:
+            end = len(lines)
+        for line in lines[start: end]:
+            transcript += line['text']
+
+        # clean up any line breaks
+        resid_lines = transcript.split('\n')
+        transcript = ''
+        for line in resid_lines:
+            transcript += line
+            
+        transcript_chunks.append(transcript)
+    
+    transcript = transcript_chunks
+    
+    return transcript
+
+
+def calc_preservation(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None):
+
+    these_scores = {}
+    chunk_num = config["chunk_num"]
+    input_json = config["input_json"]
+    input_json_and_txt = config["input_json_and_txt"]
+    levenshtein = config['levenshtein']
+    diff = config['diff']
+
+    if levenshtein:
+        these_scores["levenshtein"] = {}
+    if diff:
+        these_scores["diff"] = {}
+
+    for id in ids:
+
+        transcript = read_transcript_from_id(id, chunk_num=chunk_num)
+
+        if input_json and not input_json_and_txt:
+            diar_transcript = reconstruct_transcript_from_json(diar_path_json, id, chunk_num=chunk_num)
+        else:
+            diar_transcript = reconstruct_transcript(diar_path_txt, id, chunk_num=chunk_num)
+
+        if levenshtein:
+            these_scores["levenshtein"][id] = {}  
+        if diff:
+            these_scores["diff"][id] = {}
+
+        for i in range(chunk_num):
+            # indexed by id and then chunk number
+            if levenshtein:
+                these_scores["levenshtein"][id][i] = NormalizedLevenshtein().similarity(transcript[i], diar_transcript[i])
+            if diff:
+                these_scores["diff"][id][i] = difflib.SequenceMatcher(None, transcript[i], diar_transcript[i]).ratio()
+
+    return these_scores
 
 def main():
 
@@ -118,14 +244,14 @@ def main():
         "--diarized_path_txt",
         required=False,
         help="Path to diarized files in .txt form",
-        default="/archive/shared/sim_center/shared/annie/diarized/gpt4-all/text",
+        default="/archive/shared/sim_center/shared/annie/diarized/gpt4-all/text/",
     )
 
     parser.add_argument(
         "--diarized_path_json",
         required=False,
         help="Path to diarized files in .json form",
-        default="/archive/shared/sim_center/shared/annie/diarized/gpt4-all/json",
+        default="/archive/shared/sim_center/shared/annie/diarized/gpt4-all/json/",
     )
 
     parser.add_argument(
@@ -156,13 +282,7 @@ def main():
     diarized_path_json = args.diarized_path_json
     output_dir = args.output_dir
 
-    # seeing main output to debug
-    i = 0
-    with open("out.txt", "w") as f:
-        for element in output:
-            f.write(ids[i])
-            i += 1
-            f.write(str(element) + "\n")
+    print(run_eval(config, data_path, diarized_path_txt, diarized_path_json, output_dir))
 
 
 if __name__ == "__main__":

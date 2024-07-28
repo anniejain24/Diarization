@@ -238,11 +238,7 @@ def json_construct(diarized: List[str]):
             temp = {}
             temp['chunk'] = i
             temp['speaker'] = line[:line.find(':')]
-            temp['text'] = line[line.find(':') + 1: line.find('(')]
-            temp['timestamp'] = []
-            if (line.find('(') != -1) and ('?' not in line[line.find('('): line.find(')')]):
-                temp['timestamp'].append(float(line[line.find('(') + 1: line.rfind(',')]))
-                temp['timestamp'].append(float(line[line.rfind(',') + 2: line.find(')')]))
+            temp['text'] = line[line.find(':') + 1:]
 
             out.append(temp)
 
@@ -537,7 +533,7 @@ def azure_summarize(
         config: dict,
         summary_path: str = "helper_files/summary_prompt.txt") -> List[str]:
 
-    '''print(
+    print(
         os.environ.get("OPENAI_API_VERSION"),
         os.environ.get("AZURE_OPENAI_ENDPOINT"),
         os.environ.get("AZURE_OPENAI_API_KEY"))  # for debugging if connection error'''
