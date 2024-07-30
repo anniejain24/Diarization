@@ -8,6 +8,7 @@ import pandas as pd
 import os
 from typing import List
 from openai import AzureOpenAI
+from openai import OpenAI
 
 
 def run_model(
@@ -117,9 +118,9 @@ def run_model(
         if (not return_json) or (json_and_txt):
 
             if json_and_txt:
-                thisfile = output_dir + 'text/' + filename + '.txt'
+                thisfile = output_dir + '/text/' + filename + '.txt'
             else:
-                thisfile = output_dir + filename + '.txt'
+                thisfile = output_dir + str('/') + filename + '.txt'
 
             with open(thisfile, "w") as f:
                 j = 0
@@ -136,9 +137,9 @@ def run_model(
         if (return_json) or (json_and_txt):
 
             if json_and_txt:
-                thisfile = output_dir + 'json/' + filename + '.json'
+                thisfile = output_dir + '/json/' + filename + '.json'
             else:
-                thisfile = output_dir + filename + '.json'
+                thisfile = output_dir + str('/') + filename + '.json'
 
             with open(thisfile, "w") as f:
                 json.dump(json_transcript, f)
@@ -230,7 +231,7 @@ def json_construct(diarized: List[str]):
 
     i = 0
     for chunk in diarized:
-        lines = chunk.split('\n')
+        lines = chunk.split('\n\n')
 
         for line in lines:
             if line.find(':') == -1:
@@ -273,6 +274,7 @@ def llama_summarize(
     top_p = config["top_p_summary"]
     mod_name = config["mod_name_summary"]
     do_sample = config["do_sample_summary"]
+    llama_running = config["llama_running"]
 
     prompt = summary_prompt(summary_path)
 
@@ -280,20 +282,44 @@ def llama_summarize(
     if mod_name == "llama-8b":
         model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
 
+        pipeline = transformers.pipeline(
+            "text-generation",
+            model=model_id,
+            model_kwargs={"torch_dtype": torch.bfloat16},
+            device_map="auto",
+        )
+
+        terminators = [
+            pipeline.tokenizer.eos_token_id,
+            pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
+        ]
+
     elif mod_name == "llama-70b":
-        model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
 
-    pipeline = transformers.pipeline(
-        "text-generation",
-        model=model_id,
-        model_kwargs={"torch_dtype": torch.bfloat16},
-        device_map="auto",
-    )
+        if llama_running:
+            model_id = config["llama_instance"]
+            openai_api_base = config["openai_api_base"]
 
-    terminators = [
-        pipeline.tokenizer.eos_token_id,
-        pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-    ]
+            client = OpenAI(
+                base_url=openai_api_base,
+                api_key=os.environ.get("OPENAI_API_KEY")  # set "EMPTY" or set key if one
+            )
+
+        else:
+
+            model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
+
+            pipeline = transformers.pipeline(
+                "text-generation",
+                model=model_id,
+                model_kwargs={"torch_dtype": torch.bfloat16},
+                device_map="auto",
+            )
+
+            terminators = [
+                pipeline.tokenizer.eos_token_id,
+                pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
+            ]
 
     s = []
 
@@ -309,17 +335,33 @@ def llama_summarize(
             {"role": "user", "content": transcript},
         ]
 
-        outputs = pipeline(
-            messages,
-            max_new_tokens=max_new_tokens,
-            eos_token_id=terminators,
-            do_sample=do_sample,
-            temperature=temperature,
-            top_p=top_p,
-        )
+        if llama_running:
 
-        summary_chunk = outputs[0]["generated_text"][-1]
-        s.append(summary_chunk["content"])
+            outputs = client.chat.completions.create(
+                model=model_id,
+                messages=messages,
+                max_tokens=max_new_tokens,
+                temperature=temperature,
+                top_p=top_p,
+            )
+
+            summary_chunk = outputs.choices[0].message.content
+
+        else:
+
+            outputs = pipeline(
+                messages,
+                max_new_tokens=max_new_tokens,
+                eos_token_id=terminators,
+                do_sample=do_sample,
+                temperature=temperature,
+                top_p=top_p,
+            )
+
+            summary_chunk = outputs[0]["generated_text"][-1]
+            summary_chunk = summary_chunk["content"]
+
+        s.append(summary_chunk)
 
     # summarize each chunk
     else:
@@ -330,17 +372,33 @@ def llama_summarize(
                 {"role": "user", "content": chunk},
             ]
 
-            outputs = pipeline(
-                messages,
-                max_new_tokens=max_new_tokens,
-                eos_token_id=terminators,
-                do_sample=True,
-                temperature=temperature,
-                top_p=top_p,
-            )
+            if llama_running:
 
-            summary_chunk = outputs[0]["generated_text"][-1]
-            s.append(summary_chunk["content"])
+                outputs = client.chat.completions.create(
+                    model=model_id,
+                    messages=messages,
+                    max_tokens=max_new_tokens,
+                    temperature=temperature,
+                    top_p=top_p,
+                )
+
+                summary_chunk = outputs.choices[0].message.content
+
+            else:
+
+                outputs = pipeline(
+                    messages,
+                    max_new_tokens=max_new_tokens,
+                    eos_token_id=terminators,
+                    do_sample=do_sample,
+                    temperature=temperature,
+                    top_p=top_p,
+                )
+
+                summary_chunk = outputs[0]["generated_text"][-1]
+                summary_chunk = summary_chunk["content"]
+
+            s.append(summary_chunk)
 
     # list of summaries from each chunk
     return s
@@ -360,6 +418,7 @@ def llama_diarize(
     do_sample = config["do_sample_diarize"]
     mod_name = config["mod_name_diarize"]
     summary = config["summary"]
+    llama_running = config["llama_running"]
 
     prompt = diarize_prompt(diarize_path)
 
@@ -367,20 +426,43 @@ def llama_diarize(
     if mod_name == "llama-8b":
         model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
 
+        pipeline = transformers.pipeline(
+            "text-generation",
+            model=model_id,
+            model_kwargs={"torch_dtype": torch.bfloat16},
+            device_map="auto",
+        )
+
+        terminators = [
+            pipeline.tokenizer.eos_token_id,
+            pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
+        ]
+
     elif mod_name == "llama-70b":
-        model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
 
-    pipeline = transformers.pipeline(
-        "text-generation",
-        model=model_id,
-        model_kwargs={"torch_dtype": torch.bfloat16},
-        device_map="auto",
-    )
+        if llama_running:
+            model_id = config["llama_instance"]
+            openai_api_base = config["openai_api_base"]
 
-    terminators = [
-        pipeline.tokenizer.eos_token_id,
-        pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-    ]
+            client = OpenAI(
+                base_url=openai_api_base,
+                api_key=os.environ.get("OPENAI_API_KEY")  # not necessary to set for C111 ,
+            )
+
+        else:
+            model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
+
+            pipeline = transformers.pipeline(
+                "text-generation",
+                model=model_id,
+                model_kwargs={"torch_dtype": torch.bfloat16},
+                device_map="auto",
+            )
+
+            terminators = [
+                pipeline.tokenizer.eos_token_id,
+                pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
+            ]
 
     diarized = []
 
@@ -401,17 +483,32 @@ def llama_diarize(
                 {"role": "user", "content": "transcript: " + transcript[i]},
             ]
 
-        outputs = pipeline(
-            messages,
-            max_new_tokens=max_new_tokens,
-            eos_token_id=terminators,
-            do_sample=do_sample,
-            temperature=temperature,
-            top_p=top_p,
-        )
+        if llama_running:
 
-        diarized_chunk = outputs[0]["generated_text"][-1]
-        diarized.append(diarized_chunk["content"])
+            outputs = client.chat.completions.create(
+                model=model_id,
+                messages=messages,
+                max_tokens=max_new_tokens,
+                temperature=temperature,
+                top_p=top_p,
+            )
+
+            diarized_chunk = outputs.choices[0].message.content
+
+        else:
+            outputs = pipeline(
+                messages,
+                max_new_tokens=max_new_tokens,
+                eos_token_id=terminators,
+                do_sample=do_sample,
+                temperature=temperature,
+                top_p=top_p,
+            )
+
+            diarized_chunk = outputs[0]["generated_text"][-1]
+            diarized_chunk = diarized_chunk["content"]
+
+        diarized.append(diarized_chunk)
 
     # list of diarized chunks
     return diarized
@@ -533,7 +630,7 @@ def azure_summarize(
         config: dict,
         summary_path: str = "helper_files/summary_prompt.txt") -> List[str]:
 
-    print(
+    '''print(
         os.environ.get("OPENAI_API_VERSION"),
         os.environ.get("AZURE_OPENAI_ENDPOINT"),
         os.environ.get("AZURE_OPENAI_API_KEY"))  # for debugging if connection error'''

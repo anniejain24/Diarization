@@ -32,7 +32,7 @@ def run_eval(
     accuracy_basic = config["accuracy_basic"]
     accuracy_baseline_normed = config["accuracy_baseline_normed"]
     accuracy_opposite_normed = config["accuracy_opposite_normed"]
-    chunk_num = config["chunk_num"]
+    segments = config["segments"]
     input_json = config["input_json"]
     input_json_and_txt = config["input_json_and_txt"]
 
@@ -42,19 +42,16 @@ def run_eval(
     if not input_json and not input_json_and_txt:
         diarized_path_json = None
 
-
     scores = {}
 
     if preservation:
-        scores['preservation'] = {}
-        if levenshtein:
-            scores['preservation'] = calc_preservation(config, ids, diar_path_txt=diarized_path_txt, diar_path_json=diarized_path_json)
+        scores['preservation'] = calc_preservation(config, ids, diar_path_txt=diarized_path_txt, diar_path_json=diarized_path_json)
 
     return ids, scores
 
     
 
-def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: bool = False) -> List[str]:
+def read_transcript_from_id(transcript_id: str, segments: int, return_json: bool = False) -> List[str]:
 
     path_to_data_folder = "/archive/shared/sim_center/shared/ameer/"
     # path_to_data_folder = '/archive/shared/sim_center/shared/annie/GPT4 3-chunk/'
@@ -79,7 +76,7 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: boo
 
     lines = json_transcript
 
-    if chunk_num == 1:
+    if segments == 1:
 
         if return_json:
             return json_transcript
@@ -97,11 +94,11 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: boo
 
             json_transcript = {}
 
-            for n in range(chunk_num):
+            for n in range(segments):
 
-                start = n * int(len(lines) / chunk_num)
-                end = (n + 1) * int(len(lines) / chunk_num)
-                if n == chunk_num - 1:
+                start = n * int(len(lines) / segments)
+                end = (n + 1) * int(len(lines) / segments)
+                if n == segments - 1:
                     end = len(lines)
 
                 json_transcript["chunk " + str(n)] = lines[start:end]
@@ -110,12 +107,12 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: boo
 
         transcript_chunks = []
         # for each chunk
-        for n in range(chunk_num):
+        for n in range(segments):
             transcript = ""
             # get the relevant lines
-            start = n * int(len(lines) / chunk_num)
-            end = (n + 1) * int(len(lines) / chunk_num)
-            if n == chunk_num - 1:
+            start = n * int(len(lines) / segments)
+            end = (n + 1) * int(len(lines) / segments)
+            if n == segments - 1:
                 end = len(lines)
 
             for line in lines[start:end]:
@@ -130,7 +127,8 @@ def read_transcript_from_id(transcript_id: str, chunk_num: int, return_json: boo
 
     return transcript
 
-def reconstruct_transcript(path: str, id: str, chunk_num: int) -> List[str]:
+
+def reconstruct_transcript(path: str, id: str, segments: int) -> List[str]:
 
     transcript = ''
     path = path + id + '.txt'
@@ -139,12 +137,12 @@ def reconstruct_transcript(path: str, id: str, chunk_num: int) -> List[str]:
     
     transcript_chunks = []
         # for each chunk
-    for n in range(chunk_num):
+    for n in range(segments):
         transcript = ""
         # get the relevant lines
-        start = n * int(len(lines) / chunk_num)
-        end = (n + 1) * int(len(lines) / chunk_num)
-        if n == chunk_num - 1:
+        start = n * int(len(lines) / segments)
+        end = (n + 1) * int(len(lines) / segments)
+        if n == segments - 1:
             end = len(lines)
 
         for line in lines[start:end]:
@@ -169,19 +167,19 @@ def reconstruct_transcript(path: str, id: str, chunk_num: int) -> List[str]:
 
     return transcript
 
-def reconstruct_transcript_from_json(path: str, id: str, chunk_num: int) -> List[str]:
+def reconstruct_transcript_from_json(path: str, id: str, segments: int) -> List[str]:
 
     path = path + id + '.json'
     with open(path, 'r') as file:
         lines = json.load(file)
     
     transcript_chunks = []
-    for n in range(chunk_num):
+    for n in range(segments):
         transcript = ''
         # get the relevant lines
-        start = n * int(len(lines) / chunk_num)
-        end = (n + 1) * int(len(lines) / chunk_num)
-        if n == chunk_num - 1:
+        start = n * int(len(lines) / segments)
+        end = (n + 1) * int(len(lines) / segments)
+        if n == segments - 1:
             end = len(lines)
         for line in lines[start: end]:
             transcript += line['text']
@@ -202,7 +200,7 @@ def reconstruct_transcript_from_json(path: str, id: str, chunk_num: int) -> List
 def calc_preservation(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None):
 
     these_scores = {}
-    chunk_num = config["chunk_num"]
+    segments = config["segments"]
     input_json = config["input_json"]
     input_json_and_txt = config["input_json_and_txt"]
     levenshtein = config['levenshtein']
@@ -215,19 +213,19 @@ def calc_preservation(config: dict, ids: List[str], diar_path_txt: str = None, d
 
     for id in ids:
 
-        transcript = read_transcript_from_id(id, chunk_num=chunk_num)
+        transcript = read_transcript_from_id(id, segments=segments)
 
         if input_json and not input_json_and_txt:
-            diar_transcript = reconstruct_transcript_from_json(diar_path_json, id, chunk_num=chunk_num)
+            diar_transcript = reconstruct_transcript_from_json(diar_path_json, id, segments=segments)
         else:
-            diar_transcript = reconstruct_transcript(diar_path_txt, id, chunk_num=chunk_num)
+            diar_transcript = reconstruct_transcript(diar_path_txt, id, segments=segments)
 
         if levenshtein:
             these_scores["levenshtein"][id] = {}  
         if diff:
             these_scores["diff"][id] = {}
 
-        for i in range(chunk_num):
+        for i in range(segments):
             # indexed by id and then chunk number
             if levenshtein:
                 these_scores["levenshtein"][id][i] = NormalizedLevenshtein().similarity(transcript[i], diar_transcript[i])

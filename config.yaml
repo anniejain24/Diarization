@@ -1,7 +1,7 @@
 run_name: # save files with this name appended to front (optional)
 raw_transcript: False # if true, return only raw transcripts corresponding to each ID (in chunks if chunk_num > 1)
 return_json: True # if true, return output as json. if false, return as .txt file line delimited for diarization
-json_and_txt: False # if true, override the above and return both the .txt and json file
+json_and_txt: True # if true, override the above and return both the .txt and json file
 temperature_summary: 1
 temperature_diarize: 1
 top_p_summary: 1
@@ -12,15 +12,19 @@ do_sample_summary: True
 do_sample_diarize: True
 timeout_summary: None # for azure deployments
 max_retries_summary: 2 # for azure deployments
-mod_name_summary: 'azure' # choose from azure, llama-8b, llama-70b, claude-opus-3, claude-sonnet-3, claude-haiku-3, claude-sonnet-3.5, or azure
-mod_name_diarize: 'azure' # same as above
-azure_deployment_summary: 'annie-gpt4-1' # only relevant if using azure deployment
-azure_deployment_diarize: 'annie-gpt4-1'
+mod_name_summary: 'llama-70b' # choose from azure, llama-8b, llama-70b, claude-opus-3, claude-sonnet-3, claude-haiku-3, claude-sonnet-3.5, or azure
+mod_name_diarize: 'llama-70b' # same as above
+azure_deployment_summary: 'g4o-annie' # only relevant if using azure deployment
+azure_deployment_diarize: 'g4o-annie'
 chunk_num: 1
 summary: True # run summary part of pipeline if true
 summary_chunking: True # summarize whole transcript for each chunk or summarize corresponding chunk only (if True)
 return_chunked: False # if True label each chunk in final transcript (chunk 0, chunk 1...)
 claude_key: '/work/bioinformatics/s229618/api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models
+openai_api_base: "http://172.18.227.111:9001/v1/" # vllm port, only for llama 70b at this time
+llama_running: True #if llama 70b up and running already on node, use instance
+llama_instance: "meta-llama/Meta-Llama-3.1-70B-Instruct"
+
 
 # If using an azure deployment: be sure to set the following environment variables using these command line prompts:
 # export OPENAI_API_VERSION="2024-05-01-preview" (or other model version)
