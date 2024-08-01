@@ -41,6 +41,53 @@ def run_model(
 
     # run pipeline
     raw_transcript = config["raw_transcript"]  # check if user wanted to return only raw transcripts
+    llama_running = config["llama_running"]
+
+    if "llama" in mod_name_summary and not llama_running and summary:
+
+        if mod_name_summary == "llama-8b":
+            summary_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
+        if mod_name_summary == "llama-70b":
+            summary_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
+
+        summary_pipeline = transformers.pipeline(
+            "text-generation",
+            model=summary_id,
+            model_kwargs={"torch_dtype": torch.bfloat16},
+            device=3,
+        )
+
+        summary_terminators = [
+            summary_pipeline.tokenizer.eos_token_id,
+            summary_pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
+        ]
+    
+    else:
+        summary_pipeline = None
+        summary_terminators = None
+
+    if "llama" in mod_name_diarize and not llama_running:
+
+        if mod_name_diarize == "llama-8b":
+            diarize_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
+        if mod_name_diarize == "llama-70b":
+            diarize_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
+
+        diarize_pipeline = transformers.pipeline(
+            "text-generation",
+            model=diarize_id,
+            model_kwargs={"torch_dtype": torch.bfloat16},
+            device=3,
+        )
+
+        diarize_terminators = [
+            diarize_pipeline.tokenizer.eos_token_id,
+            diarize_pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
+        ]
+    
+    else:
+        diarize_pipeline = None
+        diarize_terminators = None
 
     for id in ids:
 
@@ -61,7 +108,7 @@ def run_model(
             print("summarizing: " + id)
 
             if "llama" in mod_name_summary:
-                s = llama_summarize(transcript, config, summary_path=summary_path)
+                s = llama_summarize(transcript, config, summary_path=summary_path, pipeline=summary_pipeline, terminators=summary_terminators)
             elif "claude" in mod_name_summary:
                 s = claude_summarize(transcript, config, summary_path=summary_path)
             elif "azure" in mod_name_summary:
@@ -78,8 +125,9 @@ def run_model(
             print("diarizing: " + id)
 
             if "llama" in mod_name_diarize:
+
                 diarized = llama_diarize(
-                    transcript, config, diarize_path=diarize_path, summary_list=s
+                    transcript, config, diarize_path=diarize_path, summary_list=s, pipeline=diarize_pipeline, terminators=diarize_terminators
                 )
 
             elif "claude" in mod_name_diarize:
@@ -267,59 +315,26 @@ def llama_summarize(
     transcript: list,
     config: dict,
     summary_path: str = "helper_files/summary_prompt.txt",
+    pipeline: transformers.pipeline = None,
+    terminators: List = None,
 ) -> List[str]:
 
     temperature = config["temperature_summary"]
     max_new_tokens = config["max_new_tokens_summary"]
     top_p = config["top_p_summary"]
-    mod_name = config["mod_name_summary"]
     do_sample = config["do_sample_summary"]
     llama_running = config["llama_running"]
 
     prompt = summary_prompt(summary_path)
 
-    # change these paths if you wish to use llama instances stored elsewhere
-    if mod_name == "llama-8b":
-        model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
+    if llama_running:
+        model_id = config["llama_instance"]
+        openai_api_base = config["openai_api_base"]
 
-        pipeline = transformers.pipeline(
-            "text-generation",
-            model=model_id,
-            model_kwargs={"torch_dtype": torch.bfloat16},
-            device_map="auto",
+        client = OpenAI(
+            base_url=openai_api_base,
+            api_key=os.environ.get("OPENAI_API_KEY")  # set "EMPTY" or set key if one
         )
-
-        terminators = [
-            pipeline.tokenizer.eos_token_id,
-            pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-        ]
-
-    elif mod_name == "llama-70b":
-
-        if llama_running:
-            model_id = config["llama_instance"]
-            openai_api_base = config["openai_api_base"]
-
-            client = OpenAI(
-                base_url=openai_api_base,
-                api_key=os.environ.get("OPENAI_API_KEY")  # set "EMPTY" or set key if one
-            )
-
-        else:
-
-            model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
-
-            pipeline = transformers.pipeline(
-                "text-generation",
-                model=model_id,
-                model_kwargs={"torch_dtype": torch.bfloat16},
-                device_map="auto",
-            )
-
-            terminators = [
-                pipeline.tokenizer.eos_token_id,
-                pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-            ]
 
     s = []
 
@@ -410,59 +425,29 @@ def llama_diarize(
     config: dict,
     diarize_path: str = "helper_files/diarize_prompt_w_summary.txt",
     summary_list: list = None,
+    pipeline: transformers.pipeline = None,
+    terminators: List = None,
 ) -> List[str]:
 
     temperature = config["temperature_diarize"]
     max_new_tokens = config["max_new_tokens_diarize"]
     top_p = config["top_p_diarize"]
     do_sample = config["do_sample_diarize"]
-    mod_name = config["mod_name_diarize"]
     summary = config["summary"]
     llama_running = config["llama_running"]
 
     prompt = diarize_prompt(diarize_path)
 
     # change these paths if you wish to use llama instances stored elsewhere
-    if mod_name == "llama-8b":
-        model_id = "/archive/shared/sim_center/shared/annie/hf_models/8b-instruct"
 
-        pipeline = transformers.pipeline(
-            "text-generation",
-            model=model_id,
-            model_kwargs={"torch_dtype": torch.bfloat16},
-            device_map="auto",
+    if llama_running:
+        model_id = config["llama_instance"]
+        openai_api_base = config["openai_api_base"]
+
+        client = OpenAI(
+            base_url=openai_api_base,
+            api_key=os.environ.get("OPENAI_API_KEY")  # not necessary to set for C111 ,
         )
-
-        terminators = [
-            pipeline.tokenizer.eos_token_id,
-            pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-        ]
-
-    elif mod_name == "llama-70b":
-
-        if llama_running:
-            model_id = config["llama_instance"]
-            openai_api_base = config["openai_api_base"]
-
-            client = OpenAI(
-                base_url=openai_api_base,
-                api_key=os.environ.get("OPENAI_API_KEY")  # not necessary to set for C111 ,
-            )
-
-        else:
-            model_id = "/archive/shared/sim_center/shared/annie/hf_models/70b-instruct"
-
-            pipeline = transformers.pipeline(
-                "text-generation",
-                model=model_id,
-                model_kwargs={"torch_dtype": torch.bfloat16},
-                device_map="auto",
-            )
-
-            terminators = [
-                pipeline.tokenizer.eos_token_id,
-                pipeline.tokenizer.convert_tokens_to_ids("<|eot_id|>"),
-            ]
 
     diarized = []
 

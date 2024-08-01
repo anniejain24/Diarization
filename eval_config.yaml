@@ -1,9 +1,16 @@
 levenshtein: True # if True run evaluations using normalized levenshtein distance
 diff: True # if True run evaluations using diff ratio
 preservation: True # if true, return transcript preservation scores
-accuracy_basic: False # if true, return basic transcript accuracy score between diarized and gold standard
-accuracy_baseline_normed: False # if true, return baseline normed transcript accuracy score between diarized and gold standard
-accuracy_opposite_normed: False # if true, return opposite normed transcript accuracy score between diarized and gold standard
-segments: 3 # if higher than 1, calculate accuracy for each chunk of transcript
-input_json: True # if true, txt files not available as input. If False, txt available assumed
-input_json_and_txt: False # if true, both json and txt paths available and ignores input_json value
+accuracy: True # if true, return transcript diarization accuracy scores (will return basic, baseline normed, and opposite normed)
+llm_judge: False # if true, the llm judges the diarized transcript (no gold standard provided)
+llm_compare: False # if true, use llm to compare gold standard vs. diarized transcript
+segments: 1 # if higher than 1, calculate accuracy for each chunk of transcript
+input_json: False # if true, only json files not available as input. If False, txt available assumed
+input_json_and_txt: False # if true, both json and txt paths available, ignores input_json setting
+gold_json: False # if True, gold standard transcripts are in json form 
+mod_name: 'claude-sonnet-3.5' # choose from azure, llama-8b, llama-70b, claude-opus-3, claude-sonnet-3, claude-haiku-3, claude-sonnet-3.5
+azure_deployment: 'g4o-annie' # only for azure models
+claude_key: '/work/bioinformatics/s229618/api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models
+openai_api_base: "http://172.18.227.111:9001/v1/" # vllm port, only for llama 70b at this time
+llama_running: False #if llama 70b up and running already on node, use instance
+llama_instance: "meta-llama/Meta-Llama-3.1-8B-Instruct"
