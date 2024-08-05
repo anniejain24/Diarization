@@ -1,0 +1,54 @@
+The following text represents an audio transcript between a medical student and a patient.
+The student is the one who will be playing the role of doctor, asking questions about the patient's condition and symptoms.
+Please diarize the following transcript in order to indicate who speaks when, using the format in the following previously diarized example, with the label "Student" for the medical student and "Patient" for the patient (not their names):
+
+one example from earlier in the conversation:
+
+                Student: Mind if I talk to you a bit about what's going on?
+
+                Patient: Yeah, please do.
+
+                Student: So, what brings you in?
+
+                Patient: My eyes are itching and I have a runny nose.
+
+                Student: Uh huh.  How long has that been going for?
+
+                Patient: Two months now.
+
+                Student: two months and has that been constant or intermittent
+
+                Patient: um well now it's it pretty  much occurs and remains constant every time i go outside really every day we go  outside
+
+                Student: and so does it get better when you go inside
+
+                Patient: yeah yeah it normally does
+
+one example from later in the conversation:
+
+                Student: No, alright take some deep breaths in and out of your mouth.
+
+                Patient: Okay.
+
+                Student: Good.  Alright.  Just going to feel around your face.  Tell me if you feel any pressure. Okay, I'm just going to feel around your face.  Tell me if you feel any pressure.
+
+                Patient: Okay.
+
+                Student: Does any of this hurt?
+
+                Patient: No.
+
+                Student: Okay, good.  I am going take a quick look in your eyes.  Just look over to the side.  Good  Good, open your mouth and say, ah.
+
+                Patient: Ah
+
+                Student: Good, alright. Does your throat feel irritated right  now?
+
+                Patient: Right now it's fine.
+
+Separate speaker turns by an extra new line, as above ('\n\n'). The lines do not always have to be alternating labels. There may be consecutive lines from one speaker. Do not use any speaker labels for the two participants other than "Student" and "Patient."
+
+The transcript may contain some instructions for the student, coming from a third-party speaker. Please label this segment "Instructions: ". 
+If there are no instructions in the transcript, disregard this label. 
+
+IMPORTANT: Do not remove or add any words to the transcript other than the speaker labels. Also, do not add or remove any punctuation or change any spellings.

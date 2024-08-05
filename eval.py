@@ -104,7 +104,7 @@ def read_transcript_from_id(transcript_id: str, segments: int) -> List[str]:
                     tok_line = line["text"].split(" ")
                     for i in range(len(tok_line)):
                         transcript += " " + tok_line[i]
-            
+
             transcript = " ".join(transcript.split())  # clean up spaces and newline
             # append to transcript
             transcript_chunks.append(transcript)
@@ -120,9 +120,9 @@ def reconstruct_transcript(path: str, id: str, segments: int) -> List[str]:
     path = path + str("/") + id + '.txt'
     with open(path, 'r') as file:
         lines = file.readlines()
-    
+
     transcript_chunks = []
-    
+
     # for each chunk
     for n in range(segments):
         transcript = ""
@@ -139,8 +139,7 @@ def reconstruct_transcript(path: str, id: str, segments: int) -> List[str]:
                 # add all tokens except for diarization label
                 for i in range(1, len(tok_line)):
                     transcript += ' ' + tok_line[i]
-                
-        
+
         # clean up any line breaks
         resid_lines = transcript.split('\n')
         transcript = ''
@@ -154,12 +153,13 @@ def reconstruct_transcript(path: str, id: str, segments: int) -> List[str]:
 
     return transcript
 
+
 def reconstruct_transcript_from_json(path: str, id: str, segments: int) -> List[str]:
 
     path = path + "/" + id + '.json'
     with open(path, 'r') as file:
         lines = json.load(file)
-    
+
     transcript_chunks = []
     for n in range(segments):
         transcript = ''
@@ -172,11 +172,11 @@ def reconstruct_transcript_from_json(path: str, id: str, segments: int) -> List[
             transcript += line['text']
 
         transcript = " ".join(transcript.split())  # clean up spaces and newline
-            
+
         transcript_chunks.append(transcript)
-    
+
     transcript = transcript_chunks
-    
+
     return transcript
 
 
@@ -186,9 +186,9 @@ def consolidate_transcript(path: str, id: str, segments: int):
     path = path + str("/") + id + '.txt'
     with open(path, 'r') as file:
         lines = file.readlines()
-    
+
     diar_transcript = []
-    for n in range(segments): 
+    for n in range(segments):
         # get the relevant lines
         start = n * int(len(lines) / segments)
         end = (n + 1) * int(len(lines) / segments)
@@ -197,15 +197,24 @@ def consolidate_transcript(path: str, id: str, segments: int):
 
         out = []
         for line in lines[start:end]:
-            if line.find(':') == -1: continue
             temp = {}
+            if line.find(':') == -1:
+                temp['speaker'] = None
+                temp['text'] = line
             temp['speaker'] = line[:line.find(':')]
+
+            # handle for extra formatting tokens like bold
+            if 'Patient' or 'patient' in temp['speaker']: 
+                temp['speaker'] = 'Patient'
+            if 'Student' or 'student' in temp['speaker']:
+                temp['speaker'] = 'Student'
+
             temp['text'] = line[line.find(':') + 1:]
             out.append(temp)
 
         new = []
         new.append({'speaker': out[0]['speaker'], 'text': out[0]['text']})
-        
+
         for i in range(1, len(out)):
             this = {}
             if out[i]['speaker'] == out[i - 1]['speaker']:
@@ -214,13 +223,13 @@ def consolidate_transcript(path: str, id: str, segments: int):
                 this['speaker'] = out[i]['speaker']
                 this['text'] = out[i]['text']
                 new.append(this)
-        
+
         diar = ''
         for line in new:
             diar += line['speaker'] + ":" + line['text']
         diar = " ".join(diar.split())  # clean up spaces and newline
         diar_transcript.append(diar)
-          
+
     return diar_transcript
 
 
@@ -229,7 +238,7 @@ def consolidate_transcript_from_json(path: str, id: str, segments: int):
     path = path + str("/") + id + '.json'
     with open(path, 'r') as file:
         lines = json.load(file)
-    
+
     diar_transcript = []
 
     for n in range(segments):
@@ -238,30 +247,40 @@ def consolidate_transcript_from_json(path: str, id: str, segments: int):
         end = (n + 1) * int(len(lines) / segments)
         if n == segments - 1:
             end = len(lines)
-        
+
         new = []
-        new.append({'speaker': lines[start]['speaker'], 'text': lines[start]['text']})
+
+        if 'Patient' or 'patient' in lines[start]['speaker']: 
+            lines[start]['speaker'] = 'Patient'
+        if 'Student' or 'student' in lines[start]['speaker']:
+            lines[start]['speaker'] = 'Student'
         
+        new.append({'speaker': lines[start]['speaker'], 'text': lines[start]['text']})
+
         for i in range(start + 1, end):
             this = {}
 
+            if 'Patient' or 'patient' in lines[i]['speaker']: 
+                lines[i]['speaker'] = 'Patient'
+            if 'Student' or 'student' in lines[i]['speaker']:
+                lines[i]['speaker'] = 'Student'
+            
             if lines[i]['speaker'] == lines[i - 1]['speaker']:
                 new[-1]['text'] += lines[i]['text']
             else:
                 this['speaker'] = lines[i]['speaker']
                 this['text'] = lines[i]['text']
                 new.append(this)
-        
+
         diar = ''
         for line in new:
             diar += line['speaker'] + ":" + line['text']
-        
+
         diar = " ".join(diar.split())  # clean up spaces and newline
         diar_transcript.append(diar)
 
-    
     return diar_transcript
-            
+
 
 def calc_preservation(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None):
 
@@ -303,7 +322,7 @@ def calc_preservation(config: dict, ids: List[str], diar_path_txt: str = None, d
 
 # calculate baseline score between a transcript with no labels and the gold transcript
 def nolabel_baseline_score(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None, gold_path: str = '/archive/shared/sim_center/shared/annie/gold-standards/gpt4-gold-standard-diarized/'):
-    
+
     segments = config["segments"]
     levenshtein = config["levenshtein"]
     diff = config["diff"]
@@ -317,7 +336,7 @@ def nolabel_baseline_score(config: dict, ids: List[str], diar_path_txt: str = No
 
     for id in ids:
 
-        if input_json and not input_json_and_txt: 
+        if input_json and not input_json_and_txt:
             transcript = reconstruct_transcript_from_json(diar_path_json, id, segments)
         else:
             transcript = reconstruct_transcript(diar_path_txt, id, segments)
@@ -334,11 +353,11 @@ def nolabel_baseline_score(config: dict, ids: List[str], diar_path_txt: str = No
             if levenshtein:
                 similarity = NormalizedLevenshtein().similarity(transcript[n], gold[n])
                 scores["levenshtein"][id][n] = similarity
-            
+
             if diff:
                 similarity = difflib.SequenceMatcher(None, transcript[n], gold[n]).ratio()
                 scores["diff"][id][n] = similarity
-            
+
     return scores
 
 
@@ -359,7 +378,7 @@ def calc_accuracy(config: dict, ids: List[str], diar_path_txt: str = None, diar_
     if diff:
         these_scores["diff"] = {}
         these_scores["diff_baseline_normed"] = {}
-    
+
     nolabel_baselines = nolabel_baseline_score(config, ids, diar_path_txt=diar_path_txt, gold_path=gold_path)
 
     for id in ids:
@@ -368,19 +387,15 @@ def calc_accuracy(config: dict, ids: List[str], diar_path_txt: str = None, diar_
 
         if gold_json:
             transcript = consolidate_transcript_from_json(gold_path, id, segments=segments)
-        
+
         else:
             transcript = consolidate_transcript(gold_path, id, segments=segments)
-        
-        #print(transcript)
 
         if input_json and not input_json_and_txt:
             diar_transcript = consolidate_transcript_from_json(diar_path_json, id, segments=segments)
-    
+
         else:
             diar_transcript = consolidate_transcript(diar_path_txt, id, segments=segments)
-        
-        #print(diar_transcript)
 
         if levenshtein:
             these_scores["levenshtein"][id] = {}
@@ -400,11 +415,14 @@ def calc_accuracy(config: dict, ids: List[str], diar_path_txt: str = None, diar_
 
     return these_scores, nolabel_baselines
 
+
 def llm_judge(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None):
     return None
 
+
 def llm_compare(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None, gold_path: str = '/archive/shared/sim_center/shared/annie/gold-standards/gpt4-gold-standard-diarized/'):
     return None
+
 
 def run_llm(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_json: str = None, gold_path: str = '/archive/shared/sim_center/shared/annie/gold-standards/gpt4-gold-standard-diarized/'):
 
@@ -453,10 +471,10 @@ def run_llm(config: dict, ids: List[str], diar_path_txt: str = None, diar_path_j
             print("comparing: " + id)
             out = llm_compare()
 
-
         output.append(out)
         
         return output
+
 
 def main():
 
@@ -491,6 +509,13 @@ def main():
     )
 
     parser.add_argument(
+        "--segments",
+        required=False,
+        help="number of segments to eval (overrides value in config)",
+        default=None,
+    )
+
+    parser.add_argument(
         "--gold_path",
         required=False,
         help="Path to folder with gold standards",
@@ -519,6 +544,9 @@ def main():
     gold_path = args.gold_path
     output_dir = args.output_dir
     run_name = args.run_name
+
+    if args.segments is not None:
+        config['segments'] = int(args.segments)
 
     output = run_eval(config, data_path, diarized_path_txt, diarized_path_json, gold_path, output_dir)
     
