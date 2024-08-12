@@ -1,5 +1,6 @@
 out.txt
 promptflow/
+/log
 *.DS_Store
 */.promptflow/flow.log
 *__pycache__/
