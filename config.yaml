@@ -1,4 +1,4 @@
-run_name: # save files with this name appended to front (optional)
+run_name: yo # save files with this name appended to front (optional)
 raw_transcript: False # if true, return only raw transcripts corresponding to each ID (in chunks if chunk_num > 1)
 return_json: False # if true, return output as json. if false, return as .txt file line delimited for diarization
 json_and_txt: False # if true, override the above and return both the .txt and json file
@@ -12,11 +12,11 @@ do_sample_summary: True
 do_sample_diarize: True
 timeout_summary: None # for azure deployments
 max_retries_summary: 2 # for azure deployments
-mod_name_summary: 'azure' # choose from azure, llama-8b, llamaßß-70b, claude-opus-3, claude-sonnet-3, claude-haiku-3, claude-sonnet-3.5
-mod_name_diarize: 'azure' # same as above
-azure_deployment_summary: 'annie-gpt4-1' # only relevant if using azure deployment
-azure_deployment_diarize: 'annie-gpt4-1'
-chunk_num: 3
+mod_name_summary: 'claude-sonnet-3.5' # choose from azure, llama-8b, llamaßß-70b, claude-opus-3, claude-sonnet-3, claude-haiku-3, claude-sonnet-3.5
+mod_name_diarize: 'claude-sonnet-3.5' # same as above
+azure_deployment_summary: 'g4o-annie' # only relevant if using azure deployment
+azure_deployment_diarize: 'g4o-annie'
+chunk_num: 1
 summary: False # run summary part of pipeline if true
 summary_chunking: True # summarize whole transcript for each chunk or summarize corresponding chunk only (if True)
 return_chunked: False # if True label each chunk in final transcript (chunk 0, chunk 1...)
