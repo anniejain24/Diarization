@@ -19,6 +19,7 @@ def run_eval(
         diarized_path_txt: str,
         diarized_path_json: str,
         gold_path: str,
+        input_dir: str,
         output_dir: str
 ) -> tuple[List[str], List[str]]:
     
@@ -524,6 +525,14 @@ def main():
 
     # the default directory and default ids may already have associated files, so make sure to check before accidentally replacing and change either path or ids
     parser.add_argument(
+        "--input_dir",
+        required=False,
+        help="Directory with raw transcripts or text input",
+        default="input/",
+    )
+
+    # the default directory and default ids may already have associated files, so make sure to check before accidentally replacing and change either path or ids
+    parser.add_argument(
         "--output_dir",
         required=False,
         help="Directory to save diarized transcript files",
@@ -542,13 +551,14 @@ def main():
     diarized_path_txt = args.diarized_path_txt
     diarized_path_json = args.diarized_path_json
     gold_path = args.gold_path
+    input_dir = args.input_dir
     output_dir = args.output_dir
     run_name = args.run_name
 
     if args.segments is not None:
         config['segments'] = int(args.segments)
 
-    output = run_eval(config, data_path, diarized_path_txt, diarized_path_json, gold_path, output_dir)
+    output = run_eval(config, data_path, diarized_path_txt, diarized_path_json, gold_path, input_dir, output_dir)
     
     with open(output_dir + str("/") + run_name + '.json', "w") as f:
         json.dump(output, f)

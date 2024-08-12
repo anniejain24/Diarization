@@ -16,6 +16,7 @@ def run_model(
     data_path: str = "helper_files/ids.jsonl",
     summary_path: str = "helper_files/summary_prompt.txt",
     diarize_path: str = "helper_files/diarize_prompt_w_summary.txt",
+    input_dir: str = "input/",
     output_dir: str = "temp/",
 ) -> tuple[List[str], List[str]]:
 
@@ -26,7 +27,7 @@ def run_model(
     id_list = []
     for id in ids:
         id = json.loads(id)
-        id_list.append(id["id"].split(".")[0])
+        id_list.append(id["id"])
     ids = id_list
 
     # some relevant configs
@@ -750,7 +751,7 @@ def main():
     parser.add_argument(
         "--data_path",
         required=False,
-        help="Path to jsonl files with ids",
+        help="Path to jsonl files with ids (or transcript file names)",
         default="helper_files/test-id.jsonl",
     )
 
@@ -768,13 +769,22 @@ def main():
         default=None,
     )
 
-    # the default directory and default ids may already have associated files, so make sure to check before accidentally replacing and change either path or ids
+    # directory with input transcripts/text
+    parser.add_argument(
+        "--input_dir",
+        required=False,
+        help="Directory with raw transcripts or text to diarize",
+        default="input/",
+    )
+
+    # output directory
     parser.add_argument(
         "--output_dir",
         required=False,
         help="Directory to save diarized transcript files",
         default="temp/",
     )
+
     parser.add_argument(
         "--config",
         required=False,
@@ -809,6 +819,7 @@ def main():
     # specify path to jsonl file with ids
     data_path = args.data_path
     summary_path = args.summary_path
+    input_dir = args.input_dir
     output_dir = args.output_dir
 
     # check chunk num and switch out if passed in cl, allows changing in bash file etc.
@@ -836,6 +847,7 @@ def main():
         data_path=data_path,
         summary_path=summary_path,
         diarize_path=diarize_path,
+        input_dir=input_dir,
         output_dir=output_dir,
     )
     print(ids, output)

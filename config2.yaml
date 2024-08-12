@@ -1,4 +1,4 @@
-# EXTRA CONFIG TO RUN MULTIPLE
+# EXTRA CONFIG TO RUN MULTIPLE AT ONCE
 
 run_name: # save files with this name appended to front (optional)
 raw_transcript: False # if true, return only raw transcripts corresponding to each ID (in chunks if chunk_num > 1)

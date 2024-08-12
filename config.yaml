@@ -20,7 +20,7 @@ chunk_num: 1
 summary: False # run summary part of pipeline if true
 summary_chunking: True # summarize whole transcript for each chunk or summarize corresponding chunk only (if True)
 return_chunked: False # if True label each chunk in final transcript (chunk 0, chunk 1...)
-claude_key: '/work/bioinformatics/s229618/api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models
+claude_key: 'api_keys/claude_key.txt' # path to personal key in .txt file, required for claude models
 openai_api_base: "http://172.18.227.111:9001/v1/" # vllm port, only for llama 70b at this time
 llama_running: True #if llama 70b up and running already on node, use instance
 llama_instance: "meta-llama/Meta-Llama-3.1-70B-Instruct"

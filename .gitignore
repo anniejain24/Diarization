@@ -1,5 +1,6 @@
 out.txt
 promptflow/
+api_keys/
 /log
 *.DS_Store
 */.promptflow/flow.log
