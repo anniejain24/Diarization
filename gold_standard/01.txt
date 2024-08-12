@@ -1,0 +1,55 @@
+instructions: Learners, you may begin your patient station.
+
+instructions: Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you.
+
+student: Hello, Mr. Johnson.
+
+patient: Hi, good morning.
+
+student: My name is Sarah, and I’m a medical student.
+
+student: How are you feeling today?
+
+patient: I've been better. I've been having some pretty bad stomach pains.
+
+student: I’m sorry to hear that. Could you tell me more about the pain you’re experiencing?
+
+patient: Sure. It started about three days ago. It’s a sharp, cramping pain in my lower abdomen.
+
+student: I see. On a scale from 1 to 10, with 10 being the worst pain you’ve ever felt, how would you rate it?
+
+patient: I’d say it’s around a 7. It gets worse after I eat.
+
+student: That sounds uncomfortable. Have you noticed any other symptoms, like nausea, vomiting, or changes in your bowel habits?
+
+patient: Yes, I’ve been feeling pretty nauseous, and I’ve had some diarrhea as well.
+
+student: Thank you for sharing that. Have you taken any medications or tried anything to relieve the pain?
+
+patient: I took some over-the-counter antacids, but they didn’t seem to help much.
+
+student: Alright. Have you had any recent changes in your diet or any new stressors in your life?
+
+patient: I did start a new job last month, and I’ve been eating out more often because of my busy schedule.
+
+student: That could be a factor. Have you ever had similar pain before, or is this the first time?
+
+patient: I’ve had mild stomach aches before, but nothing this intense.
+
+student: Understood. Do you have any medical conditions or take any regular medications?
+
+patient: I have high blood pressure, but it’s well-controlled with medication. I take Lisinopril daily.
+
+student: Thank you for that information. Are you allergic to any medications or foods?
+
+patient: No known allergies.
+
+student: Great. Just to get a complete picture, could you tell me a little about your family medical history? Any conditions that run in your family?
+
+patient: My father had diabetes, and my mother has a history of irritable bowel syndrome.
+
+student: Thank you, Mr. Johnson. I have a better understanding of your situation now. I’ll share this information with the supervising doctor, and we’ll come up with a plan to help you feel better.
+
+patient: Thanks, Sarah. I appreciate it.
+
+student: You’re welcome. Hang tight, and we’ll be back shortly.

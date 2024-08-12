@@ -1,0 +1,53 @@
+instructions: Learners, you may begin your patient station.
+
+instructions: Please remove your cover sheet, jot down any notes, knock, and then enter. Thank you.
+
+student: Good afternoon, Ms. Smith.
+
+patient: Good afternoon.
+
+student: My name is David, and I’m a medical student. How can I assist you today?
+
+patient: I’ve been having some chest pain that’s been worrying me.
+
+student: I’m sorry to hear that. Can you describe the chest pain for me?
+
+patient: It’s a dull, aching pain that comes and goes. It started about a week ago.
+
+student: On a scale from 1 to 10, with 10 being the worst pain you’ve ever felt, how would you rate it?
+
+patient: When it’s bad, it’s about a 6.
+
+student: Have you noticed anything that triggers the pain or makes it worse?
+
+patient: It seems to get worse when I’m stressed or after I eat a big meal.
+
+student: I see. Do you have any other symptoms like shortness of breath, nausea, or sweating?
+
+patient: Sometimes I feel a bit short of breath, but no nausea or sweating.
+
+student: Thank you for sharing that. Have you taken any medications or tried anything to relieve the pain?
+
+patient: I’ve tried some antacids, thinking it might be heartburn, but they didn’t help much.
+
+student: Understood. Have you experienced any similar pain in the past?
+
+patient: No, this is the first time I’ve had this kind of pain.
+
+student: Do you have any medical conditions or take any regular medications?
+
+patient: I have high cholesterol, and I’m on atorvastatin for that.
+
+student: Any allergies to medications?
+
+patient: No, no allergies.
+
+student: Thank you. Could you also tell me a bit about your family medical history? Any heart disease or similar conditions?
+
+patient: My father had a heart attack in his fifties, and my mother has hypertension.
+
+student: Thank you, Ms. Smith. I’m going to share this information with the supervising doctor, and we’ll come up with a plan to address your chest pain.
+
+patient: Thank you, David. I appreciate it.
+
+student: You’re welcome. Please hang tight, and we’ll be back shortly.

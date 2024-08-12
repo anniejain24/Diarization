@@ -15,9 +15,9 @@
 
 ## structuring of input data
 
-Input data should be provided in a json format, with a list of elements, each element containing a "text" field. E.g: files are outputted from whisper.ai in this way, with corresponding text and timestamps. Any other fields can be provided as well, but the text field for each utterance is necessary. 
+Input data should be provided in a json format, with a list of elements, each element containing a "text" field. E.g: files are outputted from whisper.ai in this way, with corresponding text and timestamps. Any other fields can be provided as well, but the text field for each utterance is necessary. The below example is located in `input/01.json` and a second example transcript is provided at `input/02.json` along with an example id list (containing a jsonl formatted id or file name list to be diarized) at `helper_files/test-ids.jsonl`
 
-![alt text](github/diarization/images/input_format.png "Input format")
+![alt text](images/input_format.png)
 
 If the transcript is simply a string, use format.py to perform sentence tokenization and output the life-formatted json version
 
@@ -56,8 +56,8 @@ Customize by editing `config.yaml` with the desired models, pipeline components,
 ## set up environment
 
 ```shell
-conda env create -f diarize_env.yaml -y
-conda activate diarize
+conda env create -f diarize_env.yml -y
+conda activate diarization
 ```
 ## input data
 format and where they are from
