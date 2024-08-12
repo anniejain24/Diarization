@@ -20,7 +20,6 @@ def run_eval(
         diarized_path_json: str,
         gold_path: str,
         input_dir: str,
-        output_dir: str
 ) -> tuple[List[str], List[str]]:
     
     # extract transcript ids from file
@@ -30,7 +29,7 @@ def run_eval(
     id_list = []
     for id in ids:
         id = json.loads(id)
-        id_list.append(id["id"].split(".")[0])
+        id_list.append(id["id"])
     ids = id_list
 
     preservation = config["preservation"]
@@ -47,25 +46,21 @@ def run_eval(
     scores = {}
 
     if preservation:
-        scores['preservation'] = calc_preservation(config, ids, diar_path_txt=diarized_path_txt, diar_path_json=diarized_path_json)
+        scores['preservation'] = calc_preservation(config, ids, diar_path_txt=diarized_path_txt, diar_path_json=diarized_path_json, input_dir=input_dir)
     if accuracy:
         scores['accuracy'], scores['nolabel_baseline'] = calc_accuracy(config, ids, diar_path_txt=diarized_path_txt, diar_path_json=diarized_path_json, gold_path=gold_path)
 
     return ids, scores
 
     
-def read_transcript_from_id(transcript_id: str, segments: int) -> List[str]:
+def read_transcript_from_id(transcript_id: str, segments: int, input_dir: str='input/') -> List[str]:
 
-    path_to_data_folder = "/archive/shared/sim_center/shared/ameer/"
+    path_to_data_folder = input_dir
     # path_to_data_folder = '/archive/shared/sim_center/shared/annie/GPT4 3-chunk/'
     # lookinto this dictionary to find the path
     # can also manually create the path and it would be faster but not by much
 
-    merged_lookup = pd.read_csv(path_to_data_folder + "grade_lookupv5.csv")
-
-    path = merged_lookup[merged_lookup.id == transcript_id].path.iloc[0]
-
-    path = path[:-4] + ".json"
+    path = path_to_data_folder + str("/") + id + ".json"
 
     # Opening JSON file
     f = open(path)

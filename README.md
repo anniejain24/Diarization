@@ -13,6 +13,16 @@
 
 ## diarization
 
+## structuring of input data
+
+Input data should be provided in a json format, with a list of elements, each element containing a "text" field. E.g: files are outputted from whisper.ai in this way, with corresponding text and timestamps. Any other fields can be provided as well, but the text field for each utterance is necessary. 
+
+![alt text](github/diarization/images/input_format.png "Input format")
+
+If the transcript is simply a string, use format.py to perform sentence tokenization and output the life-formatted json version
+
+
+
 ## types of models and possible pipelines
 
 Models:
@@ -95,3 +105,6 @@ python run.py --config config.yaml --data_path 'helper_files/test-id.jsonl' --su
 **diarize_path:** path to diarization prompt, default in `helper_files/diarize_prompt.txt`
 
 **output_dir:** path to directory to save diarization output, default saves tp `temp/`
+
+
+[def]: github/diarization/images/input_format.png
